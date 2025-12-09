@@ -9,18 +9,29 @@ const url = new URL(Astro.request.url);
 
 // Props interface with defaults - reading from URL params or using defaults
 const title = url.searchParams.get("title") || "Standard Titel";
-const image = url.searchParams.get("image") || "https://placehold.co/1200x600/006269/ffffff?text=Hero+Image";
+const image =
+  url.searchParams.get("image") ||
+  "https://placehold.co/1200x600/006269/ffffff?text=Hero+Image";
 
 // Singleview specific props
-const singleviewHeader = url.searchParams.get("singleviewHeader") || "Overskrift for singleview";
-const singleviewText = url.searchParams.get("singleviewText") || "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+const singleviewHeader =
+  url.searchParams.get("singleviewHeader") || "Overskrift for singleview";
+const singleviewText =
+  url.searchParams.get("singleviewText") ||
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
 const singleviewListParam = url.searchParams.get("singleviewList");
-const singleviewList = singleviewListParam ? JSON.parse(singleviewListParam) : ["Punkt 1", "Punkt 2", "Punkt 3"];
+const singleviewList = singleviewListParam
+  ? JSON.parse(singleviewListParam)
+  : ["Punkt 1", "Punkt 2", "Punkt 3"];
 const singleviewTheme = url.searchParams.get("singleviewTheme") || "default";
-const singleviewMedia = url.searchParams.get("singleviewMedia") || "https://placehold.co/800x600/f5a600/ffffff?text=Secondary+Media";
+const singleviewMedia =
+  url.searchParams.get("singleviewMedia") ||
+  "https://placehold.co/800x600/f5a600/ffffff?text=Secondary+Media";
 
 // Additional content props
-const additionalText = url.searchParams.get("additionalText") || "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
+const additionalText =
+  url.searchParams.get("additionalText") ||
+  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
 const ctaText = url.searchParams.get("ctaText") || "Tilmeld dig nu";
 const ctaLink = url.searchParams.get("ctaLink") || "/bliv_aktiv";
 const backLink = url.searchParams.get("backLink") || "/card-example";
@@ -31,32 +42,32 @@ const themeColors = {
     bg: "bg-primary-100",
     border: "border-primary-500",
     text: "text-primary-600",
-    accent: "bg-primary-500"
+    accent: "bg-primary-500",
   },
   home: {
     bg: "bg-primary-100",
     border: "border-primary-500",
     text: "text-primary-600",
-    accent: "bg-primary-500"
+    accent: "bg-primary-500",
   },
   volunteer: {
     bg: "bg-secondary-100",
     border: "border-secondary-500",
     text: "text-secondary-600",
-    accent: "bg-secondary-500"
+    accent: "bg-secondary-500",
   },
   action: {
     bg: "bg-primary-100",
     border: "border-primary-400",
     text: "text-primary-600",
-    accent: "bg-primary-400"
+    accent: "bg-primary-400",
   },
   recipes: {
     bg: "bg-secondary-100",
     border: "border-secondary-400",
     text: "text-secondary-600",
-    accent: "bg-secondary-400"
-  }
+    accent: "bg-secondary-400",
+  },
 };
 
 const currentTheme = themeColors[singleviewTheme] || themeColors.default;
@@ -171,8 +182,8 @@ const currentTheme = themeColors[singleviewTheme] || themeColors.default;
         class={`${currentTheme.bg} border-l-4 ${currentTheme.border} p-8 mb-12 rounded-lg animate-fade-in animate-delay-700`}
       >
         <Text teksttype="brødtekst" stylingclasses="italic text-2xl font-serif">
-          "Hver lille indsats tæller. Sammen kan vi gøre en forskel i kampen
-          mod madspild."
+          "Hver lille indsats tæller. Sammen kan vi gøre en forskel i kampen mod
+          madspild."
         </Text>
       </div>
 
