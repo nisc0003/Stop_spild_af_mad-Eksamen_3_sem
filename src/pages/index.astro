@@ -17,41 +17,27 @@ const featuredCards = [
     singleviewHeader: "Tips til hjemmet",
     singleviewList: ["Planlæg måltider", "Opbevar korrekt", "Brug resterne"],
     singleviewTheme: "home",
-    singleviewMedia: "https://placehold.co/800x600/006269/ffffff",
-    additionalText:
-      "Med de rette værktøjer og viden kan hver familie spare tusindvis af kroner årligt.",
-    ctaText: "Læs mere",
-    ctaLink: "/tilmeldt",
-    backLink: "/",
+    singleviewMedia: "https://placehold.co/1200x800",
   },
   {
     title: "Bliv frivillig",
     image: "https://placehold.co/600x400/f5a600/ffffff?text=Bliv+Frivillig",
-    link: "/aktiv_singleview",
+    link: "/bliv_aktiv",
     singleviewText: "Hjælp med at redde mad og gøre en forskel.",
     singleviewHeader: "Frivilligt arbejde",
     singleviewList: ["Indsaml mad", "Del til trængende", "Spar miljøet"],
     singleviewTheme: "volunteer",
-    singleviewMedia: "https://placehold.co/800x600/f5a600/ffffff",
-    additionalText:
-      "Vi søger altid motiverede frivillige, der vil gøre en forskel.",
-    ctaText: "Tilmeld dig som frivillig",
-    ctaLink: "/bliv_aktiv",
-    backLink: "/",
+    singleviewMedia: "https://placehold.co/1200x800",
   },
   {
     title: "Hvad kan du gøre?",
     image: "https://placehold.co/600x400/00e4f5/ffffff?text=Gør+En+Forskel",
-    link: "/aktiv_singleview",
+    link: "/hvad_vi_kan_goere",
     singleviewText: "Udforsk alle de måder du kan bidrage.",
     singleviewHeader: "Gør en forskel",
     singleviewList: ["Køb smart", "Forstå datomerker", "Donér mad"],
     singleviewTheme: "action",
-    singleviewMedia: "https://placehold.co/800x600/00e4f5/ffffff",
-    additionalText: "Kampen mod madspild starter hos den enkelte.",
-    ctaText: "Se alle tips",
-    ctaLink: "/hvad_vi_kan_goere",
-    backLink: "/",
+    singleviewMedia: "https://placehold.co/1200x800",
   },
 ];
 ---
@@ -85,10 +71,6 @@ const featuredCards = [
               singleviewList={card.singleviewList}
               singleviewTheme={card.singleviewTheme}
               singleviewMedia={card.singleviewMedia}
-              additionalText={card.additionalText}
-              ctaText={card.ctaText}
-              ctaLink={card.ctaLink}
-              backLink={card.backLink}
             />
           ))
         }
