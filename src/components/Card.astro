@@ -1,0 +1,67 @@
+---
+import Heading from "../components/Heading.astro";
+import Link from "../components/Link.astro";
+
+// Props for card display
+const {
+  title,
+  image,
+  link = "#",
+  // Singleview data (passed but not displayed on card)
+  singleviewText,
+  singleviewHeader,
+  singleviewList,
+  singleviewTheme,
+  singleviewMedia,
+  // Additional singleview props
+  additionalText,
+  ctaText,
+  ctaLink,
+  backLink,
+} = Astro.props;
+
+// Encode props for URL - only pass what's needed
+const params = new URLSearchParams({
+  title: title || "",
+  image: image || "",
+  singleviewHeader: singleviewHeader || "",
+  singleviewText: singleviewText || "",
+  singleviewList: JSON.stringify(singleviewList || []),
+  singleviewTheme: singleviewTheme || "default",
+  singleviewMedia: singleviewMedia || "",
+  additionalText: additionalText || "",
+  ctaText: ctaText || "Tilmeld dig nu",
+  ctaLink: ctaLink || "/bliv_aktiv",
+  backLink: backLink || "/card-example",
+});
+
+const singleviewUrl = `${link}?${params.toString()}`;
+---
+
+<article
+  class="group bg-white border border-gray-300 rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 animate-fade-in animate-duration-700 intersect:animate-slide-up-fade"
+>
+  <a href={singleviewUrl} class="block">
+    <!-- Image Container -->
+    <div class="relative overflow-hidden aspect-video">
+      <img
+        src={image}
+        alt={title}
+        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+      />
+    </div>
+
+    <!-- Content Container -->
+    <div class="p-4 md:p-6">
+      <Heading
+        htmlheading="h3"
+        size="medium"
+        stylingclasses="mb-3 group-hover:text-primary-500 transition-colors duration-300"
+      >
+        {title}
+      </Heading>
+
+      <Link href={singleviewUrl} variant="textlink"> Læs mere → </Link>
+    </div>
+  </a>
+</article>

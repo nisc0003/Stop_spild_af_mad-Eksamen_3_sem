@@ -1,15 +1,192 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Link from "../components/Link.astro";
-import { Image } from "astro:assets";
-import thumbsup from "../assets/images/thumbsup.png";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
-import Button from "../components/Button.astro";
+import Link from "../components/Link.astro";
+
+// Get URL parameters
+const url = new URL(Astro.request.url);
+
+// Props interface with defaults - reading from URL params or using defaults
+const title = url.searchParams.get("title") || "Standard Titel";
+const image = url.searchParams.get("image") || "https://placehold.co/1200x600/006269/ffffff?text=Hero+Image";
+
+// Singleview specific props
+const singleviewHeader = url.searchParams.get("singleviewHeader") || "Overskrift for singleview";
+const singleviewText = url.searchParams.get("singleviewText") || "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+const singleviewListParam = url.searchParams.get("singleviewList");
+const singleviewList = singleviewListParam ? JSON.parse(singleviewListParam) : ["Punkt 1", "Punkt 2", "Punkt 3"];
+const singleviewTheme = url.searchParams.get("singleviewTheme") || "default";
+const singleviewMedia = url.searchParams.get("singleviewMedia") || "https://placehold.co/800x600/f5a600/ffffff?text=Secondary+Media";
+
+// Additional content props
+const additionalText = url.searchParams.get("additionalText") || "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
+const ctaText = url.searchParams.get("ctaText") || "Tilmeld dig nu";
+const ctaLink = url.searchParams.get("ctaLink") || "/bliv_aktiv";
+const backLink = url.searchParams.get("backLink") || "/card-example";
+
+// Theme-based color schemes
+const themeColors = {
+  default: {
+    bg: "bg-primary-100",
+    border: "border-primary-500",
+    text: "text-primary-600",
+    accent: "bg-primary-500"
+  },
+  home: {
+    bg: "bg-primary-100",
+    border: "border-primary-500",
+    text: "text-primary-600",
+    accent: "bg-primary-500"
+  },
+  volunteer: {
+    bg: "bg-secondary-100",
+    border: "border-secondary-500",
+    text: "text-secondary-600",
+    accent: "bg-secondary-500"
+  },
+  action: {
+    bg: "bg-primary-100",
+    border: "border-primary-400",
+    text: "text-primary-600",
+    accent: "bg-primary-400"
+  },
+  recipes: {
+    bg: "bg-secondary-100",
+    border: "border-secondary-400",
+    text: "text-secondary-600",
+    accent: "bg-secondary-400"
+  }
+};
+
+const currentTheme = themeColors[singleviewTheme] || themeColors.default;
 ---
-<MainLayout title="Titel">
-	<main class="container mx-auto p-4">
-		<Heading htmlheading="h1">Lav noget flot!</Heading>
-        <Text teksttype="brødtekst">Så bliver Anders glad:-)</Text>
-	</main>
+
+<MainLayout title={title}>
+  <main class="container mx-auto px-4 py-8">
+    <!-- Back Link -->
+    <div class="mb-6 animate-fade-in">
+      <Link href={backLink}>← Tilbage til oversigt</Link>
+    </div>
+
+    <!-- Hero Image Section -->
+    <div
+      class="mb-12 rounded-lg overflow-hidden shadow-xl animate-fade-in animate-delay-100"
+    >
+      <img
+        src={image}
+        alt={title}
+        class="w-full h-64 md:h-96 lg:h-[500px] object-cover"
+      />
+    </div>
+
+    <!-- Main Content Container -->
+    <article class="max-w-4xl mx-auto">
+      <!-- Title Section -->
+      <div class="mb-8 animate-fade-in animate-delay-200">
+        <Heading htmlheading="h1" size="large" stylingclasses="mb-4">
+          {title}
+        </Heading>
+        <div class={`h-1 w-24 ${currentTheme.accent} rounded-full`}></div>
+      </div>
+
+      <!-- Singleview Header and Text -->
+      <div class="mb-12 animate-fade-in animate-delay-300">
+        <Heading
+          htmlheading="h2"
+          size="medium"
+          stylingclasses={`mb-4 ${currentTheme.text}`}
+        >
+          {singleviewHeader}
+        </Heading>
+        <Text teksttype="brødtekst">
+          {singleviewText}
+        </Text>
+      </div>
+
+      <!-- Two Column Layout: List + Media -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <!-- List Section -->
+        <div
+          class={`${currentTheme.bg} border-l-4 ${currentTheme.border} p-6 rounded-lg animate-fade-in animate-delay-400`}
+        >
+          <Heading htmlheading="h3" size="small" stylingclasses="mb-4">
+            Vigtige punkter
+          </Heading>
+          <ul class="space-y-3">
+            {
+              singleviewList.map((item) => (
+                <li class="flex items-start gap-3">
+                  <svg
+                    class={`w-6 h-6 ${currentTheme.text} shrink-0 mt-1`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <span class="text-lg">{item}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+
+        <!-- Secondary Media -->
+        <div
+          class="rounded-lg overflow-hidden shadow-lg animate-fade-in animate-delay-500"
+        >
+          <img
+            src={singleviewMedia}
+            alt="Supplerende billede"
+            class="w-full h-full object-cover min-h-[300px]"
+          />
+        </div>
+      </div>
+
+      <!-- Additional Text Content -->
+      <div class="mb-12 animate-fade-in animate-delay-600">
+        <Heading htmlheading="h3" size="medium" stylingclasses="mb-4">
+          Læs mere om emnet
+        </Heading>
+        <Text teksttype="brødtekst">
+          {additionalText}
+        </Text>
+        <Text teksttype="brødtekst">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel
+          egestas dolor, nec dignissim metus. Donec augue elit, rhoncus ac
+          sodales id, porttitor vitae est. Donec laoreet rutrum libero sed
+          pharetra. Phasellus sodales massa malesuada tellus fringilla, nec
+          bibendum tellus blandit.
+        </Text>
+      </div>
+
+      <!-- Quote/Highlight Section -->
+      <div
+        class={`${currentTheme.bg} border-l-4 ${currentTheme.border} p-8 mb-12 rounded-lg animate-fade-in animate-delay-700`}
+      >
+        <Text teksttype="brødtekst" stylingclasses="italic text-2xl font-serif">
+          "Hver lille indsats tæller. Sammen kan vi gøre en forskel i kampen
+          mod madspild."
+        </Text>
+      </div>
+
+      <!-- Call to Action Section -->
+      <div
+        class="text-center py-12 bg-gray-50 rounded-lg animate-fade-in animate-delay-800"
+      >
+        <Heading htmlheading="h3" size="medium" stylingclasses="mb-6">
+          Klar til at komme i gang?
+        </Heading>
+        <Link href={ctaLink} variant="primary" size="large">
+          {ctaText}
+        </Link>
+      </div>
+    </article>
+  </main>
 </MainLayout>

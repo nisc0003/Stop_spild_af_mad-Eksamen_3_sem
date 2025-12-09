@@ -1,0 +1,160 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Heading from "../components/Heading.astro";
+import Card from "../components/Card.astro";
+
+// Example data array - this would typically come from an API or CMS
+const cardsData = [
+  {
+    title: "Reducer madspild hjemme",
+    image: "https://placehold.co/600x400/006269/ffffff?text=Madspild+Hjemme",
+    link: "/aktiv_singleview",
+    singleviewText:
+      "Lær hvordan du kan reducere madspild i dit eget køkken med simple tricks og gode vaner. Hver dansker smider i gennemsnit 105 kilo mad ud om året - det kan vi gøre bedre!",
+    singleviewHeader: "Tips til hjemmet",
+    singleviewList: [
+      "Planlæg dine måltider for hele ugen",
+      "Opbevar madvarer korrekt i køleskabet",
+      "Brug resterne kreativt i nye retter",
+      "Forstå forskellen på 'bedst før' og 'sidste anvendelsesdato'",
+      "Frys overskudsmad ned til senere",
+    ],
+    singleviewTheme: "home",
+    singleviewMedia:
+      "https://placehold.co/800x600/006269/ffffff?text=Køleskab+Organisation",
+    additionalText:
+      "Med de rette værktøjer og viden kan hver familie spare tusindvis af kroner årligt ved at reducere madspild. Det handler ikke kun om økonomi, men også om at tage ansvar for vores klima og miljø.",
+    ctaText: "Download madspildguide",
+    ctaLink: "/tilmeldt",
+    backLink: "/card-example",
+  },
+  {
+    title: "Bliv frivillig",
+    image: "https://placehold.co/600x400/f5a600/ffffff?text=Bliv+Frivillig",
+    link: "/aktiv_singleview",
+    singleviewText:
+      "Hjælp med at redde mad og gøre en forskel i dit lokalsamfund. Som frivillig er du med til at samle overskudsmad fra butikker og restauranter og dele det ud til mennesker, der har brug for det.",
+    singleviewHeader: "Frivilligt arbejde der giver mening",
+    singleviewList: [
+      "Indsaml overskudsmad fra lokale butikker",
+      "Sorter og pakke madvarer",
+      "Del maden ud til trængende familier",
+      "Vær med til at redde klimaet",
+      "Mød andre engagerede mennesker",
+    ],
+    singleviewTheme: "volunteer",
+    singleviewMedia:
+      "https://placehold.co/800x600/f5a600/ffffff?text=Frivillige+I+Aktion",
+    additionalText:
+      "Vi søger altid motiverede frivillige, der vil gøre en forskel. Uanset om du har en time om ugen eller en dag om måneden, er dit bidrag værdifuldt. Sammen redder vi mad og hjælper mennesker.",
+    ctaText: "Tilmeld dig som frivillig",
+    ctaLink: "/bliv_aktiv",
+    backLink: "/card-example",
+  },
+  {
+    title: "Hvad kan du gøre?",
+    image: "https://placehold.co/600x400/00e4f5/ffffff?text=Hvad+Kan+Du+Gøre",
+    link: "/aktiv_singleview",
+    singleviewText:
+      "Udforsk alle de måder du kan bidrage til kampen mod madspild. Fra små ændringer i hverdagen til større initiativer - hver handling tæller.",
+    singleviewHeader: "Gør en forskel - stort eller småt",
+    singleviewList: [
+      "Køb kun det, du rent faktisk skal bruge",
+      "Forstå og respekter datomerker",
+      "Donér overskudsmad til velgørenhed",
+      "Del opskrifter på madlavning med rester",
+      "Støt restauranter med doggy bags",
+    ],
+    singleviewTheme: "action",
+    singleviewMedia:
+      "https://placehold.co/800x600/00e4f5/ffffff?text=Mad+Redning",
+    additionalText:
+      "Kampen mod madspild starter hos den enkelte. Ved at træffe bevidste valg hver dag, kan vi sammen skabe en bæredygtig fremtid. Det kræver ikke meget - små ændringer gør stor forskel.",
+    ctaText: "Se alle tips",
+    ctaLink: "/hvad_vi_kan_goere",
+    backLink: "/card-example",
+  },
+  {
+    title: "Opskrifter med rester",
+    image: "https://placehold.co/600x400/f5e400/000000?text=Opskrifter",
+    link: "/aktiv_singleview",
+    singleviewText:
+      "Find lækre og kreative opskrifter der bruger dine madrester. Fra gammelt brød til overskudsgrøntsager - alt kan forvandles til lækre måltider!",
+    singleviewHeader: "Kreative opskrifter til restemad",
+    singleviewList: [
+      "Gammelt brød → Sprøde brød-chips eller croutoner",
+      "Overskudsgrøntsager → Nærende grøntsagssuppe",
+      "Moden frugt → Sunde smoothies og kompot",
+      "Kogt pasta → Pastasalat eller gratineret ret",
+      "Kyllingerester → Sandwich-fyld eller wraps",
+    ],
+    singleviewTheme: "recipes",
+    singleviewMedia:
+      "https://placehold.co/800x600/f5e400/000000?text=Lækker+Restemad",
+    additionalText:
+      "Restemad behøver ikke være kedeligt! Med lidt kreativitet kan du lave fantastiske retter, der både smager godt og er bedre for miljøet. Vores opskriftssamling vokser løbende med inspiration fra danske køkkener.",
+    ctaText: "Se alle opskrifter",
+    ctaLink: "/tilmeldt",
+    backLink: "/card-example",
+  },
+];
+---
+
+<MainLayout title="Card Example - Mappable Cards">
+  <main class="container mx-auto p-4">
+    <Heading htmlheading="h1" size="large" stylingclasses="mb-8">
+      Mappable Card Component Example
+    </Heading>
+
+    <!-- Card Grid - Mobile: 1 column, Tablet: 2 columns, Desktop: 3-4 columns -->
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12"
+    >
+      {
+        cardsData.map((card) => (
+          <Card
+            title={card.title}
+            image={card.image}
+            link={card.link}
+            singleviewText={card.singleviewText}
+            singleviewHeader={card.singleviewHeader}
+            singleviewList={card.singleviewList}
+            singleviewTheme={card.singleviewTheme}
+            singleviewMedia={card.singleviewMedia}
+            additionalText={card.additionalText}
+            ctaText={card.ctaText}
+            ctaLink={card.ctaLink}
+            backLink={card.backLink}
+          />
+        ))
+      }
+    </div>
+
+    <!-- Example: 2-column layout for wider cards -->
+    <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
+      Alternative 2-Column Layout
+    </Heading>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {
+        cardsData
+          .slice(0, 2)
+          .map((card) => (
+            <Card
+              title={card.title}
+              image={card.image}
+              link={card.link}
+              singleviewText={card.singleviewText}
+              singleviewHeader={card.singleviewHeader}
+              singleviewList={card.singleviewList}
+              singleviewTheme={card.singleviewTheme}
+              singleviewMedia={card.singleviewMedia}
+              additionalText={card.additionalText}
+              ctaText={card.ctaText}
+              ctaLink={card.ctaLink}
+              backLink={card.backLink}
+            />
+          ))
+      }
+    </div>
+  </main>
+</MainLayout>
