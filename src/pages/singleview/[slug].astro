@@ -1,0 +1,113 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import Heading from "../../components/Heading.astro";
+import Text from "../../components/Text.astro";
+import Link from "../../components/Link.astro";
+
+// Data for alle cards
+const cards = [
+  {
+    slug: "stoettemedlem",
+    title: "STØTTEMEDLEM",
+    image: "https://placehold.co/1200x600/006269/ffffff?text=Bliv+Støttemedlem",
+    singleviewHeader: "BLIV STØTTEMEDLEM",
+    singleviewText:
+      "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.",
+    singleviewList: ["Planlæg måltider", "Opbevar korrekt", "Brug resterne"],
+  },
+  {
+    slug: "frivillig",
+    title: "FRIVILLIG",
+    image: "https://placehold.co/1200x600/f5a600/ffffff?text=Bliv+Frivillig",
+    singleviewHeader: "BLIV FRIVILLIG",
+    singleviewText:
+      "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.",
+    singleviewList: ["Indsaml mad", "Del til trængende", "Spar miljøet"],
+  },
+  {
+    slug: "erhvervspartner",
+    title: "ERHVERVSPARTNER",
+    image:
+      "https://placehold.co/1200x600/00e4f5/ffffff?text=Bliv+Erhvervspartner",
+    singleviewHeader: "BLIV ERHVERVSPARTNER",
+    singleviewText:
+      "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.",
+    singleviewList: ["Køb smart", "Forstå datomærker", "Donér mad"],
+  },
+];
+
+// getStaticPaths - bygger en side for hver slug
+export function getStaticPaths() {
+  return [
+    { params: { slug: "stoettemedlem" } },
+    { params: { slug: "frivillig" } },
+    { params: { slug: "erhvervspartner" } },
+  ];
+}
+
+// Hent slug fra URL
+const { slug } = Astro.params;
+
+// Find det matchende card
+const item = cards.find((card) => card.slug === slug);
+---
+
+<MainLayout title={item?.title || "Indhold findes ikke"}>
+  <main class="container mx-auto p-4">
+    {
+      !item && (
+        <div class="max-w-xl mx-auto text-center">
+          <Heading htmlheading="h1" size="medium" stylingclasses="mb-4">
+            Siden kunne ikke findes
+          </Heading>
+
+          <Text>
+            Det indhold du leder efter findes ikke eller linket er forkert.
+          </Text>
+
+          <div class="mt-6">
+            <Link href="/" variant="primary">
+              Tilbage til forsiden
+            </Link>
+          </div>
+        </div>
+      )
+    }
+
+    {
+      item && (
+        <>
+          <div class="mb-6">
+            <Link href="/">← Tilbage</Link>
+          </div>
+
+          <div class="mb-8 rounded-lg overflow-hidden shadow-lg">
+            <img
+              src={item.image}
+              alt={item.title}
+              class="w-full h-64 md:h-96 object-cover"
+            />
+          </div>
+
+          <article class="max-w-3xl mx-auto">
+            <Heading htmlheading="h1" size="large" stylingclasses="mb-4">
+              {item.title}
+            </Heading>
+
+            <Heading htmlheading="h2" size="small" stylingclasses="mb-4">
+              {item.singleviewHeader}
+            </Heading>
+
+            <Text>{item.singleviewText}</Text>
+
+            <ul class="list-disc pl-6 my-6">
+              {item.singleviewList.map((li) => (
+                <li>{li}</li>
+              ))}
+            </ul>
+          </article>
+        </>
+      )
+    }
+  </main>
+</MainLayout>

@@ -4,13 +4,17 @@ const {
   htmlheading = "h2",
   size = "medium",
   font = "sans",
+<<<<<<< HEAD
   weight = "medium",
+=======
+>>>>>>> add_cards
   stylingclasses = "",
 } = Astro.props;
 const Htmlheading = htmlheading;
 
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskellige størrelser.
 const sizeClasses = {
+<<<<<<< HEAD
   xlarge: "text-[4rem] md:text-[5rem] lg:text-[6rem]",
   large: "text-[2.5rem] md:text-[3rem] lg:text-[4rem]",
   medium: "text-[2.25rem] md:text-[2.5rem] lg:text-[3rem]",
@@ -22,12 +26,18 @@ const weightClasses = {
   light: "font-light leading-[1.2]",
   medium: "font-medium leading-[1.15]",
   bold: "font-bold uppercase leading-[1.1] tracking-wide",
+=======
+  large: "text-3xl lg:text-6xl",
+  medium: "text-2xl lg:text-3xl",
+  small: "text-xl",
+>>>>>>> add_cards
 };
 
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskellige skrifttyper.
 const fontClasses = {
   display: "font-display",
   sans: "font-sans",
+<<<<<<< HEAD
   sanstight: "font-sanstight",
 };
 ---
@@ -39,4 +49,12 @@ const fontClasses = {
     weightClasses[weight],
     fontClasses[font],
   ]}><slot /></Htmlheading
+=======
+  serif: "font-serif",
+};
+---
+
+<Htmlheading class:list={[stylingclasses, sizeClasses[size], fontClasses[font]]}
+  ><slot /></Htmlheading
+>>>>>>> add_cards
 >
