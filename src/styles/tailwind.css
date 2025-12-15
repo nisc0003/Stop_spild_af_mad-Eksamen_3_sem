@@ -19,7 +19,7 @@
   /*Typografi */
   --font-display: "hobeaux", sans-serif;
   --font-sans: "inter-variable", sans-serif;
-  --font-sanstight: "inter-tight-variabl", sans-serif;
+  --font-sanstight: "inter-tight-variable", sans-serif;
 }
 
 @layer base {
