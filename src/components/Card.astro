@@ -1,48 +1,13 @@
 ---
 import Heading from "../components/Heading.astro";
-import Link from "../components/Link.astro";
 
-// Props for card display
-const {
-  title,
-  image,
-  link = "#",
-  // Singleview data (passed but not displayed on card)
-  singleviewText,
-  singleviewHeader,
-  singleviewList,
-  singleviewTheme,
-  singleviewMedia,
-  // Additional singleview props
-  additionalText,
-  ctaText,
-  ctaLink,
-  backLink,
-} = Astro.props;
-
-// Encode props for URL - only pass what's needed
-const params = new URLSearchParams({
-  title: title || "",
-  image: image || "",
-  singleviewHeader: singleviewHeader || "",
-  singleviewText: singleviewText || "",
-  singleviewList: JSON.stringify(singleviewList || []),
-  singleviewTheme: singleviewTheme || "default",
-  singleviewMedia: singleviewMedia || "",
-  additionalText: additionalText || "",
-  ctaText: ctaText || "Tilmeld dig nu",
-  ctaLink: ctaLink || "/bliv_aktiv",
-  backLink: backLink || "/card-example",
-});
-
-const singleviewUrl = `${link}?${params.toString()}`;
+const { slug, title, image } = Astro.props;
 ---
 
 <article
-  class="group bg-white border border-gray-300 rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 animate-fade-in animate-duration-700 intersect:animate-slide-up-fade"
+  class="group bg-white border border-gray-300 rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
 >
-  <a href={singleviewUrl} class="block">
-    <!-- Image Container -->
+  <a href={`/singleview/${slug}`} class="block">
     <div class="relative overflow-hidden aspect-video">
       <img
         src={image}
@@ -51,7 +16,6 @@ const singleviewUrl = `${link}?${params.toString()}`;
       />
     </div>
 
-    <!-- Content Container -->
     <div class="p-4 md:p-6">
       <Heading
         htmlheading="h3"
@@ -61,7 +25,7 @@ const singleviewUrl = `${link}?${params.toString()}`;
         {title}
       </Heading>
 
-      <Link href={singleviewUrl} variant="textlink"> Læs mere → </Link>
+      <span class="underline text-blue-500">Læs mere →</span>
     </div>
   </a>
 </article>

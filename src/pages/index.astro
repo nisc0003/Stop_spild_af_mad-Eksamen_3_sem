@@ -1,43 +1,27 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import { Image } from "astro:assets";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
-import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
 import Card from "../components/Card.astro";
 
-// Example cards data
+// Card data - slug bruges til URL, resten til visning
 const featuredCards = [
   {
-    title: "Reducer madspild hjemme",
-    image: "https://placehold.co/600x400/006269/ffffff?text=Madspild+Hjemme",
-    link: "/aktiv_singleview",
-    singleviewText: "Lær hvordan du kan reducere madspild i dit eget køkken.",
-    singleviewHeader: "Tips til hjemmet",
-    singleviewList: ["Planlæg måltider", "Opbevar korrekt", "Brug resterne"],
-    singleviewTheme: "home",
-    singleviewMedia: "https://placehold.co/1200x800",
+    slug: "stoettemedlem",
+    title: "STØTTEMEDLEM",
+    image: "https://placehold.co/600x400/006269/ffffff?text=Bliv+Støttemedlem",
   },
   {
-    title: "Bliv frivillig",
+    slug: "frivillig",
+    title: "FRIVILLIG",
     image: "https://placehold.co/600x400/f5a600/ffffff?text=Bliv+Frivillig",
-    link: "/bliv_aktiv",
-    singleviewText: "Hjælp med at redde mad og gøre en forskel.",
-    singleviewHeader: "Frivilligt arbejde",
-    singleviewList: ["Indsaml mad", "Del til trængende", "Spar miljøet"],
-    singleviewTheme: "volunteer",
-    singleviewMedia: "https://placehold.co/1200x800",
   },
   {
-    title: "Hvad kan du gøre?",
-    image: "https://placehold.co/600x400/00e4f5/ffffff?text=Gør+En+Forskel",
-    link: "/hvad_vi_kan_goere",
-    singleviewText: "Udforsk alle de måder du kan bidrage.",
-    singleviewHeader: "Gør en forskel",
-    singleviewList: ["Køb smart", "Forstå datomerker", "Donér mad"],
-    singleviewTheme: "action",
-    singleviewMedia: "https://placehold.co/1200x800",
+    slug: "erhvervspartner",
+    title: "ERHVERVSPARTNER",
+    image:
+      "https://placehold.co/600x400/00e4f5/ffffff?text=Bliv+Erhvervspartner",
   },
 ];
 ---
@@ -48,36 +32,22 @@ const featuredCards = [
       <Heading htmlheading="h1" size="large" stylingclasses="mb-4">
         Stop Spild Af Mad
       </Heading>
-      <Text teksttype="brødtekst">
+      <Text>
         Sammen kan vi gøre en forskel. Udforsk hvordan du kan bidrage til kampen
         mod madspild.
       </Text>
     </section>
 
-    <!-- Featured Cards Section -->
     <section class="mb-12">
       <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
         Kom i gang
       </Heading>
+
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {
-          featuredCards.map((card) => (
-            <Card
-              title={card.title}
-              image={card.image}
-              link={card.link}
-              singleviewText={card.singleviewText}
-              singleviewHeader={card.singleviewHeader}
-              singleviewList={card.singleviewList}
-              singleviewTheme={card.singleviewTheme}
-              singleviewMedia={card.singleviewMedia}
-            />
-          ))
-        }
+        {featuredCards.map((card) => <Card {...card} />)}
       </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="text-center py-12 bg-primary-100 rounded-lg">
       <Heading htmlheading="h2" size="medium" stylingclasses="mb-4">
         Klar til at gøre en forskel?
