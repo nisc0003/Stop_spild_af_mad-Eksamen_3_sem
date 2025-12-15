@@ -2,10 +2,10 @@
 import Heading from "../components/Heading.astro";
 import Link from "../components/Link.astro";
 
-const { id, title, image } = Astro.props;
+const { slug, title, image } = Astro.props;
 
-// Simpelt link med kun id
-const singleviewUrl = `/aktiv_singleview?id=${id}`;
+// Link til singleview med slug
+const singleviewUrl = `/singleview/${slug}`;
 ---
 
 <article
@@ -23,7 +23,7 @@ const singleviewUrl = `/aktiv_singleview?id=${id}`;
     <div class="p-4 md:p-6">
       <Heading
         htmlheading="h3"
-        size="medium"
+        size="small"
         stylingclasses="mb-3 group-hover:text-primary-500 transition-colors duration-300"
       >
         {title}

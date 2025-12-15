@@ -5,22 +5,23 @@ import Text from "../components/Text.astro";
 import Link from "../components/Link.astro";
 import Card from "../components/Card.astro";
 
-// Card data - kun det der er nødvendigt for at vise cards
+// Card data - matcher slugs i singleview/[slug].astro
 const featuredCards = [
   {
-    id: "madspild-hjemme",
-    title: "Reducer madspild hjemme",
-    image: "https://placehold.co/600x400/006269/ffffff?text=Madspild+Hjemme",
+    slug: "stoettemedlem",
+    title: "STØTTEMEDLEM",
+    image: "https://placehold.co/600x400/006269/ffffff?text=Bliv+Støttemedlem",
   },
   {
-    id: "bliv-frivillig",
-    title: "Bliv frivillig",
+    slug: "frivillig",
+    title: "FRIVILLIG",
     image: "https://placehold.co/600x400/f5a600/ffffff?text=Bliv+Frivillig",
   },
   {
-    id: "goer-en-forskel",
-    title: "Hvad kan du gøre?",
-    image: "https://placehold.co/600x400/00e4f5/ffffff?text=Gør+En+Forskel",
+    slug: "erhvervspartner",
+    title: "ERHVERVSPARTNER",
+    image:
+      "https://placehold.co/600x400/00e4f5/ffffff?text=Bliv+Erhvervspartner",
   },
 ];
 ---
