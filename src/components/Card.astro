@@ -1,13 +1,17 @@
 ---
 import Heading from "../components/Heading.astro";
+import Link from "../components/Link.astro";
 
-const { slug, title, image } = Astro.props;
+const { id, title, image } = Astro.props;
+
+// Simpelt link med kun id
+const singleviewUrl = `/aktiv_singleview?id=${id}`;
 ---
 
 <article
   class="group bg-white border border-gray-300 rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
 >
-  <a href={`/singleview/${slug}`} class="block">
+  <a href={singleviewUrl} class="block">
     <div class="relative overflow-hidden aspect-video">
       <img
         src={image}
@@ -25,7 +29,7 @@ const { slug, title, image } = Astro.props;
         {title}
       </Heading>
 
-      <span class="underline text-blue-500">Læs mere →</span>
+      <Link href={singleviewUrl} variant="textlink"> Læs mere → </Link>
     </div>
   </a>
 </article>

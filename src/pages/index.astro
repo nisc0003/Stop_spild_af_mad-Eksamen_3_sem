@@ -5,23 +5,22 @@ import Text from "../components/Text.astro";
 import Link from "../components/Link.astro";
 import Card from "../components/Card.astro";
 
-// Card data - slug bruges til URL, resten til visning
+// Card data - kun det der er nødvendigt for at vise cards
 const featuredCards = [
   {
-    slug: "stoettemedlem",
-    title: "STØTTEMEDLEM",
-    image: "https://placehold.co/600x400/006269/ffffff?text=Bliv+Støttemedlem",
+    id: "madspild-hjemme",
+    title: "Reducer madspild hjemme",
+    image: "https://placehold.co/600x400/006269/ffffff?text=Madspild+Hjemme",
   },
   {
-    slug: "frivillig",
-    title: "FRIVILLIG",
+    id: "bliv-frivillig",
+    title: "Bliv frivillig",
     image: "https://placehold.co/600x400/f5a600/ffffff?text=Bliv+Frivillig",
   },
   {
-    slug: "erhvervspartner",
-    title: "ERHVERVSPARTNER",
-    image:
-      "https://placehold.co/600x400/00e4f5/ffffff?text=Bliv+Erhvervspartner",
+    id: "goer-en-forskel",
+    title: "Hvad kan du gøre?",
+    image: "https://placehold.co/600x400/00e4f5/ffffff?text=Gør+En+Forskel",
   },
 ];
 ---
