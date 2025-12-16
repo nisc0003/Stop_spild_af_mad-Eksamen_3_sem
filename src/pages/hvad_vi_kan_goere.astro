@@ -13,7 +13,7 @@ import Card from "../components/Card.astro";
 <section class="hero">
 </section>
 
-<section class="sm:flex flex-col lg:flex-row mx-25">
+<section class="sm:flex flex-col lg:flex-row lg:mr-section_right lg:ml-section_left">
 
 <img src="/img/food_bag.png" alt="" class="sm:order-3 h-50 w-fit place-self-center lg:order-first lg:h-fit lg:w-fit">
 
@@ -35,9 +35,9 @@ import Card from "../components/Card.astro";
 
 </section>
 
-<section class="sm:flex flex-col mx-25 lg:flex lg:flex-row">
+<section class="sm:flex flex-col lg:flex lg:flex-row lg:mr-section_right lg:ml-section_left">
 
-        <div>
+    <div>
       <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
        Fortsæt med at købe enkelt-varer
       </Heading>
@@ -59,7 +59,38 @@ import Card from "../components/Card.astro";
 
             </div>
     
-      <img src="/img/banan1.png" alt="" class="ml-auto">
+      <img src="/img/banan1.png" alt="" class="sm:h-50 w-auto ml-auto lg:h-125">
+</section>
+
+<section class="lg:mr-section_right lg:ml-section_left">
+
+<Heading htmlheading="h2" size="medium" stylingclasses="mb-6"> Køb in med omtanke </Heading>
+
+			<Text>I gennemsnittet ender vi med at smide  25% af maden vi køber ud.</Text>
+			<Text>Det vil svare til at hver fjerede indkøbsvogn man ser i supermarkedet bliver smidt ud.</Text>
+
+			<div class="lg:staggeranimation flex flex-row gap-10" id="stagger">
+				<img src="/img/cart.png" alt="" class="sm:h-35 w-auto lg:h-50">
+				<img src="/img/cart.png" alt="" class="sm:h-35 w-auto lg:h-50">
+				<img src="/img/cart.png" alt="" class="sm:h-35 w-auto lg:h-50">
+				<img src="/img/cart.png" alt="" class="grayscale sm:h-35 w-auto lg:h-50">
+			</div>
+
+
 </section>
 
 </MainLayout>
+
+<script>
+          // Stagger animation Motion JS
+      import { animate, stagger, inView, scroll } from "motion";
+      inView("#stagger", () => {
+        animate(
+          ".staggeranimation img",
+          { opacity: [0, 1] },
+          {
+            delay: stagger(0.5, { startDelay: 0.5 }),
+          }
+        );
+      });
+</script>
