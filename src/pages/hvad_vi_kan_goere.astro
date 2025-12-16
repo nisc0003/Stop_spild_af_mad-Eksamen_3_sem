@@ -79,6 +79,42 @@ import Card from "../components/Card.astro";
 
 </section>
 
+<section class="lg:grid lg:grid-cols-1 lg:grid-row-2 lg:mr-section_right lg:ml-section_left lg:gap-10">
+
+
+    <div class="lg:flex lg:flex-col lg:order-2 lg:col-start-2">
+        <div class="lg:hidden">
+        <Heading htmlheading="h2" size="medium" stylingclasses="mb-6"> Doggy Bags </Heading>
+        </div>
+
+        <div class="bg-[url('/img/star.svg')] bg-no-repeat bg-contain bg-center sm:h-100 w-auto place-content-center">
+            <img src="/img/doggy_bag.png" alt="" class="sm:mx-auto h-75 w-auto">
+        </div>
+
+        <div class="sm:flex flex-col gap-5 inline lg:hidden">
+            <Text>I adskellige forskellige resturanter har vi samarbejdskab og har implimenteret vores Doggy bag!</Text>
+            <Text>Hvis du ikke kan spise din mad færdig kan du spørge om en doggy bag og tage maden med hjem!</Text>
+        </div>
+
+        <div class="sm:flex flex-col gap-5 hidden lg:inline">
+            <Text>I samarbejdskab med adskillige forskellige restauranter, har vi implementeret vores ‘doggy bag’!</Text>
+            <Text>Hvis du ikke kan spise din mad færdig kan du spørge om en ‘doggy bag’ og tage maden med hjem.</Text>
+        </div>
+    </div>
+
+        <div class="sm:flex flex-col items-center gap-5 lg:items-baseline lg:order-1">
+        <div class="sm:hidden lg:inline">
+        <Heading htmlheading="h2" size="medium" stylingclasses="mb-6"> Doggy Bags </Heading>
+        </div>
+        
+        <div class="flex flex-col gap-5 lg:w-full">
+            <img src="/img/map_placeholder.png" alt="" class="w-full">
+            <Button>SE RESTURANTER</Button>
+        </div>
+        </div>
+
+</section>
+
 </MainLayout>
 
 <script>
