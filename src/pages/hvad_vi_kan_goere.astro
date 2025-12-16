@@ -115,7 +115,170 @@ import Card from "../components/Card.astro";
 
 </section>
 
+    
+<section class="mr-section_right ml-section_left max-w-585px place-items-center lg:mb-20">
+    <Heading htmlheading="h1" size="medium" stylingclasses="mb-6"> VORES HISTORIE </Heading>
+    <Text>Vi er meget stolte af hvor meget Stop Spild Af Mad har mulighed for at udrette. 
+        <br>
+        Her er nogle af vores højdepunkter.</Text>
+</section>
+
+<section class="sm:ml-25 lg:mr-30 ml-35 bg-blue-100">
+      <div class="tidslinje sm:max-h-50 sm:flex  lg:flex-row lg:max-h-100 lg:w-auto">
+        <ul class="overflow-auto w-auto pr-35">
+          <li class="li1 activeTime" id="li1"><h1>2008</h1></li>
+          <li class="li2" id="li2"><h1>2009</h1></li>
+          <li class="li3" id="li3"><h1>2010</h1></li>
+          <li class="li4" id="li4"><h1>2011</h1></li>
+          <li class="li5" id="li5"><h1>2012</h1></li>
+          <!-- <li class="li6" id="li6"><h1>2013</h1></li>
+						<li class="li7" id="li7"><h1>2014</h1></li>
+						<li class="li8" id="li8"><h1>2015</h1></li> -->
+        </ul>
+
+        <div class="grid grid-cols-2 li1_content gap-5" id="li1_content">
+          <img src="/img/2008.png" alt="" class="place-self-end h-100 w-auto">
+          <div class="flex flex-col gap-10 w-auto">
+            <h1>Begyndelsen</h1>
+            <p>
+              Stop Spild Af Mad blev stiftet af Selina Juul i 2008 som en
+              facebook gruppe, men voksede hurtigt til en anderkendt frivilligt
+              og selvstændigt non-profit. Selina Juul var motiveret af hendes
+              fortid i Moskva, hvor hun oplevede stor fødevaremangel. Da hun kom
+              til Danmark tog hun derfor kampen op i mod madspild.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-row li2_content inactiveBox" id="li2_content">
+          <img src="/img/cart.png" alt="" />
+          <div class="flex flex-col gap-10">
+            <h1>Begyndelsen 222</h1>
+            <Text>
+              Stop Spild Af Mad blev stiftet af Selina Juul i 2008 som en
+              facebook gruppe, men voksede hurtigt til en anderkendt frivilligt
+              og selvstændigt non-profit. Selina Juul var motiveret af hendes
+              fortid i Moskva, hvor hun oplevede stor fødevaremangel. Da hun kom
+              til Danmark tog hun derfor kampen op i mod madspild.
+            </Text>
+          </div>
+        </div>
+
+        <div class="flex flex-row li3_content inactiveBox" id="li3_content">
+          <img src="/img/cart.png" alt="" />
+          <div class="flex flex-col gap-10">
+            <h1>Begyndelsen 333</h1>
+            <p>
+              Stop Spild Af Mad blev stiftet af Selina Juul i 2008 som en
+              facebook gruppe, men voksede hurtigt til en anderkendt frivilligt
+              og selvstændigt non-profit. Selina Juul var motiveret af hendes
+              fortid i Moskva, hvor hun oplevede stor fødevaremangel. Da hun kom
+              til Danmark tog hun derfor kampen op i mod madspild.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-row li4_content inactiveBox" id="li4_content">
+          <img src="/img/cart.png" alt="" />
+          <div class="flex flex-col gap-10">
+            <h1>Begyndelsen 444</h1>
+            <p>
+              Stop Spild Af Mad blev stiftet af Selina Juul i 2008 som en
+              facebook gruppe, men voksede hurtigt til en anderkendt frivilligt
+              og selvstændigt non-profit. Selina Juul var motiveret af hendes
+              fortid i Moskva, hvor hun oplevede stor fødevaremangel. Da hun kom
+              til Danmark tog hun derfor kampen op i mod madspild.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-row li5_content inactiveBox" id="li5_content">
+          <img src="/img/cart.png" alt="" />
+          <div class="flex flex-col gap-10">
+            <h1>Begyndelsen 555</h1>
+            <p>
+              Stop Spild Af Mad blev stiftet af Selina Juul i 2008 som en
+              facebook gruppe, men voksede hurtigt til en anderkendt frivilligt
+              og selvstændigt non-profit. Selina Juul var motiveret af hendes
+              fortid i Moskva, hvor hun oplevede stor fødevaremangel. Da hun kom
+              til Danmark tog hun derfor kampen op i mod madspild.
+            </p>
+          </div>
+        </div>
+      </div>
+</section>
+
+
+<section class="lg:mr-section_right lg:ml-section_left">
+    <Heading htmlheading="h1" size="medium" stylingclasses="mb-6"> Vores TEDx Talks </Heading>
+    
+    <div class="active">
+    <video width="auto" height="100%" controls id="vid2012">
+    <source src="img/vids/TedX_2012.mp4" type="video/mp4">
+    </video>
+    </div>
+
+    <div class="inactive">
+    <video width="auto" height="100%" controls id="vid2016">
+    <source src="img/vids/TedX_2016.mp4" type="video/mp4">
+    </video>
+    </div>
+
+    <section class="flex flex-row w-full">
+    <div id="2012_btn">
+        <Button>2012</Button>
+    </div>
+        <div id="2016_btn">
+        <Button>2016</Button>
+    </div>
+    </section>
+</section>
+
 </MainLayout>
+
+<style>
+    <style>
+      .activeTime {
+        color: #B4DD1E;
+        cursor: default;
+      }
+
+      .activeBox {
+        display: block;
+      }
+
+      .inactiveBox {
+        display: none;
+      }
+
+      h1 {
+        font-size: 4rem;
+      }
+
+      ul::-webkit-scrollbar {
+        display: none;
+        scroll-behavior: smooth;
+      }
+
+      li {
+        cursor: pointer;
+
+        h1 {
+          font-size: 5rem;
+        }
+      }
+
+
+    .active{
+        display: block;
+    }
+
+    .inactive{
+        display: none;
+    }
+
+    </style>
+</style>
 
 <script>
           // Stagger animation Motion JS
@@ -129,4 +292,142 @@ import Card from "../components/Card.astro";
           }
         );
       });
+
+    // TEDx Talk JS
+      const btn2012 = document.getElementById("2012_btn");
+      const btn2016 = document.getElementById("2016_btn");
+      const vid2012 = document.getElementById("vid2012");
+      const vid2016 = document.getElementById("vid2016");
+
+
+      btn2012.addEventListener("click", () => {
+        vid2016.classList.remove("active");
+        vid2016.classList.add("inactive");
+        vid2012.classList.remove("inactive");
+        vid2012.classList.add("active");
+      });
+
+      btn2016.addEventListener("click", () => {
+        vid2012.classList.remove("active");
+        vid2012.classList.add("inactive");
+        vid2016.classList.remove("inactive");
+        vid2016.classList.add("active");
+        
+      });
+
+      // Tidslinje JS
+      const list1 = document.getElementById("li1");
+      const list2 = document.getElementById("li2");
+      const list3 = document.getElementById("li3");
+      const list4 = document.getElementById("li4");
+      const list5 = document.getElementById("li5");
+      const list6 = document.getElementById("li6");
+      const list7 = document.getElementById("li7");
+      const list8 = document.getElementById("li8");
+
+      const list1box = document.getElementById("li1_content");
+      const list2box = document.getElementById("li2_content");
+      const list3box = document.getElementById("li3_content");
+      const list4box = document.getElementById("li4_content");
+      const list5box = document.getElementById("li5_content");
+      const list6box = document.getElementById("li_6content");
+      const list7box = document.getElementById("li_7content");
+      const list8box = document.getElementById("li_8content");
+
+      list1.addEventListener("click", () => {
+        list1.classList.add("activeTime");
+        list1box.classList.remove("inactiveBox");
+        // list1box.classList.add("animate-fade-down", "animate-ease-out");
+        list2.classList.remove("activeTime");
+        list2box.classList.add("inactiveBox");
+        list3.classList.remove("activeTime");
+        list3box.classList.add("inactiveBox");
+        list4.classList.remove("activeTime");
+        list4box.classList.add("inactiveBox");
+        list5.classList.remove("activeTime");
+        list5box.classList.add("inactiveBox");
+        list6.classList.remove("activeTime");
+        list6box.classList.add("inactiveBox");
+        list7.classList.remove("activeTime");
+        list7box.classList.add("inactiveBox");
+        list8.classList.remove("activeTime");
+        list8box.classList.add("inactiveBox");
+      });
+
+      list2.addEventListener("click", () => {
+        list2.classList.add("activeTime");
+        list2box.classList.remove("inactiveBox");
+        list1.classList.remove("activeTime");
+        list1box.classList.add("inactiveBox");
+        list3.classList.remove("activeTime");
+        list3box.classList.add("inactiveBox");
+        list4.classList.remove("activeTime");
+        list4box.classList.add("inactiveBox");
+        list5.classList.remove("activeTime");
+        list5box.classList.add("inactiveBox");
+        list6.classList.remove("activeTime");
+        list6box.classList.add("inactiveBox");
+        list7.classList.remove("activeTime");
+        list7box.classList.add("inactiveBox");
+        list8.classList.remove("activeTime");
+        list8box.classList.add("inactiveBox");
+      });
+
+      list3.addEventListener("click", () => {
+        list3.classList.add("activeTime");
+        list3box.classList.remove("inactiveBox");
+        list1.classList.remove("activeTime");
+        list1box.classList.add("inactiveBox");
+        list2.classList.remove("activeTime");
+        list2box.classList.add("inactiveBox");
+        list4.classList.remove("activeTime");
+        list4box.classList.add("inactiveBox");
+        list5.classList.remove("activeTime");
+        list5box.classList.add("inactiveBox");
+        list6.classList.remove("activeTime");
+        list6box.classList.add("inactiveBox");
+        list7.classList.remove("activeTime");
+        list7box.classList.add("inactiveBox");
+        list8.classList.remove("activeTime");
+        list8box.classList.add("inactiveBox");
+      });
+
+      list4.addEventListener("click", () => {
+        list4.classList.add("activeTime");
+        list4box.classList.remove("inactiveBox");
+        list1.classList.remove("activeTime");
+        list1box.classList.add("inactiveBox");
+        list2.classList.remove("activeTime");
+        list2box.classList.add("inactiveBox");
+        list3.classList.remove("activeTime");
+        list3box.classList.add("inactiveBox");
+        list5.classList.remove("activeTime");
+        list5box.classList.add("inactiveBox");
+        list6.classList.remove("activeTime");
+        list6box.classList.add("inactiveBox");
+        list7.classList.remove("activeTime");
+        list7box.classList.add("inactiveBox");
+        list8.classList.remove("activeTime");
+        list8box.classList.add("inactiveBox");
+      });
+
+      list5.addEventListener("click", () => {
+        list5.classList.add("activeTime");
+        list5box.classList.remove("inactiveBox");
+        list1.classList.remove("activeTime");
+        list1box.classList.add("inactiveBox");
+        list2.classList.remove("activeTime");
+        list2box.classList.add("inactiveBox");
+        list3.classList.remove("activeTime");
+        list3box.classList.add("inactiveBox");
+        list4.classList.remove("activeTime");
+        list4box.classList.add("inactiveBox");
+        list6.classList.remove("activeTime");
+        list6box.classList.add("inactiveBox");
+        list7.classList.remove("activeTime");
+        list7box.classList.add("inactiveBox");
+        list8.classList.remove("activeTime");
+        list8box.classList.add("inactiveBox");
+      });
+
 </script>
