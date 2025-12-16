@@ -16,16 +16,88 @@
   --color-secondary-500: #f5a600;
   --color-secondary-600: #f57a00;
 
+  --color-orange--400: #E64F16;
+  --color-orange--200: #FFAF83;
+  --color-orange--100: #FEC6A7;
+
+  --color-purple--400: #842A4B;
+  --color-purple--200: #CDB0CC;
+  --color-purple--100: #DFCCDE;
+
+  --color-yellow--400: #FFCD2F;
+  --color-yellow--200: #FFE696;
+  --color-yellow--100: #FFF2C7;
+
+  --color-green--400: #275214;
+  --color-green--200: #6A9B59;
+  --color-green--100: #D6EDCB;
+
+  --color-white: #FDFCF8;
+  --color-black: #1B1B1B;
+
+
+/* RADIUS VALUES */
+  --radius-CTA: 5px;
+  --radius-contentBox: 8px;
+  --radius-IMG: 8px;
+  --radius-NAV: 10px;
+
+
   /*Typografi */
   --font-display: "hobeaux", sans-serif;
   --font-sans: "inter-variable", sans-serif;
   --font-sanstight: "inter-tight-variable", sans-serif;
 }
 
+@theme inline{
+  /* TOKENS */
+
+  /* STANDARD TOKENS */
+  --bg-color: var(--color-white);
+  --text-color: var(--color-black);
+
+
+  /* BUTTON TOKENS */
+  --active-orange-bg: var(--color-orange--400);
+  --active-orange-text: var(--color-orange--100);
+  
+  --active-green-bg: var(--color-green--400);
+  --active-green-text: var(--color-green--100);
+
+  --active-purple-bg: var(--color-purple--400);
+  --active-purple-text: var(--color-purple--100);
+
+
+  /* INACTIVE BUTTON TOKENS */
+  --inactive-orange-bg: var(--color-orange--100);
+  --inactive-orange-text: var(--color-orange--400);
+  
+  --inactive-green-bg: var(--color-green--100);
+  --inactive-green-text: var(--color-green--400);
+
+  --inactive-purple-bg: var(--color-purple--100);
+  --inactive-purple-text: var(--color-purple--400);
+}
+
 @layer base {
 }
 
 @layer components {
+  .radius-CTA{
+    border-radius: var(--radius-CTA);
+  }
+
+  .radius-contentBox{
+    border-radius: var(--radius-contentBox);
+  }
+
+  .radius-IMG{
+    border-radius: var(--radius-IMG);
+  }
+
+  .radius-NAV{
+    border-radius: var(--radius-NAV);
+  }
 }
 
 @layer utilities {

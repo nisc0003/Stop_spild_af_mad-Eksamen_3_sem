@@ -7,5 +7,59 @@ import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
 import Card from "../components/Card.astro";
 ---
+<!-- SM: er 640px i width -->
+<MainLayout title="Hvad kan vi gøre">
 
-<MainLayout title="" />
+<section class="hero">
+</section>
+
+<section class="sm:flex flex-col lg:flex-row mx-25">
+
+<img src="/img/food_bag.png" alt="" class="sm:order-3 h-50 w-fit place-self-center lg:order-first lg:h-fit lg:w-fit">
+
+
+<div class="flex flex-col place-content-between">
+      <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
+       Hvad kan vi gøre?
+      </Heading>
+
+      <Text> Emner som disse kan virke store og uoverskuelige. Det kan være svært at vide hvor man skal starte, hvis man gerne vil hjælpe med at gøre en forskel. Derfor har vi her nogle simple vaner man kan indfører i hverdagen, som hjælper til med at mindske mængden af madspild:</Text>
+
+      <div class="flex flex-col gap-4 mb-10">
+        <Button> KØB ENKELT VARE </Button>
+        <Button> KØB IND MED OMTANKE </Button>
+        <Button> DOGGY BAGS</Button>
+    </div>
+
+</div>
+
+</section>
+
+<section class="sm:flex flex-col mx-25 lg:flex lg:flex-row">
+
+        <div>
+      <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
+       Fortsæt med at købe enkelt-varer
+      </Heading>
+
+
+      <div class="sm:flex flex-col gap-3 lg:hidden">
+      <Text>I 2017 medvirkede Stop Spild Af Mad til at Rema 1000 droppede mængerabatter i alle kædens danske butikker.</Text>
+      <Text>Mængden af madspild faldt her efter fra ca. 80-100 bananer blev smidt ud om dagen, til kun 10 bananer om dagen. </Text>
+      </div>
+
+      <div class="sm:hidden lg:inline lg:flex lg:flex-col gap-3">
+        <Text>
+            I 2017 medvirkede Stop Spild Af Mad til at Rema 1000 droppede mængerabatter i alle kædens danske butikker.
+        </Text>
+        <Text>
+            Mængden af madspild faldt her efter fra ca. 80-100 bananer blev smidt ud om dagen, til kun 10 bananer om dagen.
+        </Text>
+      </div>
+
+            </div>
+    
+      <img src="/img/banan1.png" alt="" class="ml-auto">
+</section>
+
+</MainLayout>
