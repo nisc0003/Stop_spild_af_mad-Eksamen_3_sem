@@ -2,7 +2,20 @@
 import Heading from "../components/Heading.astro";
 import Link from "../components/Link.astro";
 
-const { slug, title, image } = Astro.props;
+const {
+  slug,
+  title,
+  image,
+  subtitle,
+  textfield1,
+  textfield2,
+  textfield3,
+  list,
+  id,
+  link,
+  mediaType,
+  mediaSrc,
+} = Astro.props;
 
 // Link til singleview med slug
 const singleviewUrl = `/singleview/${slug}`;
