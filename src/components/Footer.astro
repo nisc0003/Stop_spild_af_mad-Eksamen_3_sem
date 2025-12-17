@@ -1,7 +1,180 @@
 ---
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+import Link from "../components/Link.astro";
 ---
-<footer class="bg-primary-500 text-white">
-    <div class="container mx-auto p-4">
-        <p>&copy; 2025</p>
+
+<footer
+  class="bg-primary-500 flex flex-col gap-8 mr-section_right ml-section_left mb-section_buttom mt-section_top"
+>
+  <div class="md:flex md:flex-row md:gap-5 md:justify-between">
+    <div class="mb-8 md:mb-0 md:w-xs">
+      <a href="/"
+        ><img
+          class="w-25"
+          src="/public/img/Logo_med_type.webp"
+          alt="Logo med forenignens navn"
+        /></a
+      >
+      <Text
+        stylingclasses="mt-2 max-w-xs md:max-w-3xs lg:max-w-xs"
+        size="small"
+        font="sans"
+        weight="light"
+        >Vi er Danmarks største bevægelse mod madspild. Vi har igangsat kampen
+        mod madspild i Danmark og vi bragte Danmarks kamp mod madspild på
+        verdenskortet.</Text
+      >
     </div>
+
+    <div
+      class="sm:flex sm:flex-row sm:justify-between md:gap-10 lg:gap-20 xl:gap-30"
+    >
+      <div class="mb-8">
+        <Heading
+          stylingclasses="mb-2"
+          htmlheading="h5"
+          size="xsmall"
+          font="display"
+          weight="medium">KONTAKT</Heading
+        >
+        <ul class="mb-3">
+          <li>
+            <Text size="small" font="sans" weight="medium"
+              >Stop Sild Af Mad</Text
+            >
+          </li>
+          <li>
+            <Text size="small" font="sans" weight="light"
+              >Amaliegade 6, 2. tv</Text
+            >
+          </li>
+          <li>
+            <Text size="small" font="sans" weight="light">1256 København K</Text
+            >
+          </li>
+          <li>
+            <Text size="small" font="sans" weight="light"
+              >CVR nr.: 38 21 72 91</Text
+            >
+          </li>
+        </ul>
+        <ul>
+          <li class="mb-3">
+            <Text size="small" font="sans" weight="light"
+              >Mail: info@stopspildafmad.org</Text
+            >
+          </li>
+          <li>
+            <Text
+              stylingclasses="hover:underline hover:cursor-pointer"
+              size="small"
+              font="sans"
+              weight="light"
+              >Persondata og cookiepolitik
+            </Text>
+          </li>
+        </ul>
+      </div>
+
+      <div class="">
+        <Heading
+          stylingclasses="mb-2"
+          htmlheading="h5"
+          size="xsmall"
+          font="display"
+          weight="medium">LÆS MERE</Heading
+        >
+        <ul>
+          <li class="mb-3">
+            <a href="/hvad_vi_kan_goere"
+              ><Text
+                stylingclasses="hover:underline"
+                size="small"
+                font="sans"
+                weight="light">Tips til hverdagen</Text
+              ></a
+            >
+          </li>
+          <li class="mb-3">
+            <a href="/hvad_vi_kan_goere">
+              <Text
+                stylingclasses="hover:underline"
+                size="small"
+                font="sans"
+                weight="light">Vores historie</Text
+              ></a
+            >
+          </li>
+          <li class="mb-3">
+            <Text
+              stylingclasses="hover:underline"
+              size="small"
+              font="sans"
+              weight="light"
+              >Priser og anderkendelser
+            </Text>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-1 border-green--100 rounded-sm mb-3"></div>
+
+  <div class="sm:grid sm:grid-cols-2">
+    <div class="mb-8">
+      <Heading
+        stylingclasses="mb-2"
+        htmlheading="h5"
+        size="xsmall"
+        font="display"
+        weight="medium">STØT VORES SAG</Heading
+      >
+      <Link href="#" variant="green" size="small">SE STØTTEFORMER</Link>
+    </div>
+
+    <div>
+      <Heading
+        stylingclasses="mb-2 sm:text-right"
+        htmlheading="h5"
+        size="xsmall"
+        font="display"
+        weight="medium">FØLG OS PÅ VORES SOCIALS</Heading
+      >
+
+      <div class="flex flax-row gap-2 sm:justify-end">
+        <a href="https://www.facebook.com/Madspild"
+          ><img
+            class="w-12"
+            src="/public/img/facebook_logo.webp"
+            alt="besøg vores facebook profil"
+          /></a
+        >
+        <a
+          href="https://www.instagram.com/explore/search/keyword/?q=%23stopspildafmad"
+          ><img
+            class="w-12"
+            src="/public/img/instagram_logo.webp"
+            alt="besøg vores instagram hashtag"
+          /></a
+        >
+        <a
+          href="https://www.linkedin.com/company/stopspildafmad/posts/?feedView=all"
+          ><img
+            class="w-12"
+            src="/public/img/linkedin_logo.webp"
+            alt="besøg vores linkedin profil"
+          /></a
+        >
+        <a href="https://www.youtube.com/user/StopSpildAfMad"
+          ><img
+            class="w-12"
+            src="/public/img/youtube_logo.webp"
+            alt="besøg vores youtube kanal"
+          /></a
+        >
+      </div>
+    </div>
+  </div>
 </footer>
