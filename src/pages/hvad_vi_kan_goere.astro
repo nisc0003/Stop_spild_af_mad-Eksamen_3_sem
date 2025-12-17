@@ -7,153 +7,247 @@ import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
 import Card from "../components/Card.astro";
 ---
+
 <!-- SM: er 640px i width -->
 <MainLayout title="Vores mission">
-
-  <section class="sm:flex-col flex lg:flex-row mr-section_right ml-section_left place-content-between top">
-    <Heading htmlheading="h2" size="medium" stylingclasses="mb-6"> DELTAG I KAMPEN I MOD MADSPILD </Heading>
+  <section
+    class="sm:flex-col flex lg:flex-row mr-section_right ml-section_left place-content-between top"
+  >
+    <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
+      DELTAG I KAMPEN I MOD MADSPILD
+    </Heading>
 
     <div class="flex flex-col gap-3">
       <Button> LÆS OM VORES TIPS </Button>
       <Button> VORES HISTORIE </Button>
     </div>
-
   </section>
 
-<section class="carousel">
+  <section class="carousel">
+    <div class="group">
+      <!-- Forklar de andre hvad flex grow shrink og basis er -->
+      <img
+        src="/img/frugt1.png"
+        alt=""
+        class="carousel_img grow-0 shrink-0 basis-5em"
+      />
+      <img
+        src="/img/frugt2.png"
+        alt=""
+        class="carousel_img grow-0 shrink-0 basis-5em"
+      />
+      <img
+        src="/img/frugt3.png"
+        alt=""
+        class="carousel_img grow-0 shrink-0 basis-5em"
+      />
+      <img
+        src="/img/frugt4.png"
+        alt=""
+        class="carousel_img grow-0 shrink-0 basis-5em"
+      />
+      <img
+        src="/img/frugt5.png"
+        alt=""
+        class="carousel_img grow-0 shrink-0 basis-5em"
+      />
+      <img
+        src="/img/frugt6.png"
+        alt=""
+        class="carousel_img grow-0 shrink-0 basis-5em"
+      />
+    </div>
 
-  <div class="group ">
-  <!-- Forklar de andre hvad flex grow shrink og basis er -->
-    <img src="/img/frugt1.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
-    <img src="/img/frugt2.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
-    <img src="/img/frugt3.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
-    <img src="/img/frugt4.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
-    <img src="/img/frugt5.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
-    <img src="/img/frugt6.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
-  </div>
+    <div class="group">
+      <img
+        src="/img/frugt1.png"
+        alt=""
+        class="carousel_img grow-0 shrink-0 basis-5em"
+      />
+      <img
+        src="/img/frugt2.png"
+        alt=""
+        class="carousel_img grow-0 shrink-0 basis-5em"
+      />
+      <img
+        src="/img/frugt3.png"
+        alt=""
+        class="carousel_img grow-0 shrink-0 basis-5em"
+      />
+      <img
+        src="/img/frugt4.png"
+        alt=""
+        class="carousel_img grow-0 shrink-0 basis-5em"
+      />
+      <img
+        src="/img/frugt5.png"
+        alt=""
+        class="carousel_img grow-0 shrink-0 basis-5em"
+      />
+      <img
+        src="/img/frugt6.png"
+        alt=""
+        class="carousel_img grow-0 shrink-0 basis-5em"
+      />
+    </div>
+  </section>
 
-    <div class="group ">
-    <img src="/img/frugt1.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
-    <img src="/img/frugt2.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
-    <img src="/img/frugt3.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
-    <img src="/img/frugt4.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
-    <img src="/img/frugt5.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
-    <img src="/img/frugt6.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
-  </div>
+  <section
+    class="sm:flex flex-col lg:flex-row lg:mr-section_right lg:ml-section_left"
+  >
+    <img
+      src="/img/food_bag.png"
+      alt=""
+      class="sm:order-3 h-50 w-fit place-self-center lg:order-first lg:h-fit lg:w-fit"
+    />
 
-</section>
-
-<section class="sm:flex flex-col lg:flex-row lg:mr-section_right lg:ml-section_left">
-
-<img src="/img/food_bag.png" alt="" class="sm:order-3 h-50 w-fit place-self-center lg:order-first lg:h-fit lg:w-fit">
-
-
-<div class="flex flex-col place-content-between ">
+    <div class="flex flex-col place-content-between">
       <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
-       Hvad kan vi gøre?
+        Hvad kan vi gøre?
       </Heading>
 
-      <Text> Emner som disse kan virke store og uoverskuelige. Det kan være svært at vide hvor man skal starte, hvis man gerne vil hjælpe med at gøre en forskel. Derfor har vi her nogle simple vaner man kan indfører i hverdagen, som hjælper til med at mindske mængden af madspild:</Text>
+      <Text>
+        Emner som disse kan virke store og uoverskuelige. Det kan være svært at
+        vide hvor man skal starte, hvis man gerne vil hjælpe med at gøre en
+        forskel. Derfor har vi her nogle simple vaner man kan indfører i
+        hverdagen, som hjælper til med at mindske mængden af madspild:</Text
+      >
 
-      <div class="flex flex-col gap-5 ">
+      <div class="flex flex-col gap-5">
         <Button> KØB ENKELT VARE </Button>
         <Button> KØB IND MED OMTANKE </Button>
         <Button> DOGGY BAGS</Button>
+      </div>
     </div>
+  </section>
 
-</div>
-
-</section>
-
-<section class="sm:flex flex-col lg:flex lg:flex-row lg:mr-section_right lg:ml-section_left">
-
+  <section
+    class="sm:flex flex-col lg:flex lg:flex-row lg:mr-section_right lg:ml-section_left"
+  >
     <div>
       <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
-       Fortsæt med at købe enkelt-varer
+        Fortsæt med at købe enkelt-varer
       </Heading>
 
-
       <div class="sm:flex flex-col gap-3 lg:hidden">
-      <Text>I 2017 medvirkede Stop Spild Af Mad til at Rema 1000 droppede mængerabatter i alle kædens danske butikker.</Text>
-      <Text>Mængden af madspild faldt her efter fra ca. 80-100 bananer blev smidt ud om dagen, til kun 10 bananer om dagen. </Text>
+        <Text
+          >I 2017 medvirkede Stop Spild Af Mad til at Rema 1000 droppede
+          mængerabatter i alle kædens danske butikker.</Text
+        >
+        <Text
+          >Mængden af madspild faldt her efter fra ca. 80-100 bananer blev smidt
+          ud om dagen, til kun 10 bananer om dagen.
+        </Text>
       </div>
 
       <div class="sm:hidden lg:inline lg:flex lg:flex-col gap-3">
         <Text>
-            I 2017 medvirkede Stop Spild Af Mad til at Rema 1000 droppede mængerabatter i alle kædens danske butikker.
+          I 2017 medvirkede Stop Spild Af Mad til at Rema 1000 droppede
+          mængerabatter i alle kædens danske butikker.
         </Text>
         <Text>
-            Mængden af madspild faldt her efter fra ca. 80-100 bananer blev smidt ud om dagen, til kun 10 bananer om dagen.
+          Mængden af madspild faldt her efter fra ca. 80-100 bananer blev smidt
+          ud om dagen, til kun 10 bananer om dagen.
         </Text>
       </div>
-
-            </div>
-    
-      <img src="/img/banan1.png" alt="" class="sm:h-50 w-auto ml-auto lg:h-125">
-</section>
-
-<section class="lg:mr-section_right lg:ml-section_left">
-
-<Heading htmlheading="h2" size="medium" stylingclasses="mb-6"> Køb in med omtanke </Heading>
-
-			<Text>I gennemsnittet ender vi med at smide  25% af maden vi køber ud.</Text>
-			<Text>Det vil svare til at hver fjerede indkøbsvogn man ser i supermarkedet bliver smidt ud.</Text>
-
-			<div class="lg:staggeranimation flex flex-row gap-10" id="stagger">
-				<img src="/img/cart.png" alt="" class="sm:h-35 w-auto lg:h-50">
-				<img src="/img/cart.png" alt="" class="sm:h-35 w-auto lg:h-50">
-				<img src="/img/cart.png" alt="" class="sm:h-35 w-auto lg:h-50">
-				<img src="/img/cart.png" alt="" class="grayscale sm:h-35 w-auto lg:h-50">
-			</div>
-
-
-</section>
-
-<section class="lg:grid lg:grid-cols-1 lg:grid-row-2 lg:mr-section_right lg:ml-section_left lg:gap-10">
-
-
-    <div class="lg:flex lg:flex-col lg:order-2 lg:col-start-2">
-        <div class="lg:hidden">
-        <Heading htmlheading="h2" size="medium" stylingclasses="mb-6"> Doggy Bags </Heading>
-        </div>
-
-        <div class="bg-[url('/img/star.svg')] bg-no-repeat bg-contain bg-center sm:h-100 w-auto place-content-center">
-            <img src="/img/doggy_bag.png" alt="" class="sm:mx-auto h-75 w-auto">
-        </div>
-
-        <div class="sm:flex flex-col gap-5 inline lg:hidden">
-            <Text>I adskellige forskellige resturanter har vi samarbejdskab og har implimenteret vores Doggy bag!</Text>
-            <Text>Hvis du ikke kan spise din mad færdig kan du spørge om en doggy bag og tage maden med hjem!</Text>
-        </div>
-
-        <div class="sm:flex flex-col gap-5 hidden lg:inline">
-            <Text>I samarbejdskab med adskillige forskellige restauranter, har vi implementeret vores ‘doggy bag’!</Text>
-            <Text>Hvis du ikke kan spise din mad færdig kan du spørge om en ‘doggy bag’ og tage maden med hjem.</Text>
-        </div>
     </div>
 
-        <div class="sm:flex flex-col items-center gap-5 lg:items-baseline lg:order-1">
-        <div class="sm:hidden lg:inline">
-        <Heading htmlheading="h2" size="medium" stylingclasses="mb-6"> Doggy Bags </Heading>
-        </div>
-        
-        <div class="flex flex-col gap-5 lg:w-full">
-            <img src="/img/map_placeholder.png" alt="" class="w-full">
-            <Button>SE RESTURANTER</Button>
-        </div>
-        </div>
+    <img src="/img/banan1.png" alt="" class="sm:h-50 w-auto ml-auto lg:h-125" />
+  </section>
 
-</section>
+  <section class="lg:mr-section_right lg:ml-section_left">
+    <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
+      Køb in med omtanke
+    </Heading>
 
-    
-<section class="mr-section_right ml-section_left max-w-585px place-items-center lg:mb-20">
-    <Heading htmlheading="h1" size="medium" stylingclasses="mb-6"> VORES HISTORIE </Heading>
-    <Text>Vi er meget stolte af hvor meget Stop Spild Af Mad har mulighed for at udrette. 
-        <br>
-        Her er nogle af vores højdepunkter.</Text>
-</section>
+    <Text>I gennemsnittet ender vi med at smide 25% af maden vi køber ud.</Text>
+    <Text
+      >Det vil svare til at hver fjerede indkøbsvogn man ser i supermarkedet
+      bliver smidt ud.</Text
+    >
 
-<!-- <section class="sm:ml-25 lg:mr-30 ml-35 bg-blue-100 lg:mr-section_right lg:ml-section_left">
+    <div class="lg:staggeranimation flex flex-row gap-10" id="stagger">
+      <img src="/img/cart.png" alt="" class="sm:h-35 w-auto lg:h-50" />
+      <img src="/img/cart.png" alt="" class="sm:h-35 w-auto lg:h-50" />
+      <img src="/img/cart.png" alt="" class="sm:h-35 w-auto lg:h-50" />
+      <img
+        src="/img/cart.png"
+        alt=""
+        class="grayscale sm:h-35 w-auto lg:h-50"
+      />
+    </div>
+  </section>
+
+  <section
+    class="lg:grid lg:grid-cols-1 lg:grid-row-2 lg:mr-section_right lg:ml-section_left lg:gap-10"
+  >
+    <div class="lg:flex lg:flex-col lg:order-2 lg:col-start-2">
+      <div class="lg:hidden">
+        <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
+          Doggy Bags
+        </Heading>
+      </div>
+
+      <div
+        class="bg-[url('/img/star.svg')] bg-no-repeat bg-contain bg-center sm:h-100 w-auto place-content-center"
+      >
+        <img src="/img/doggy_bag.png" alt="" class="sm:mx-auto h-75 w-auto" />
+      </div>
+
+      <div class="sm:flex flex-col gap-5 inline lg:hidden">
+        <Text
+          >I adskellige forskellige resturanter har vi samarbejdskab og har
+          implimenteret vores Doggy bag!</Text
+        >
+        <Text
+          >Hvis du ikke kan spise din mad færdig kan du spørge om en doggy bag
+          og tage maden med hjem!</Text
+        >
+      </div>
+
+      <div class="sm:flex flex-col gap-5 hidden lg:inline">
+        <Text
+          >I samarbejdskab med adskillige forskellige restauranter, har vi
+          implementeret vores ‘doggy bag’!</Text
+        >
+        <Text
+          >Hvis du ikke kan spise din mad færdig kan du spørge om en ‘doggy bag’
+          og tage maden med hjem.</Text
+        >
+      </div>
+    </div>
+
+    <div
+      class="sm:flex flex-col items-center gap-5 lg:items-baseline lg:order-1"
+    >
+      <div class="sm:hidden lg:inline">
+        <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
+          Doggy Bags
+        </Heading>
+      </div>
+
+      <div class="flex flex-col gap-5 lg:w-full">
+        <img src="/img/map_placeholder.png" alt="" class="w-full" />
+        <Button>SE RESTURANTER</Button>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="mr-section_right ml-section_left max-w-585px place-items-center lg:mb-20"
+  >
+    <Heading htmlheading="h1" size="medium" stylingclasses="mb-6">
+      VORES HISTORIE
+    </Heading>
+    <Text
+      >Vi er meget stolte af hvor meget Stop Spild Af Mad har mulighed for at
+      udrette.
+      <br />
+      Her er nogle af vores højdepunkter.</Text
+    >
+  </section>
+
+  <!-- <section class="sm:ml-25 lg:mr-30 ml-35 bg-blue-100 lg:mr-section_right lg:ml-section_left">
       <div class="tidslinje sm:max-h-50 sm:flex  lg:flex-row lg:max-h-100 lg:w-auto">
         <ul class="overflow-auto w-auto pr-35">
           <li class="li1 activeTime" id="li1"><h1>2008</h1></li>
@@ -240,272 +334,267 @@ import Card from "../components/Card.astro";
       </div>
 </section> -->
 
+  <section class="lg:mr-section_right lg:ml-section_left bg-amber-500 mt-20">
+    <Heading htmlheading="h1" size="medium" stylingclasses="mb-6">
+      Vores TEDx Talks
+    </Heading>
 
-<section class="lg:mr-section_right lg:ml-section_left bg-amber-500 mt-20">
-    <Heading htmlheading="h1" size="medium" stylingclasses="mb-6"> Vores TEDx Talks </Heading>
-    
     <div class="active">
-    <video width="auto" height="100%" controls id="vid2012">
-    <source src="img/vids/TedX_2012.mp4" type="video/mp4">
-    </video>
+      <video width="auto" height="100%" controls id="vid2012">
+        <source src="img/vids/TedX_2012.mp4" type="video/mp4" />
+      </video>
     </div>
 
     <div class="inactive">
-    <video width="auto" height="100%" controls id="vid2016">
-    <source src="img/vids/TedX_2016.mp4" type="video/mp4">
-    </video>
+      <video width="auto" height="100%" controls id="vid2016">
+        <source src="img/vids/TedX_2016.mp4" type="video/mp4" />
+      </video>
     </div>
 
     <section class="flex flex-row w-full">
-    <div id="2012_btn">
+      <div id="2012_btn">
         <Button>2012</Button>
-    </div>
-        <div id="2016_btn">
+      </div>
+      <div id="2016_btn">
         <Button>2016</Button>
-    </div>
+      </div>
     </section>
-</section>
-
-
+  </section>
 
   <div>
     <a href="#" id="scrollToTop" class="material-icons-outlined">
-    <Button>TILBAGE TIL TOPPEN</Button>
+      <Button>TILBAGE TIL TOPPEN</Button>
     </a>
   </div>
-
 </MainLayout>
 
 <style>
-    <style>
-      .activeTime {
-        color: #B4DD1E;
-        cursor: default;
-      }
+  .activeTime {
+    color: #b4dd1e;
+    cursor: default;
+  }
 
-      .activeBox {
-        display: block;
-      }
+  .activeBox {
+    display: block;
+  }
 
-      .inactiveBox {
-        display: none;
-      }
+  .inactiveBox {
+    display: none;
+  }
 
-      h1 {
-        font-size: 4rem;
-      }
+  h1 {
+    font-size: 4rem;
+  }
 
-      ul::-webkit-scrollbar {
-        display: none;
-        scroll-behavior: smooth;
-      }
+  ul::-webkit-scrollbar {
+    display: none;
+    scroll-behavior: smooth;
+  }
 
-      li {
-        cursor: pointer;
+  li {
+    cursor: pointer;
 
-        h1 {
-          font-size: 5rem;
-        }
-      }
-
-
-    .active{
-        display: block;
+    h1 {
+      font-size: 5rem;
     }
+  }
 
-    .inactive{
-        display: none;
+  .active {
+    display: block;
+  }
+
+  .inactive {
+    display: none;
+  }
+
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    animation: spin 20s infinite linear;
+    padding-right: 1em;
+  }
+
+  .carousel_img {
+    flex: 0 0 5em;
+    align-content: center;
+    padding: 1em;
+  }
+
+  @keyframes spin {
+    from {
+      translate: 0;
     }
-
-    .carousel{
-      display: flex;
-      overflow-x: auto;
+    to {
+      translate: -100%;
     }
+  }
 
-    .carousel::-webkit-scrollbar {
-        display: none;
-      }
-
-    .group{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1em;
-      animation: spin 20s infinite linear;
-      padding-right: 1em;
-    }
-
-    .carousel_img{
-      flex: 0 0 5em;
-      align-content: center;
-      padding: 1em;
-    }
-
-    @keyframes spin{
-      from {translate: 0;}
-      to {translate: -100%;}
-    }
-
-    #scrollToTop {
+  #scrollToTop {
     animation-timeline: scroll(y);
     scroll-behavior: smooth;
 
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-    </style>
+  }
 </style>
 
-<script>
-          // Stagger animation Motion JS
-      import { animate, stagger, inView, scroll } from "motion";
-      inView("#stagger", () => {
-        animate(
-          ".staggeranimation img",
-          { opacity: [0, 1] },
-          {
-            delay: stagger(0.5, { startDelay: 0.5 }),
-          }
-        );
-      });
+<script is:inline>
+  // Stagger animation Motion JS
+  import { animate, stagger, inView, scroll } from "motion";
+  inView("#stagger", () => {
+    animate(
+      ".staggeranimation img",
+      { opacity: [0, 1] },
+      {
+        delay: stagger(0.5, { startDelay: 0.5 }),
+      },
+    );
+  });
 
-    // TEDx Talk JS
-      const btn2012 = document.getElementById("2012_btn");
-      const btn2016 = document.getElementById("2016_btn");
-      const vid2012 = document.getElementById("vid2012");
-      const vid2016 = document.getElementById("vid2016");
+  // TEDx Talk JS
+  const btn2012 = document.getElementById("2012_btn");
+  const btn2016 = document.getElementById("2016_btn");
+  const vid2012 = document.getElementById("vid2012");
+  const vid2016 = document.getElementById("vid2016");
 
+  btn2012.addEventListener("click", () => {
+    vid2016.classList.remove("active");
+    vid2016.classList.add("inactive");
+    vid2012.classList.remove("inactive");
+    vid2012.classList.add("active");
+  });
 
-      btn2012.addEventListener("click", () => {
-        vid2016.classList.remove("active");
-        vid2016.classList.add("inactive");
-        vid2012.classList.remove("inactive");
-        vid2012.classList.add("active");
-      });
+  btn2016.addEventListener("click", () => {
+    vid2012.classList.remove("active");
+    vid2012.classList.add("inactive");
+    vid2016.classList.remove("inactive");
+    vid2016.classList.add("active");
+  });
 
-      btn2016.addEventListener("click", () => {
-        vid2012.classList.remove("active");
-        vid2012.classList.add("inactive");
-        vid2016.classList.remove("inactive");
-        vid2016.classList.add("active");
-        
-      });
+  // Tidslinje JS
+  const list1 = document.getElementById("li1");
+  const list2 = document.getElementById("li2");
+  const list3 = document.getElementById("li3");
+  const list4 = document.getElementById("li4");
+  const list5 = document.getElementById("li5");
+  const list6 = document.getElementById("li6");
+  const list7 = document.getElementById("li7");
+  const list8 = document.getElementById("li8");
 
-      // Tidslinje JS
-      const list1 = document.getElementById("li1");
-      const list2 = document.getElementById("li2");
-      const list3 = document.getElementById("li3");
-      const list4 = document.getElementById("li4");
-      const list5 = document.getElementById("li5");
-      const list6 = document.getElementById("li6");
-      const list7 = document.getElementById("li7");
-      const list8 = document.getElementById("li8");
+  const list1box = document.getElementById("li1_content");
+  const list2box = document.getElementById("li2_content");
+  const list3box = document.getElementById("li3_content");
+  const list4box = document.getElementById("li4_content");
+  const list5box = document.getElementById("li5_content");
+  const list6box = document.getElementById("li_6content");
+  const list7box = document.getElementById("li_7content");
+  const list8box = document.getElementById("li_8content");
 
-      const list1box = document.getElementById("li1_content");
-      const list2box = document.getElementById("li2_content");
-      const list3box = document.getElementById("li3_content");
-      const list4box = document.getElementById("li4_content");
-      const list5box = document.getElementById("li5_content");
-      const list6box = document.getElementById("li_6content");
-      const list7box = document.getElementById("li_7content");
-      const list8box = document.getElementById("li_8content");
+  list1.addEventListener("click", () => {
+    list1.classList.add("activeTime");
+    list1box.classList.remove("inactiveBox");
+    // list1box.classList.add("animate-fade-down", "animate-ease-out");
+    list2.classList.remove("activeTime");
+    list2box.classList.add("inactiveBox");
+    list3.classList.remove("activeTime");
+    list3box.classList.add("inactiveBox");
+    list4.classList.remove("activeTime");
+    list4box.classList.add("inactiveBox");
+    list5.classList.remove("activeTime");
+    list5box.classList.add("inactiveBox");
+    list6.classList.remove("activeTime");
+    list6box.classList.add("inactiveBox");
+    list7.classList.remove("activeTime");
+    list7box.classList.add("inactiveBox");
+    list8.classList.remove("activeTime");
+    list8box.classList.add("inactiveBox");
+  });
 
-      list1.addEventListener("click", () => {
-        list1.classList.add("activeTime");
-        list1box.classList.remove("inactiveBox");
-        // list1box.classList.add("animate-fade-down", "animate-ease-out");
-        list2.classList.remove("activeTime");
-        list2box.classList.add("inactiveBox");
-        list3.classList.remove("activeTime");
-        list3box.classList.add("inactiveBox");
-        list4.classList.remove("activeTime");
-        list4box.classList.add("inactiveBox");
-        list5.classList.remove("activeTime");
-        list5box.classList.add("inactiveBox");
-        list6.classList.remove("activeTime");
-        list6box.classList.add("inactiveBox");
-        list7.classList.remove("activeTime");
-        list7box.classList.add("inactiveBox");
-        list8.classList.remove("activeTime");
-        list8box.classList.add("inactiveBox");
-      });
+  list2.addEventListener("click", () => {
+    list2.classList.add("activeTime");
+    list2box.classList.remove("inactiveBox");
+    list1.classList.remove("activeTime");
+    list1box.classList.add("inactiveBox");
+    list3.classList.remove("activeTime");
+    list3box.classList.add("inactiveBox");
+    list4.classList.remove("activeTime");
+    list4box.classList.add("inactiveBox");
+    list5.classList.remove("activeTime");
+    list5box.classList.add("inactiveBox");
+    list6.classList.remove("activeTime");
+    list6box.classList.add("inactiveBox");
+    list7.classList.remove("activeTime");
+    list7box.classList.add("inactiveBox");
+    list8.classList.remove("activeTime");
+    list8box.classList.add("inactiveBox");
+  });
 
-      list2.addEventListener("click", () => {
-        list2.classList.add("activeTime");
-        list2box.classList.remove("inactiveBox");
-        list1.classList.remove("activeTime");
-        list1box.classList.add("inactiveBox");
-        list3.classList.remove("activeTime");
-        list3box.classList.add("inactiveBox");
-        list4.classList.remove("activeTime");
-        list4box.classList.add("inactiveBox");
-        list5.classList.remove("activeTime");
-        list5box.classList.add("inactiveBox");
-        list6.classList.remove("activeTime");
-        list6box.classList.add("inactiveBox");
-        list7.classList.remove("activeTime");
-        list7box.classList.add("inactiveBox");
-        list8.classList.remove("activeTime");
-        list8box.classList.add("inactiveBox");
-      });
+  list3.addEventListener("click", () => {
+    list3.classList.add("activeTime");
+    list3box.classList.remove("inactiveBox");
+    list1.classList.remove("activeTime");
+    list1box.classList.add("inactiveBox");
+    list2.classList.remove("activeTime");
+    list2box.classList.add("inactiveBox");
+    list4.classList.remove("activeTime");
+    list4box.classList.add("inactiveBox");
+    list5.classList.remove("activeTime");
+    list5box.classList.add("inactiveBox");
+    list6.classList.remove("activeTime");
+    list6box.classList.add("inactiveBox");
+    list7.classList.remove("activeTime");
+    list7box.classList.add("inactiveBox");
+    list8.classList.remove("activeTime");
+    list8box.classList.add("inactiveBox");
+  });
 
-      list3.addEventListener("click", () => {
-        list3.classList.add("activeTime");
-        list3box.classList.remove("inactiveBox");
-        list1.classList.remove("activeTime");
-        list1box.classList.add("inactiveBox");
-        list2.classList.remove("activeTime");
-        list2box.classList.add("inactiveBox");
-        list4.classList.remove("activeTime");
-        list4box.classList.add("inactiveBox");
-        list5.classList.remove("activeTime");
-        list5box.classList.add("inactiveBox");
-        list6.classList.remove("activeTime");
-        list6box.classList.add("inactiveBox");
-        list7.classList.remove("activeTime");
-        list7box.classList.add("inactiveBox");
-        list8.classList.remove("activeTime");
-        list8box.classList.add("inactiveBox");
-      });
+  list4.addEventListener("click", () => {
+    list4.classList.add("activeTime");
+    list4box.classList.remove("inactiveBox");
+    list1.classList.remove("activeTime");
+    list1box.classList.add("inactiveBox");
+    list2.classList.remove("activeTime");
+    list2box.classList.add("inactiveBox");
+    list3.classList.remove("activeTime");
+    list3box.classList.add("inactiveBox");
+    list5.classList.remove("activeTime");
+    list5box.classList.add("inactiveBox");
+    list6.classList.remove("activeTime");
+    list6box.classList.add("inactiveBox");
+    list7.classList.remove("activeTime");
+    list7box.classList.add("inactiveBox");
+    list8.classList.remove("activeTime");
+    list8box.classList.add("inactiveBox");
+  });
 
-      list4.addEventListener("click", () => {
-        list4.classList.add("activeTime");
-        list4box.classList.remove("inactiveBox");
-        list1.classList.remove("activeTime");
-        list1box.classList.add("inactiveBox");
-        list2.classList.remove("activeTime");
-        list2box.classList.add("inactiveBox");
-        list3.classList.remove("activeTime");
-        list3box.classList.add("inactiveBox");
-        list5.classList.remove("activeTime");
-        list5box.classList.add("inactiveBox");
-        list6.classList.remove("activeTime");
-        list6box.classList.add("inactiveBox");
-        list7.classList.remove("activeTime");
-        list7box.classList.add("inactiveBox");
-        list8.classList.remove("activeTime");
-        list8box.classList.add("inactiveBox");
-      });
-
-      list5.addEventListener("click", () => {
-        list5.classList.add("activeTime");
-        list5box.classList.remove("inactiveBox");
-        list1.classList.remove("activeTime");
-        list1box.classList.add("inactiveBox");
-        list2.classList.remove("activeTime");
-        list2box.classList.add("inactiveBox");
-        list3.classList.remove("activeTime");
-        list3box.classList.add("inactiveBox");
-        list4.classList.remove("activeTime");
-        list4box.classList.add("inactiveBox");
-        list6.classList.remove("activeTime");
-        list6box.classList.add("inactiveBox");
-        list7.classList.remove("activeTime");
-        list7box.classList.add("inactiveBox");
-        list8.classList.remove("activeTime");
-        list8box.classList.add("inactiveBox");
-      });
-
+  list5.addEventListener("click", () => {
+    list5.classList.add("activeTime");
+    list5box.classList.remove("inactiveBox");
+    list1.classList.remove("activeTime");
+    list1box.classList.add("inactiveBox");
+    list2.classList.remove("activeTime");
+    list2box.classList.add("inactiveBox");
+    list3.classList.remove("activeTime");
+    list3box.classList.add("inactiveBox");
+    list4.classList.remove("activeTime");
+    list4box.classList.add("inactiveBox");
+    list6.classList.remove("activeTime");
+    list6box.classList.add("inactiveBox");
+    list7.classList.remove("activeTime");
+    list7box.classList.add("inactiveBox");
+    list8.classList.remove("activeTime");
+    list8box.classList.add("inactiveBox");
+  });
 </script>
