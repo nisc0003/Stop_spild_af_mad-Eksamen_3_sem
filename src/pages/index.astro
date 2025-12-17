@@ -4,26 +4,6 @@ import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Link from "../components/Link.astro";
 import Card from "../components/Card.astro";
-
-// Card data - matcher slugs i singleview/[slug].astro
-const featuredCards = [
-  {
-    slug: "stoettemedlem",
-    title: "STØTTEMEDLEM",
-    image: "https://placehold.co/600x400/006269/ffffff?text=Bliv+Støttemedlem",
-  },
-  {
-    slug: "frivillig",
-    title: "FRIVILLIG",
-    image: "https://placehold.co/600x400/f5a600/ffffff?text=Bliv+Frivillig",
-  },
-  {
-    slug: "erhvervspartner",
-    title: "ERHVERVSPARTNER",
-    image:
-      "https://placehold.co/600x400/00e4f5/ffffff?text=Bliv+Erhvervspartner",
-  },
-];
 ---
 
 <MainLayout title="Stop Spild Af Mad">
@@ -42,19 +22,6 @@ const featuredCards = [
       <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
         Kom i gang
       </Heading>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {featuredCards.map((card) => <Card {...card} />)}
-      </div>
-    </section>
-
-    <section class="text-center py-12 bg-primary-100 rounded-lg">
-      <Heading htmlheading="h2" size="medium" stylingclasses="mb-4">
-        Klar til at gøre en forskel?
-      </Heading>
-      <Link href="/card-example" variant="primary" size="large">
-        Se flere eksempler
-      </Link>
     </section>
   </main>
 </MainLayout>

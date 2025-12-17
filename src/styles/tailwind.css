@@ -6,8 +6,6 @@
 @import "tailwindcss-intersect";
 
 @theme {
-  /* Her tilføjes theme variable // tokens */
-
   /*Farver */
 
   --color-orange--400: #e64f16;
