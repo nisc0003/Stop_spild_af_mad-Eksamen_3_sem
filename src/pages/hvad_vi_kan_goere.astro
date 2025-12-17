@@ -166,7 +166,7 @@ import Card from "../components/Card.astro";
       bliver smidt ud.</Text
     >
 
-    <div class="lg:staggeranimation flex flex-row gap-10" id="stagger">
+    <div class="staggeranimation flex flex-row gap-10" id="stagger">
       <img src="/img/cart.png" alt="" class="sm:h-35 w-auto lg:h-50" />
       <img src="/img/cart.png" alt="" class="sm:h-35 w-auto lg:h-50" />
       <img src="/img/cart.png" alt="" class="sm:h-35 w-auto lg:h-50" />
@@ -247,92 +247,96 @@ import Card from "../components/Card.astro";
     >
   </section>
 
-  <!-- <section class="sm:ml-25 lg:mr-30 ml-35 bg-blue-100 lg:mr-section_right lg:ml-section_left">
-      <div class="tidslinje sm:max-h-50 sm:flex  lg:flex-row lg:max-h-100 lg:w-auto">
-        <ul class="overflow-auto w-auto pr-35">
-          <li class="li1 activeTime" id="li1"><h1>2008</h1></li>
-          <li class="li2" id="li2"><h1>2009</h1></li>
-          <li class="li3" id="li3"><h1>2010</h1></li>
-          <li class="li4" id="li4"><h1>2011</h1></li>
-          <li class="li5" id="li5"><h1>2012</h1></li>
-          <div class="hidden">
+  <section
+    class="sm:ml-25 lg:mr-30 ml-35 bg-blue-100 lg:mr-section_right lg:ml-section_left"
+  >
+    <div
+      class="tidslinje sm:max-h-50 sm:flex lg:flex-row lg:max-h-100 lg:w-auto"
+    >
+      <ul class="overflow-auto w-auto pr-35">
+        <li class="li1 activeTime" id="li1"><h1>2008</h1></li>
+        <li class="li2" id="li2"><h1>2009</h1></li>
+        <li class="li3" id="li3"><h1>2010</h1></li>
+        <li class="li4" id="li4"><h1>2011</h1></li>
+        <li class="li5" id="li5"><h1>2012</h1></li>
+        <div class="hidden">
           <li class="li6" id="li6"><h1>2013</h1></li>
-						<li class="li7" id="li7"><h1>2014</h1></li>
-						<li class="li8" id="li8"><h1>2015</h1></li>
-            </div>
-          </ul>
-
-        <div class="grid grid-cols-2 li1_content gap-5" id="li1_content">
-          <img src="/img/2008.png" alt="" class="place-self-end h-100 w-auto">
-          <div class="flex flex-col gap-10 w-auto">
-            <h1>Begyndelsen</h1>
-            <p>
-              Stop Spild Af Mad blev stiftet af Selina Juul i 2008 som en
-              facebook gruppe, men voksede hurtigt til en anderkendt frivilligt
-              og selvstændigt non-profit. Selina Juul var motiveret af hendes
-              fortid i Moskva, hvor hun oplevede stor fødevaremangel. Da hun kom
-              til Danmark tog hun derfor kampen op i mod madspild.
-            </p>
-          </div>
+          <li class="li7" id="li7"><h1>2014</h1></li>
+          <li class="li8" id="li8"><h1>2015</h1></li>
         </div>
+      </ul>
 
-        <div class="flex flex-row li2_content inactiveBox" id="li2_content">
-          <img src="/img/cart.png" alt="" />
-          <div class="flex flex-col gap-10">
-            <h1>Begyndelsen 222</h1>
-            <Text>
-              Stop Spild Af Mad blev stiftet af Selina Juul i 2008 som en
-              facebook gruppe, men voksede hurtigt til en anderkendt frivilligt
-              og selvstændigt non-profit. Selina Juul var motiveret af hendes
-              fortid i Moskva, hvor hun oplevede stor fødevaremangel. Da hun kom
-              til Danmark tog hun derfor kampen op i mod madspild.
-            </Text>
-          </div>
-        </div>
-
-        <div class="flex flex-row li3_content inactiveBox" id="li3_content">
-          <img src="/img/cart.png" alt="" />
-          <div class="flex flex-col gap-10">
-            <h1>Begyndelsen 333</h1>
-            <p>
-              Stop Spild Af Mad blev stiftet af Selina Juul i 2008 som en
-              facebook gruppe, men voksede hurtigt til en anderkendt frivilligt
-              og selvstændigt non-profit. Selina Juul var motiveret af hendes
-              fortid i Moskva, hvor hun oplevede stor fødevaremangel. Da hun kom
-              til Danmark tog hun derfor kampen op i mod madspild.
-            </p>
-          </div>
-        </div>
-
-        <div class="flex flex-row li4_content inactiveBox" id="li4_content">
-          <img src="/img/cart.png" alt="" />
-          <div class="flex flex-col gap-10">
-            <h1>Begyndelsen 444</h1>
-            <p>
-              Stop Spild Af Mad blev stiftet af Selina Juul i 2008 som en
-              facebook gruppe, men voksede hurtigt til en anderkendt frivilligt
-              og selvstændigt non-profit. Selina Juul var motiveret af hendes
-              fortid i Moskva, hvor hun oplevede stor fødevaremangel. Da hun kom
-              til Danmark tog hun derfor kampen op i mod madspild.
-            </p>
-          </div>
-        </div>
-
-        <div class="flex flex-row li5_content inactiveBox" id="li5_content">
-          <img src="/img/cart.png" alt="" />
-          <div class="flex flex-col gap-10">
-            <h1>Begyndelsen 555</h1>
-            <p>
-              Stop Spild Af Mad blev stiftet af Selina Juul i 2008 som en
-              facebook gruppe, men voksede hurtigt til en anderkendt frivilligt
-              og selvstændigt non-profit. Selina Juul var motiveret af hendes
-              fortid i Moskva, hvor hun oplevede stor fødevaremangel. Da hun kom
-              til Danmark tog hun derfor kampen op i mod madspild.
-            </p>
-          </div>
+      <div class="grid grid-cols-2 li1_content gap-5" id="li1_content">
+        <img src="/img/2008.png" alt="" class="place-self-end h-100 w-auto" />
+        <div class="flex flex-col gap-10 w-auto">
+          <h1>Begyndelsen</h1>
+          <p>
+            Stop Spild Af Mad blev stiftet af Selina Juul i 2008 som en facebook
+            gruppe, men voksede hurtigt til en anderkendt frivilligt og
+            selvstændigt non-profit. Selina Juul var motiveret af hendes fortid
+            i Moskva, hvor hun oplevede stor fødevaremangel. Da hun kom til
+            Danmark tog hun derfor kampen op i mod madspild.
+          </p>
         </div>
       </div>
-</section> -->
+
+      <div class="flex flex-row li2_content inactiveBox" id="li2_content">
+        <img src="/img/cart.png" alt="" />
+        <div class="flex flex-col gap-10">
+          <h1>Begyndelsen 222</h1>
+          <Text>
+            Stop Spild Af Mad blev stiftet af Selina Juul i 2008 som en facebook
+            gruppe, men voksede hurtigt til en anderkendt frivilligt og
+            selvstændigt non-profit. Selina Juul var motiveret af hendes fortid
+            i Moskva, hvor hun oplevede stor fødevaremangel. Da hun kom til
+            Danmark tog hun derfor kampen op i mod madspild.
+          </Text>
+        </div>
+      </div>
+
+      <div class="flex flex-row li3_content inactiveBox" id="li3_content">
+        <img src="/img/cart.png" alt="" />
+        <div class="flex flex-col gap-10">
+          <h1>Begyndelsen 333</h1>
+          <p>
+            Stop Spild Af Mad blev stiftet af Selina Juul i 2008 som en facebook
+            gruppe, men voksede hurtigt til en anderkendt frivilligt og
+            selvstændigt non-profit. Selina Juul var motiveret af hendes fortid
+            i Moskva, hvor hun oplevede stor fødevaremangel. Da hun kom til
+            Danmark tog hun derfor kampen op i mod madspild.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-row li4_content inactiveBox" id="li4_content">
+        <img src="/img/cart.png" alt="" />
+        <div class="flex flex-col gap-10">
+          <h1>Begyndelsen 444</h1>
+          <p>
+            Stop Spild Af Mad blev stiftet af Selina Juul i 2008 som en facebook
+            gruppe, men voksede hurtigt til en anderkendt frivilligt og
+            selvstændigt non-profit. Selina Juul var motiveret af hendes fortid
+            i Moskva, hvor hun oplevede stor fødevaremangel. Da hun kom til
+            Danmark tog hun derfor kampen op i mod madspild.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-row li5_content inactiveBox" id="li5_content">
+        <img src="/img/cart.png" alt="" />
+        <div class="flex flex-col gap-10">
+          <h1>Begyndelsen 555</h1>
+          <p>
+            Stop Spild Af Mad blev stiftet af Selina Juul i 2008 som en facebook
+            gruppe, men voksede hurtigt til en anderkendt frivilligt og
+            selvstændigt non-profit. Selina Juul var motiveret af hendes fortid
+            i Moskva, hvor hun oplevede stor fødevaremangel. Da hun kom til
+            Danmark tog hun derfor kampen op i mod madspild.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="lg:mr-section_right lg:ml-section_left bg-amber-500 mt-20">
     <Heading htmlheading="h1" size="medium" stylingclasses="mb-6">
@@ -451,150 +455,224 @@ import Card from "../components/Card.astro";
 </style>
 
 <script is:inline>
-  // Stagger animation Motion JS
-  import { animate, stagger, inView, scroll } from "motion";
-  inView("#stagger", () => {
-    animate(
-      ".staggeranimation img",
-      { opacity: [0, 1] },
-      {
-        delay: stagger(0.5, { startDelay: 0.5 }),
-      },
-    );
-  });
+  document.addEventListener("DOMContentLoaded", function () {
+    // TEDx Talk JS
+    const btn2012 = document.getElementById("2012_btn");
+    const btn2016 = document.getElementById("2016_btn");
+    const vid2012 = document.getElementById("vid2012");
+    const vid2016 = document.getElementById("vid2016");
 
-  // TEDx Talk JS
-  const btn2012 = document.getElementById("2012_btn");
-  const btn2016 = document.getElementById("2016_btn");
-  const vid2012 = document.getElementById("vid2012");
-  const vid2016 = document.getElementById("vid2016");
+    if (btn2012 && btn2016 && vid2012 && vid2016) {
+      btn2012.addEventListener("click", (e) => {
+        e.preventDefault();
+        vid2016.classList.remove("active");
+        vid2016.classList.add("inactive");
+        vid2012.classList.remove("inactive");
+        vid2012.classList.add("active");
+      });
 
-  btn2012.addEventListener("click", () => {
-    vid2016.classList.remove("active");
-    vid2016.classList.add("inactive");
-    vid2012.classList.remove("inactive");
-    vid2012.classList.add("active");
-  });
+      btn2016.addEventListener("click", (e) => {
+        e.preventDefault();
+        vid2012.classList.remove("active");
+        vid2012.classList.add("inactive");
+        vid2016.classList.remove("inactive");
+        vid2016.classList.add("active");
+      });
+    }
 
-  btn2016.addEventListener("click", () => {
-    vid2012.classList.remove("active");
-    vid2012.classList.add("inactive");
-    vid2016.classList.remove("inactive");
-    vid2016.classList.add("active");
-  });
+    // Scroll to top
+    const scrollToTopBtn = document.getElementById("scrollToTop");
+    if (scrollToTopBtn) {
+      scrollToTopBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    }
 
-  // Tidslinje JS
-  const list1 = document.getElementById("li1");
-  const list2 = document.getElementById("li2");
-  const list3 = document.getElementById("li3");
-  const list4 = document.getElementById("li4");
-  const list5 = document.getElementById("li5");
-  const list6 = document.getElementById("li6");
-  const list7 = document.getElementById("li7");
-  const list8 = document.getElementById("li8");
+    // Stagger animation for cart images - Simple vanilla JS version
+    function initStaggerAnimation() {
+      const staggerContainer = document.getElementById("stagger");
+      if (!staggerContainer) {
+        console.warn("Stagger container not found");
+        return;
+      }
 
-  const list1box = document.getElementById("li1_content");
-  const list2box = document.getElementById("li2_content");
-  const list3box = document.getElementById("li3_content");
-  const list4box = document.getElementById("li4_content");
-  const list5box = document.getElementById("li5_content");
-  const list6box = document.getElementById("li_6content");
-  const list7box = document.getElementById("li_7content");
-  const list8box = document.getElementById("li_8content");
+      const images = staggerContainer.querySelectorAll("img");
+      if (images.length === 0) {
+        console.warn("No images found in stagger container");
+        return;
+      }
 
-  list1.addEventListener("click", () => {
-    list1.classList.add("activeTime");
-    list1box.classList.remove("inactiveBox");
-    // list1box.classList.add("animate-fade-down", "animate-ease-out");
-    list2.classList.remove("activeTime");
-    list2box.classList.add("inactiveBox");
-    list3.classList.remove("activeTime");
-    list3box.classList.add("inactiveBox");
-    list4.classList.remove("activeTime");
-    list4box.classList.add("inactiveBox");
-    list5.classList.remove("activeTime");
-    list5box.classList.add("inactiveBox");
-    list6.classList.remove("activeTime");
-    list6box.classList.add("inactiveBox");
-    list7.classList.remove("activeTime");
-    list7box.classList.add("inactiveBox");
-    list8.classList.remove("activeTime");
-    list8box.classList.add("inactiveBox");
-  });
+      // Set initial opacity to 0
+      images.forEach((img) => {
+        img.style.opacity = "0";
+        img.style.transition = "opacity 0.6s ease-in-out";
+      });
 
-  list2.addEventListener("click", () => {
-    list2.classList.add("activeTime");
-    list2box.classList.remove("inactiveBox");
-    list1.classList.remove("activeTime");
-    list1box.classList.add("inactiveBox");
-    list3.classList.remove("activeTime");
-    list3box.classList.add("inactiveBox");
-    list4.classList.remove("activeTime");
-    list4box.classList.add("inactiveBox");
-    list5.classList.remove("activeTime");
-    list5box.classList.add("inactiveBox");
-    list6.classList.remove("activeTime");
-    list6box.classList.add("inactiveBox");
-    list7.classList.remove("activeTime");
-    list7box.classList.add("inactiveBox");
-    list8.classList.remove("activeTime");
-    list8box.classList.add("inactiveBox");
-  });
+      // Use Intersection Observer to trigger animation when element is in view
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Animate images with stagger effect
+              images.forEach((img, index) => {
+                setTimeout(() => {
+                  img.style.opacity = "1";
+                }, index * 150); // 150ms delay between each image
+              });
+              observer.unobserve(staggerContainer);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
 
-  list3.addEventListener("click", () => {
-    list3.classList.add("activeTime");
-    list3box.classList.remove("inactiveBox");
-    list1.classList.remove("activeTime");
-    list1box.classList.add("inactiveBox");
-    list2.classList.remove("activeTime");
-    list2box.classList.add("inactiveBox");
-    list4.classList.remove("activeTime");
-    list4box.classList.add("inactiveBox");
-    list5.classList.remove("activeTime");
-    list5box.classList.add("inactiveBox");
-    list6.classList.remove("activeTime");
-    list6box.classList.add("inactiveBox");
-    list7.classList.remove("activeTime");
-    list7box.classList.add("inactiveBox");
-    list8.classList.remove("activeTime");
-    list8box.classList.add("inactiveBox");
-  });
+      observer.observe(staggerContainer);
+    }
 
-  list4.addEventListener("click", () => {
-    list4.classList.add("activeTime");
-    list4box.classList.remove("inactiveBox");
-    list1.classList.remove("activeTime");
-    list1box.classList.add("inactiveBox");
-    list2.classList.remove("activeTime");
-    list2box.classList.add("inactiveBox");
-    list3.classList.remove("activeTime");
-    list3box.classList.add("inactiveBox");
-    list5.classList.remove("activeTime");
-    list5box.classList.add("inactiveBox");
-    list6.classList.remove("activeTime");
-    list6box.classList.add("inactiveBox");
-    list7.classList.remove("activeTime");
-    list7box.classList.add("inactiveBox");
-    list8.classList.remove("activeTime");
-    list8box.classList.add("inactiveBox");
-  });
+    // Initialize stagger animation
+    initStaggerAnimation();
 
-  list5.addEventListener("click", () => {
-    list5.classList.add("activeTime");
-    list5box.classList.remove("inactiveBox");
-    list1.classList.remove("activeTime");
-    list1box.classList.add("inactiveBox");
-    list2.classList.remove("activeTime");
-    list2box.classList.add("inactiveBox");
-    list3.classList.remove("activeTime");
-    list3box.classList.add("inactiveBox");
-    list4.classList.remove("activeTime");
-    list4box.classList.add("inactiveBox");
-    list6.classList.remove("activeTime");
-    list6box.classList.add("inactiveBox");
-    list7.classList.remove("activeTime");
-    list7box.classList.add("inactiveBox");
-    list8.classList.remove("activeTime");
-    list8box.classList.add("inactiveBox");
+    // ===== TIDSLINJE (TIMELINE) JAVASCRIPT =====
+    // This section handles the interactive timeline where users can click on years (2008-2015)
+    // to switch between different content boxes showing historical events
+
+    // Get all year list items (li1, li2, etc.)
+    const list1 = document.getElementById("li1");
+    const list2 = document.getElementById("li2");
+    const list3 = document.getElementById("li3");
+    const list4 = document.getElementById("li4");
+    const list5 = document.getElementById("li5");
+    const list6 = document.getElementById("li6");
+    const list7 = document.getElementById("li7");
+    const list8 = document.getElementById("li8");
+
+    // Get all content boxes that correspond to each year
+    const list1box = document.getElementById("li1_content");
+    const list2box = document.getElementById("li2_content");
+    const list3box = document.getElementById("li3_content");
+    const list4box = document.getElementById("li4_content");
+    const list5box = document.getElementById("li5_content");
+    const list6box = document.getElementById("li_6content");
+    const list7box = document.getElementById("li_7content");
+    const list8box = document.getElementById("li_8content");
+
+    // ===== 2008 BUTTON CLICK HANDLER =====
+    // When user clicks 2008, show 2008 content and hide all others
+    if (list1 && list1box) {
+      list1.addEventListener("click", () => {
+        // Mark 2008 as active (add yellow background)
+        list1.classList.add("activeTime");
+        // Show 2008 content box
+        list1box.classList.remove("inactiveBox");
+        // Hide all other years
+        if (list2) list2.classList.remove("activeTime");
+        if (list2box) list2box.classList.add("inactiveBox");
+        if (list3) list3.classList.remove("activeTime");
+        if (list3box) list3box.classList.add("inactiveBox");
+        if (list4) list4.classList.remove("activeTime");
+        if (list4box) list4box.classList.add("inactiveBox");
+        if (list5) list5.classList.remove("activeTime");
+        if (list5box) list5box.classList.add("inactiveBox");
+        if (list6) list6.classList.remove("activeTime");
+        if (list6box) list6box.classList.add("inactiveBox");
+        if (list7) list7.classList.remove("activeTime");
+        if (list7box) list7box.classList.add("inactiveBox");
+        if (list8) list8.classList.remove("activeTime");
+        if (list8box) list8box.classList.add("inactiveBox");
+      });
+    }
+
+    // ===== 2009 BUTTON CLICK HANDLER =====
+    // When user clicks 2009, show 2009 content and hide all others
+    if (list2 && list2box) {
+      list2.addEventListener("click", () => {
+        list2.classList.add("activeTime");
+        list2box.classList.remove("inactiveBox");
+        if (list1) list1.classList.remove("activeTime");
+        if (list1box) list1box.classList.add("inactiveBox");
+        if (list3) list3.classList.remove("activeTime");
+        if (list3box) list3box.classList.add("inactiveBox");
+        if (list4) list4.classList.remove("activeTime");
+        if (list4box) list4box.classList.add("inactiveBox");
+        if (list5) list5.classList.remove("activeTime");
+        if (list5box) list5box.classList.add("inactiveBox");
+        if (list6) list6.classList.remove("activeTime");
+        if (list6box) list6box.classList.add("inactiveBox");
+        if (list7) list7.classList.remove("activeTime");
+        if (list7box) list7box.classList.add("inactiveBox");
+        if (list8) list8.classList.remove("activeTime");
+        if (list8box) list8box.classList.add("inactiveBox");
+      });
+    }
+
+    // ===== 2010 BUTTON CLICK HANDLER =====
+    if (list3 && list3box) {
+      list3.addEventListener("click", () => {
+        list3.classList.add("activeTime");
+        list3box.classList.remove("inactiveBox");
+        if (list1) list1.classList.remove("activeTime");
+        if (list1box) list1box.classList.add("inactiveBox");
+        if (list2) list2.classList.remove("activeTime");
+        if (list2box) list2box.classList.add("inactiveBox");
+        if (list4) list4.classList.remove("activeTime");
+        if (list4box) list4box.classList.add("inactiveBox");
+        if (list5) list5.classList.remove("activeTime");
+        if (list5box) list5box.classList.add("inactiveBox");
+        if (list6) list6.classList.remove("activeTime");
+        if (list6box) list6box.classList.add("inactiveBox");
+        if (list7) list7.classList.remove("activeTime");
+        if (list7box) list7box.classList.add("inactiveBox");
+        if (list8) list8.classList.remove("activeTime");
+        if (list8box) list8box.classList.add("inactiveBox");
+      });
+    }
+
+    // ===== 2011 BUTTON CLICK HANDLER =====
+    if (list4 && list4box) {
+      list4.addEventListener("click", () => {
+        list4.classList.add("activeTime");
+        list4box.classList.remove("inactiveBox");
+        if (list1) list1.classList.remove("activeTime");
+        if (list1box) list1box.classList.add("inactiveBox");
+        if (list2) list2.classList.remove("activeTime");
+        if (list2box) list2box.classList.add("inactiveBox");
+        if (list3) list3.classList.remove("activeTime");
+        if (list3box) list3box.classList.add("inactiveBox");
+        if (list5) list5.classList.remove("activeTime");
+        if (list5box) list5box.classList.add("inactiveBox");
+        if (list6) list6.classList.remove("activeTime");
+        if (list6box) list6box.classList.add("inactiveBox");
+        if (list7) list7.classList.remove("activeTime");
+        if (list7box) list7box.classList.add("inactiveBox");
+        if (list8) list8.classList.remove("activeTime");
+        if (list8box) list8box.classList.add("inactiveBox");
+      });
+    }
+
+    // ===== 2012 BUTTON CLICK HANDLER =====
+    if (list5 && list5box) {
+      list5.addEventListener("click", () => {
+        list5.classList.add("activeTime");
+        list5box.classList.remove("inactiveBox");
+        if (list1) list1.classList.remove("activeTime");
+        if (list1box) list1box.classList.add("inactiveBox");
+        if (list2) list2.classList.remove("activeTime");
+        if (list2box) list2box.classList.add("inactiveBox");
+        if (list3) list3.classList.remove("activeTime");
+        if (list3box) list3box.classList.add("inactiveBox");
+        if (list4) list4.classList.remove("activeTime");
+        if (list4box) list4box.classList.add("inactiveBox");
+        if (list6) list6.classList.remove("activeTime");
+        if (list6box) list6box.classList.add("inactiveBox");
+        if (list7) list7.classList.remove("activeTime");
+        if (list7box) list7box.classList.add("inactiveBox");
+        if (list8) list8.classList.remove("activeTime");
+        if (list8box) list8box.classList.add("inactiveBox");
+      });
+    }
   });
 </script>
