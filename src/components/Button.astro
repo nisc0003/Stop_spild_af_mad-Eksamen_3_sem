@@ -2,8 +2,6 @@
 // Henter parametrene fra Astro.props
 const { size = "large", icon = false } = Astro.props;
 
-// Definer kombinerede size classes - tilpasset tekststørrelse + fast padding
-// xlarge: 22px (mobile) → 24px (md) → 32px (lg)
 const sizeClasses = {
   xlarge:
     "text-[1.375rem] md:text-[1.5rem] lg:text-[2rem] font-semibold uppercase px-6 py-4",
@@ -15,16 +13,13 @@ const sizeClasses = {
     "text-[0.875rem] md:text-[1rem] lg:text-[1.125rem] font-semibold uppercase px-4 py-2",
 };
 
-// Sort variant - normal: sort bg, hvid tekst, hover: opacity ned
 const variantClasses =
   "bg-[var(--color-black)] text-[var(--color-white)] hover:opacity-75 transition-all duration-300";
 
-// Base styles for alle buttons - kun Tailwind classes
 const baseClasses =
   "inline-flex items-center justify-center gap-2 rounded-[var(--radius-CTA)] break-words whitespace-normal min-w-fit max-w-full";
 ---
 
-<!--Sæt classes for den pågældende button sammen ved hjælp af Astros class:list-->
 <button
   class:list={[baseClasses, sizeClasses[size], variantClasses]}
   class:icon-button={icon}><slot /></button
