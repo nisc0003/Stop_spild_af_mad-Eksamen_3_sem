@@ -8,9 +8,39 @@ import Link from "../components/Link.astro";
 import Card from "../components/Card.astro";
 ---
 <!-- SM: er 640px i width -->
-<MainLayout title="Hvad kan vi gøre">
+<MainLayout title="Vores mission">
 
-<section class="hero">
+  <section class="sm:flex-col flex lg:flex-row mr-section_right ml-section_left place-content-between top">
+    <Heading htmlheading="h2" size="medium" stylingclasses="mb-6"> DELTAG I KAMPEN I MOD MADSPILD </Heading>
+
+    <div class="flex flex-col gap-3">
+      <Button> LÆS OM VORES TIPS </Button>
+      <Button> VORES HISTORIE </Button>
+    </div>
+
+  </section>
+
+<section class="carousel">
+
+  <div class="group ">
+  <!-- Forklar de andre hvad flex grow shrink og basis er -->
+    <img src="/img/frugt1.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
+    <img src="/img/frugt2.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
+    <img src="/img/frugt3.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
+    <img src="/img/frugt4.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
+    <img src="/img/frugt5.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
+    <img src="/img/frugt6.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
+  </div>
+
+    <div class="group ">
+    <img src="/img/frugt1.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
+    <img src="/img/frugt2.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
+    <img src="/img/frugt3.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
+    <img src="/img/frugt4.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
+    <img src="/img/frugt5.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
+    <img src="/img/frugt6.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
+  </div>
+
 </section>
 
 <section class="sm:flex flex-col lg:flex-row lg:mr-section_right lg:ml-section_left">
@@ -18,14 +48,14 @@ import Card from "../components/Card.astro";
 <img src="/img/food_bag.png" alt="" class="sm:order-3 h-50 w-fit place-self-center lg:order-first lg:h-fit lg:w-fit">
 
 
-<div class="flex flex-col place-content-between">
+<div class="flex flex-col place-content-between ">
       <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
        Hvad kan vi gøre?
       </Heading>
 
       <Text> Emner som disse kan virke store og uoverskuelige. Det kan være svært at vide hvor man skal starte, hvis man gerne vil hjælpe med at gøre en forskel. Derfor har vi her nogle simple vaner man kan indfører i hverdagen, som hjælper til med at mindske mængden af madspild:</Text>
 
-      <div class="flex flex-col gap-4 mb-10">
+      <div class="flex flex-col gap-5 ">
         <Button> KØB ENKELT VARE </Button>
         <Button> KØB IND MED OMTANKE </Button>
         <Button> DOGGY BAGS</Button>
@@ -123,7 +153,7 @@ import Card from "../components/Card.astro";
         Her er nogle af vores højdepunkter.</Text>
 </section>
 
-<section class="sm:ml-25 lg:mr-30 ml-35 bg-blue-100">
+<!-- <section class="sm:ml-25 lg:mr-30 ml-35 bg-blue-100 lg:mr-section_right lg:ml-section_left">
       <div class="tidslinje sm:max-h-50 sm:flex  lg:flex-row lg:max-h-100 lg:w-auto">
         <ul class="overflow-auto w-auto pr-35">
           <li class="li1 activeTime" id="li1"><h1>2008</h1></li>
@@ -131,10 +161,12 @@ import Card from "../components/Card.astro";
           <li class="li3" id="li3"><h1>2010</h1></li>
           <li class="li4" id="li4"><h1>2011</h1></li>
           <li class="li5" id="li5"><h1>2012</h1></li>
-          <!-- <li class="li6" id="li6"><h1>2013</h1></li>
+          <div class="hidden">
+          <li class="li6" id="li6"><h1>2013</h1></li>
 						<li class="li7" id="li7"><h1>2014</h1></li>
-						<li class="li8" id="li8"><h1>2015</h1></li> -->
-        </ul>
+						<li class="li8" id="li8"><h1>2015</h1></li>
+            </div>
+          </ul>
 
         <div class="grid grid-cols-2 li1_content gap-5" id="li1_content">
           <img src="/img/2008.png" alt="" class="place-self-end h-100 w-auto">
@@ -206,10 +238,10 @@ import Card from "../components/Card.astro";
           </div>
         </div>
       </div>
-</section>
+</section> -->
 
 
-<section class="lg:mr-section_right lg:ml-section_left">
+<section class="lg:mr-section_right lg:ml-section_left bg-amber-500 mt-20">
     <Heading htmlheading="h1" size="medium" stylingclasses="mb-6"> Vores TEDx Talks </Heading>
     
     <div class="active">
@@ -233,6 +265,14 @@ import Card from "../components/Card.astro";
     </div>
     </section>
 </section>
+
+
+
+  <div>
+    <a href="#" id="scrollToTop" class="material-icons-outlined">
+    <Button>TILBAGE TIL TOPPEN</Button>
+    </a>
+  </div>
 
 </MainLayout>
 
@@ -276,6 +316,44 @@ import Card from "../components/Card.astro";
     .inactive{
         display: none;
     }
+
+    .carousel{
+      display: flex;
+      overflow-x: auto;
+    }
+
+    .carousel::-webkit-scrollbar {
+        display: none;
+      }
+
+    .group{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1em;
+      animation: spin 20s infinite linear;
+      padding-right: 1em;
+    }
+
+    .carousel_img{
+      flex: 0 0 5em;
+      align-content: center;
+      padding: 1em;
+    }
+
+    @keyframes spin{
+      from {translate: 0;}
+      to {translate: -100%;}
+    }
+
+    #scrollToTop {
+    animation-timeline: scroll(y);
+    scroll-behavior: smooth;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
     </style>
 </style>
