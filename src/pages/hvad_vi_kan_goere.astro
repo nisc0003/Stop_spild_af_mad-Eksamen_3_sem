@@ -11,15 +11,15 @@ import Card from "../components/Card.astro";
 <!-- SM: er 640px i width -->
 <MainLayout title="Vores mission">
   <section
-    class="sm:flex-col flex lg:flex-row mr-section_right ml-section_left place-content-between top"
+    class="sm:flex-col flex lg:flex-row mr-section_right ml-section_left place-content-between top lg:mb-section_buttom lg:mt-section_top"
   >
     <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
       DELTAG I KAMPEN I MOD MADSPILD
     </Heading>
 
     <div class="flex flex-col gap-3">
-      <Button> LÆS OM VORES TIPS </Button>
-      <Button> VORES HISTORIE </Button>
+      <Link variant="orange"> LÆS OM VORES TIPS </Link>
+      <Link> VORES HISTORIE </Link>
     </div>
   </section>
 
@@ -93,7 +93,7 @@ import Card from "../components/Card.astro";
   </section>
 
   <section
-    class="sm:flex flex-col lg:flex-row lg:mr-section_right lg:ml-section_left"
+    class="sm:flex flex-col lg:flex-row lg:mr-section_right lg:ml-section_left lg:mb-section_buttom lg:mt-section_top"
   >
     <img
       src="/img/food_bag.png"
@@ -114,17 +114,21 @@ import Card from "../components/Card.astro";
       >
 
       <div class="flex flex-col gap-5">
-        <Button> KØB ENKELT VARE </Button>
-        <Button> KØB IND MED OMTANKE </Button>
-        <Button> DOGGY BAGS</Button>
+        <!-- <Button> KØB ENKELT VARE </Button> -->
+        <Link variant="green"> KØB ENKELT VARE</Link>
+        <Link variant="orange"> KØB IND MED OMTANKE</Link>
+        <Link variant="purple"> DOGGY BAGS</Link>
+        <!-- <Button> KØB IND MED OMTANKE </Button>
+        <Button> DOGGY BAGS</Button> -->
       </div>
     </div>
   </section>
 
   <section
-    class="sm:flex flex-col lg:flex lg:flex-row lg:mr-section_right lg:ml-section_left"
+    class="sm:flex flex-col lg:flex lg:flex-row lg:mr-section_right lg:ml-section_left lg:mb-section_buttom lg:mt-section_top"
   >
     <div>
+      <Link variant="green-inverted" size="medium">Tip1:</Link>
       <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
         Fortsæt med at købe enkelt-varer
       </Heading>
@@ -140,7 +144,7 @@ import Card from "../components/Card.astro";
         </Text>
       </div>
 
-      <div class="sm:hidden lg:inline lg:flex lg:flex-col gap-3">
+      <div class="sm:hidden lg:flex lg:flex-col gap-3">
         <Text>
           I 2017 medvirkede Stop Spild Af Mad til at Rema 1000 droppede
           mængerabatter i alle kædens danske butikker.
@@ -152,10 +156,13 @@ import Card from "../components/Card.astro";
       </div>
     </div>
 
-    <img src="/img/banan1.png" alt="" class="sm:h-50 w-auto ml-auto lg:h-125" />
+    <img src="/img/banan1.png" alt="" class="sm:h-85 self-center lg:h-125" />
   </section>
 
-  <section class="lg:mr-section_right lg:ml-section_left">
+  <section
+    class="lg:mr-section_right lg:ml-section_left lg:mb-section_buttom lg:mt-section_top"
+  >
+    <Link variant="orange" size="medium">Tip2:</Link>
     <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
       Køb in med omtanke
     </Heading>
@@ -179,19 +186,24 @@ import Card from "../components/Card.astro";
   </section>
 
   <section
-    class="lg:grid lg:grid-cols-1 lg:grid-row-2 lg:mr-section_right lg:ml-section_left lg:gap-10"
+    class="lg:grid lg:grid-cols-2 lg:grid-row-2 lg:mr-section_right lg:ml-section_left lg:mb-section_buttom lg:mt-section_top lg:gap-10"
   >
     <div class="lg:flex lg:flex-col lg:order-2 lg:col-start-2">
       <div class="lg:hidden">
+        <Link variant="purple" size="medium">Tip3:</Link>
         <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
           Doggy Bags
         </Heading>
       </div>
 
       <div
-        class="bg-[url('/img/star.svg')] bg-no-repeat bg-contain bg-center sm:h-100 w-auto place-content-center"
+        class="bg-[url('/img/star.svg')] bg-no-repeat bg-contain bg-center sm:h-100 w-auto place-content-center lg:h-185"
       >
-        <img src="/img/doggy_bag.png" alt="" class="sm:mx-auto h-75 w-auto" />
+        <img
+          src="/img/doggy_bag.png"
+          alt=""
+          class="sm:mx-auto h-75 w-auto lg:h-100"
+        />
       </div>
 
       <div class="sm:flex flex-col gap-5 inline lg:hidden">
@@ -205,7 +217,7 @@ import Card from "../components/Card.astro";
         >
       </div>
 
-      <div class="sm:flex flex-col gap-5 hidden lg:inline">
+      <div class="sm:flex flex-col gap-5 hidden lg:gap-2">
         <Text
           >I samarbejdskab med adskillige forskellige restauranter, har vi
           implementeret vores ‘doggy bag’!</Text
@@ -221,6 +233,7 @@ import Card from "../components/Card.astro";
       class="sm:flex flex-col items-center gap-5 lg:items-baseline lg:order-1"
     >
       <div class="sm:hidden lg:inline">
+        <Link variant="purple" size="medium">Tip3:</Link>
         <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
           Doggy Bags
         </Heading>
@@ -228,13 +241,14 @@ import Card from "../components/Card.astro";
 
       <div class="flex flex-col gap-5 lg:w-full">
         <img src="/img/map_placeholder.png" alt="" class="w-full" />
-        <Button>SE RESTURANTER</Button>
+        <!-- <Button>SE RESTURANTER</Button> -->
+        <Link variant="purple">SE RESTURANTER</Link>
       </div>
     </div>
   </section>
 
   <section
-    class="mr-section_right ml-section_left max-w-585px place-items-center lg:mb-20"
+    class="mr-section_right ml-section_left max-w-585px place-items-center lg:mb-section_buttom lg:mt-section_top"
   >
     <Heading htmlheading="h1" size="medium" stylingclasses="mb-6">
       VORES HISTORIE
@@ -247,7 +261,7 @@ import Card from "../components/Card.astro";
     >
   </section>
 
-  <!-- <section class="sm:ml-25 lg:mr-30 ml-35 bg-blue-100 lg:mr-section_right lg:ml-section_left">
+  <!-- <section class="sm:ml-25 lg:mr-30 ml-35 bg-blue-100 lg:mr-section_right lg:ml-section_left lg:mb-section_buttom lg:mt-section_top">
       <div class="tidslinje sm:max-h-50 sm:flex  lg:flex-row lg:max-h-100 lg:w-auto">
         <ul class="overflow-auto w-auto pr-35">
           <li class="li1 activeTime" id="li1"><h1>2008</h1></li>
@@ -334,30 +348,28 @@ import Card from "../components/Card.astro";
       </div>
 </section> -->
 
-  <section class="lg:mr-section_right lg:ml-section_left bg-amber-500 mt-20">
+  <section
+    class="lg:mr-section_right lg:ml-section_left lg:mb-section_buttom lg:mt-section_top"
+  >
     <Heading htmlheading="h1" size="medium" stylingclasses="mb-6">
       Vores TEDx Talks
     </Heading>
 
     <div class="active">
-      <video width="auto" height="100%" controls id="vid2012">
+      <video width="100%" controls id="vid2012">
         <source src="img/vids/TedX_2012.mp4" type="video/mp4" />
       </video>
     </div>
 
     <div class="inactive">
-      <video width="auto" height="100%" controls id="vid2016">
+      <video width="100%" controls id="vid2016">
         <source src="img/vids/TedX_2016.mp4" type="video/mp4" />
       </video>
     </div>
 
-    <section class="flex flex-row w-full">
-      <div id="2012_btn">
-        <Button>2012</Button>
-      </div>
-      <div id="2016_btn">
-        <Button>2016</Button>
-      </div>
+    <section class="grid grid-cols-2 gap-5 mt-5">
+      <Link variant="orange" size="large" id="2012_btn"> 2012 </Link>
+      <Link variant="orange" size="large" id="2016_btn"> 2016 </Link>
     </section>
   </section>
 
