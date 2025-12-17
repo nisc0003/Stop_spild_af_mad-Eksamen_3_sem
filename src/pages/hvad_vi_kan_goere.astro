@@ -11,7 +11,7 @@ import Card from "../components/Card.astro";
 <!-- SM: er 640px i width -->
 <MainLayout title="Vores mission">
   <section
-    class="sm:flex-col flex lg:flex-row mr-section_right ml-section_left place-content-between top lg:mb-section_buttom lg:mt-section_top"
+    class="sm:flex-col flex lg:flex-row mr-section_right ml-section_left place-content-between top lg:mb-section_buttom"
   >
     <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
       DELTAG I KAMPEN I MOD MADSPILD
@@ -242,7 +242,7 @@ import Card from "../components/Card.astro";
       <div class="flex flex-col gap-5 lg:w-full">
         <img src="/img/map_placeholder.png" alt="" class="w-full" />
         <!-- <Button>SE RESTURANTER</Button> -->
-        <Link variant="purple">SE RESTURANTER</Link>
+        <Link href="wip" variant="purple">SE RESTURANTER</Link>
       </div>
     </div>
   </section>
@@ -261,13 +261,11 @@ import Card from "../components/Card.astro";
     >
   </section>
 
-  <section
-    class="sm:ml-25 lg:mr-30 ml-35 bg-blue-100 lg:mr-section_right lg:ml-section_left"
-  >
+  <section class="sm:ml-25 lg:mr-section_right lg:ml-section_left">
     <div
       class="tidslinje sm:max-h-50 sm:flex lg:flex-row lg:max-h-100 lg:w-auto"
     >
-      <ul class="overflow-auto w-auto pr-35">
+      <ul class="overflow-auto w-auto pr-55">
         <li class="li1 activeTime" id="li1"><h1>2008</h1></li>
         <li class="li2" id="li2"><h1>2009</h1></li>
         <li class="li3" id="li3"><h1>2010</h1></li>
@@ -372,8 +370,8 @@ import Card from "../components/Card.astro";
     </div>
 
     <section class="grid grid-cols-2 gap-5 mt-5">
-      <Link variant="orange" size="large" id="2012_btn"> 2012 </Link>
-      <Link variant="orange" size="large" id="2016_btn"> 2016 </Link>
+      <Link href="#" variant="orange" size="large" id="2012_btn"> 2012 </Link>
+      <Link href="#" variant="orange" size="large" id="2016_btn"> 2016 </Link>
     </section>
   </section>
 
@@ -386,8 +384,9 @@ import Card from "../components/Card.astro";
 
 <style>
   .activeTime {
-    color: #b4dd1e;
+    color: purple;
     cursor: default;
+    margin-left: 3rem;
   }
 
   .activeBox {
