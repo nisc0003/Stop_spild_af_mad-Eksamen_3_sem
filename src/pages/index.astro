@@ -141,9 +141,9 @@ import Button2 from "../components/Buttons2.astro";
         </div>
       </div>
 
-      <div>
+      <div class="sm:mt-5 lg:mt-0 flex flex-col place-content-between">
         <img src="/img/index_frugt.png" alt="" class="" />
-        <Link variant="orange">LÆS MERE OM OS</Link>
+        <Link href="/wip" variant="orange">LÆS MERE OM OS</Link>
       </div>
     </section>
 
@@ -174,9 +174,13 @@ import Button2 from "../components/Buttons2.astro";
           />
 
           <img src="/img/dr.png" alt="" class="hidden" id="dr_img" />
+          <img src="/img/jp.png" alt="" class="hidden" id="jp_img" />
+          <img src="/img/pol.png" alt="" class="hidden" id="pol_img" />
+          <img src="/img/tv2.png" alt="" class="hidden" id="tv2_img" />
+          <img src="/img/huff.png" alt="" class="hidden" id="huff_img" />
         </div>
 
-        <div class="place-self-center">
+        <div class="place-self-center flex-wrap">
           <div class="flex flex-col gap-5 mr-5" id="bbc_text">
             <Heading htmlheading="h2" size="small">BBC</Heading>
             <Heading htmlheading="h2" size="medium"
@@ -192,6 +196,42 @@ import Button2 from "../components/Buttons2.astro";
               >10.000 FATTIGE DANSKERE FÅR JULEMAD FRA SUPERMARKEDER
             </Heading>
             <Text>19 december 2016</Text>
+            <Link> LÆS ARTIKLEN </Link>
+          </div>
+
+          <div class="hidden flex-col gap-5 mr-5" id="jp_text">
+            <Heading htmlheading="h2" size="small">JYLLANDS-POSTEN</Heading>
+            <Heading htmlheading="h2" size="medium"
+              >10.000 VIDENCENTER VIL BEKÆMPE MADSPILD MED NY HJEMMESIDE
+            </Heading>
+            <Text>8 august 2016</Text>
+            <Link> LÆS ARTIKLEN </Link>
+          </div>
+
+          <div class="hidden flex-col gap-5 mr-5" id="pol_text">
+            <Heading htmlheading="h2" size="small">POLITIKEN</Heading>
+            <Heading htmlheading="h2" size="medium"
+              >MADSPILDS-AKTIVIST: PRIVATE ER STADIG DE STØRSTE SYNDERE
+            </Heading>
+            <Text>16 marts 2017</Text>
+            <Link> LÆS ARTIKLEN </Link>
+          </div>
+
+          <div class="hidden flex-col gap-5 mr-5" id="tv2_text">
+            <Heading htmlheading="h2" size="small">TV2 NEWS</Heading>
+            <Heading htmlheading="h2" size="medium"
+              >SÅDAN UNDGÅR DU MADSPILD
+            </Heading>
+            <Text>3 marts 2017</Text>
+            <Link> LÆS ARTIKLEN </Link>
+          </div>
+
+          <div class="hidden flex-col gap-5 mr-5" id="huff_text">
+            <Heading htmlheading="h2" size="small">THE HUFFINGTON POST</Heading>
+            <Heading htmlheading="h2" size="medium"
+              >THE FIGHT AGAINST FOOD WASTE IS BECOMING BIG BUSSINESS
+            </Heading>
+            <Text>14 februar 2017</Text>
             <Link> LÆS ARTIKLEN </Link>
           </div>
         </div>

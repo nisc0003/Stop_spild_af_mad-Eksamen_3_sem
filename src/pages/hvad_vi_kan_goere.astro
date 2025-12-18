@@ -262,12 +262,12 @@ import Header from "../components/Header.astro";
     >
   </section>
 
-  <section class="sm:ml-25 lg:mr-section_right lg:ml-section_left">
+  <section class="lg:mr-section_right lg:ml-section_left">
     <div
       class="tidslinje sm:flex sm:flex-col lg:flex-row lg:max-h-100 lg:w-auto"
     >
       <div
-        class="sm:order-3 sm:w-full sm:overflow-hidden lg:w-auto lg:max-h-100 lg:overflow-y-auto"
+        class="sm:order-3 sm:w-full sm:overflow-hidden lg:order-1 lg:w-auto lg:max-h-100 lg:overflow-y-auto"
       >
         <ul
           class="sm:overflow-x-auto sm:overflow-y-hidden w-full sm:pr-55 lg:pr-0 sm:flex sm:flex-nowrap lg:flex-col gap-10"
@@ -293,7 +293,7 @@ import Header from "../components/Header.astro";
         </ul> -->
       </div>
       <div class="sm:order-1 lg:order-3 flex flex-col lg:flex-1">
-        <div class="flex flex-row li1_content" id="li1_content">
+        <div class="flex sm:flex-col lg:flex-row li1_content" id="li1_content">
           <img src="/img/2008.png" alt="" />
           <div class="flex flex-col gap-10">
             <h1>Begyndelsen</h1>
@@ -364,239 +364,239 @@ import Header from "../components/Header.astro";
         </div>
       </div>
     </div>
-
-    <section
-      class="lg:mr-section_right lg:ml-section_left mb-section_buttom mt-section_top"
-    >
-      <Heading htmlheading="h1" size="medium" stylingclasses="mb-6">
-        Vores TEDx Talks
-      </Heading>
-
-      <div class="active">
-        <video width="100%" controls id="vid2012">
-          <source src="img/vids/TedX_2012.mp4" type="video/mp4" />
-        </video>
-      </div>
-
-      <div class="inactive">
-        <video width="100%" controls id="vid2016">
-          <source src="img/vids/TedX_2016.mp4" type="video/mp4" />
-        </video>
-      </div>
-
-      <section class="grid grid-cols-2 gap-5 mt-5">
-        <Link href="#" variant="orange" size="large" id="2012_btn"> 2012 </Link>
-        <Link href="#" variant="orange" size="large" id="2016_btn"> 2016 </Link>
-      </section>
-    </section>
-
-    <div>
-      <a href="#" id="scrollToTop" class="material-icons-outlined">
-        <Button>TILBAGE TIL TOPPEN</Button>
-      </a>
-    </div>
   </section>
 
-  <style>
-    .activeTime {
-      color: purple;
-      cursor: default;
-    }
+  <section
+    class="lg:mr-section_right lg:ml-section_left mb-section_buttom mt-section_top"
+  >
+    <Heading htmlheading="h1" size="medium" stylingclasses="mb-6">
+      Vores TEDx Talks
+    </Heading>
 
-    .inactiveBox {
-      display: none;
-    }
+    <div class="active">
+      <video width="100%" controls id="vid2012">
+        <source src="img/vids/TedX_2012.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <div class="inactive">
+      <video width="100%" controls id="vid2016">
+        <source src="img/vids/TedX_2016.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <section class="grid grid-cols-2 gap-5 mt-5">
+      <Link href="#" variant="orange" size="large" id="2012_btn"> 2012 </Link>
+      <Link href="#" variant="orange" size="large" id="2016_btn"> 2016 </Link>
+    </section>
+  </section>
+
+  <div>
+    <a href="#" id="scrollToTop" class="material-icons-outlined">
+      <Button>TILBAGE TIL TOPPEN</Button>
+    </a>
+  </div>
+</MainLayout>
+
+<style>
+  .activeTime {
+    color: purple;
+    cursor: default;
+  }
+
+  .inactiveBox {
+    display: none;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  ul {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+  }
+
+  li {
+    cursor: pointer;
 
     h1 {
-      font-size: 4rem;
+      font-size: 5rem;
+    }
+  }
+
+  .active {
+    display: block;
+  }
+
+  .inactive {
+    display: none;
+  }
+
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    animation: spin 20s infinite linear;
+    padding-right: 1em;
+  }
+
+  .carousel_img {
+    flex: 0 0 5em;
+    align-content: center;
+    padding: 1em;
+  }
+
+  @keyframes spin {
+    from {
+      translate: 0;
+    }
+    to {
+      translate: -100%;
+    }
+  }
+
+  #scrollToTop {
+    animation-timeline: scroll(y);
+    scroll-behavior: smooth;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+    // TEDx Talk JS
+    const btn2012 = document.getElementById("2012_btn");
+    const btn2016 = document.getElementById("2016_btn");
+    const vid2012 = document.getElementById("vid2012");
+    const vid2016 = document.getElementById("vid2016");
+
+    if (btn2012 && btn2016 && vid2012 && vid2016) {
+      btn2012.addEventListener("click", (e) => {
+        e.preventDefault();
+        vid2016.classList.remove("active");
+        vid2016.classList.add("inactive");
+        vid2012.classList.remove("inactive");
+        vid2012.classList.add("active");
+      });
+
+      btn2016.addEventListener("click", (e) => {
+        e.preventDefault();
+        vid2012.classList.remove("active");
+        vid2012.classList.add("inactive");
+        vid2016.classList.remove("inactive");
+        vid2016.classList.add("active");
+      });
     }
 
-    ul::-webkit-scrollbar {
-      display: none;
-    }
-
-    ul {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-      scroll-behavior: smooth;
-    }
-
-    li {
-      cursor: pointer;
-
-      h1 {
-        font-size: 5rem;
-      }
-    }
-
-    .active {
-      display: block;
-    }
-
-    .inactive {
-      display: none;
-    }
-
-    .carousel {
-      display: flex;
-      overflow-x: auto;
-    }
-
-    .carousel::-webkit-scrollbar {
-      display: none;
-    }
-
-    .group {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1em;
-      animation: spin 20s infinite linear;
-      padding-right: 1em;
-    }
-
-    .carousel_img {
-      flex: 0 0 5em;
-      align-content: center;
-      padding: 1em;
-    }
-
-    @keyframes spin {
-      from {
-        translate: 0;
-      }
-      to {
-        translate: -100%;
-      }
-    }
-
-    #scrollToTop {
-      animation-timeline: scroll(y);
-      scroll-behavior: smooth;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  </style>
-
-  <script is:inline>
-    document.addEventListener("DOMContentLoaded", function () {
-      // TEDx Talk JS
-      const btn2012 = document.getElementById("2012_btn");
-      const btn2016 = document.getElementById("2016_btn");
-      const vid2012 = document.getElementById("vid2012");
-      const vid2016 = document.getElementById("vid2016");
-
-      if (btn2012 && btn2016 && vid2012 && vid2016) {
-        btn2012.addEventListener("click", (e) => {
-          e.preventDefault();
-          vid2016.classList.remove("active");
-          vid2016.classList.add("inactive");
-          vid2012.classList.remove("inactive");
-          vid2012.classList.add("active");
-        });
-
-        btn2016.addEventListener("click", (e) => {
-          e.preventDefault();
-          vid2012.classList.remove("active");
-          vid2012.classList.add("inactive");
-          vid2016.classList.remove("inactive");
-          vid2016.classList.add("active");
-        });
-      }
-
-      // Scroll to top
-      const scrollToTopBtn = document.getElementById("scrollToTop");
-      if (scrollToTopBtn) {
-        scrollToTopBtn.addEventListener("click", function (e) {
-          e.preventDefault();
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          });
-        });
-      }
-
-      // Stagger animation for cart images - Simple vanilla JS version
-      function initStaggerAnimation() {
-        const staggerContainer = document.getElementById("stagger");
-        if (!staggerContainer) {
-          console.warn("Stagger container not found");
-          return;
-        }
-
-        const images = staggerContainer.querySelectorAll("img");
-        if (images.length === 0) {
-          console.warn("No images found in stagger container");
-          return;
-        }
-
-        // Set initial opacity to 0
-        images.forEach((img) => {
-          img.style.opacity = "0";
-          img.style.transition = "opacity 0.6s ease-in-out";
-        });
-
-        // Use Intersection Observer to trigger animation when element is in view
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                // Animate images with stagger effect
-                images.forEach((img, index) => {
-                  setTimeout(() => {
-                    img.style.opacity = "1";
-                  }, index * 150); // 150ms delay between each image
-                });
-                observer.unobserve(staggerContainer);
-              }
-            });
-          },
-          { threshold: 0.1 },
-        );
-
-        observer.observe(staggerContainer);
-      }
-
-      // Initialize stagger animation
-      initStaggerAnimation();
-
-      // ===== TIDSLINJE (TIMELINE) JAVASCRIPT =====
-      // This section handles the interactive timeline where users can click on years (2008-2015)
-      // to switch between different content boxes showing historical events
-
-      // Create arrays for years and their corresponding content boxes
-      const timelineItems = [];
-      for (let i = 1; i <= 8; i++) {
-        const listElement = document.getElementById(`li${i}`);
-        const contentElement = document.getElementById(`li${i}_content`);
-        if (listElement && contentElement) {
-          timelineItems.push({ list: listElement, box: contentElement });
-        }
-      }
-
-      // Generic function to handle timeline year clicks
-      function activateTimelineYear(activeIndex) {
-        timelineItems.forEach((item, index) => {
-          if (index === activeIndex) {
-            // Activate this year
-            item.list.classList.add("activeTime");
-            item.box.classList.remove("inactiveBox");
-          } else {
-            // Deactivate all other years
-            item.list.classList.remove("activeTime");
-            item.box.classList.add("inactiveBox");
-          }
-        });
-      }
-
-      // Add click listeners to all timeline items
-      timelineItems.forEach((item, index) => {
-        item.list.addEventListener("click", () => {
-          activateTimelineYear(index);
+    // Scroll to top
+    const scrollToTopBtn = document.getElementById("scrollToTop");
+    if (scrollToTopBtn) {
+      scrollToTopBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
         });
       });
+    }
+
+    // Stagger animation for cart images - Simple vanilla JS version
+    function initStaggerAnimation() {
+      const staggerContainer = document.getElementById("stagger");
+      if (!staggerContainer) {
+        console.warn("Stagger container not found");
+        return;
+      }
+
+      const images = staggerContainer.querySelectorAll("img");
+      if (images.length === 0) {
+        console.warn("No images found in stagger container");
+        return;
+      }
+
+      // Set initial opacity to 0
+      images.forEach((img) => {
+        img.style.opacity = "0";
+        img.style.transition = "opacity 0.6s ease-in-out";
+      });
+
+      // Use Intersection Observer to trigger animation when element is in view
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Animate images with stagger effect
+              images.forEach((img, index) => {
+                setTimeout(() => {
+                  img.style.opacity = "1";
+                }, index * 150); // 150ms delay between each image
+              });
+              observer.unobserve(staggerContainer);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      observer.observe(staggerContainer);
+    }
+
+    // Initialize stagger animation
+    initStaggerAnimation();
+
+    // ===== TIDSLINJE (TIMELINE) JAVASCRIPT =====
+    // This section handles the interactive timeline where users can click on years (2008-2015)
+    // to switch between different content boxes showing historical events
+
+    // Create arrays for years and their corresponding content boxes
+    const timelineItems = [];
+    for (let i = 1; i <= 8; i++) {
+      const listElement = document.getElementById(`li${i}`);
+      const contentElement = document.getElementById(`li${i}_content`);
+      if (listElement && contentElement) {
+        timelineItems.push({ list: listElement, box: contentElement });
+      }
+    }
+
+    // Generic function to handle timeline year clicks
+    function activateTimelineYear(activeIndex) {
+      timelineItems.forEach((item, index) => {
+        if (index === activeIndex) {
+          // Activate this year
+          item.list.classList.add("activeTime");
+          item.box.classList.remove("inactiveBox");
+        } else {
+          // Deactivate all other years
+          item.list.classList.remove("activeTime");
+          item.box.classList.add("inactiveBox");
+        }
+      });
+    }
+
+    // Add click listeners to all timeline items
+    timelineItems.forEach((item, index) => {
+      item.list.addEventListener("click", () => {
+        activateTimelineYear(index);
+      });
     });
-  </script>
-</MainLayout>
+  });
+</script>
