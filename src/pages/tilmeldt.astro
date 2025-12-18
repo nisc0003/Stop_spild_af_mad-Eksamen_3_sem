@@ -5,4 +5,61 @@ import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 ---
 
-<MainLayout title="Kontakt os" />
+<MainLayout title="Kontakt os">
+  <Heading>TILMELDING</Heading>
+  <Text
+    >Tak fordi du vil støtte os. Inden vi kan tage i mod din hjælp skal du
+    oplyse din email og hvilken form for støtte du vil give. Vi kontakter dig
+    efterfølgende og bekræfter din tilmelding.</Text
+  >
+
+  <select
+    class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+  >
+    <option>skbidi toilet</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+    <option>Option 4</option>
+    <option>Option 5</option>
+    <option>Option 6</option>
+  </select>
+  <form>
+    <div>
+      <label for="name">fornavn:</label><br />
+      <input type="text" id="name" name="fornavn" required />
+    </div>
+    <div>
+      <label for="name">efternavn:</label><br />
+      <input type="text" id="name" name="efternavn" required />
+    </div>
+    <div>
+      <label for="tel">Telefon:</label><br />
+      <input type="tel" id="tel" name="tlf" required />
+    </div>
+
+    <div>
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required />
+    </div>
+  </form>
+</MainLayout>
+
+<!-- 
+  Base	Class
+[type='text']	form-input
+[type='email']	form-input
+[type='url']	form-input
+[type='password']	form-input
+[type='number']	form-input
+[type='date']	form-input
+[type='datetime-local']	form-input
+[type='month']	form-input
+[type='search']	form-input
+[type='tel']	form-input
+[type='time']	form-input
+[type='week']	form-input
+textarea	form-textarea
+select	form-select
+select[multiple]	form-multiselect
+[type='checkbox']	form-checkbox
+[type='radio']	form-radio -->
