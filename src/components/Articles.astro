@@ -1,0 +1,158 @@
+---
+import Heading from "../components/Heading.astro";
+import Button2 from "../components/Buttons2.astro";
+import Text from "../components/Text.astro";
+import Link from "../components/Link.astro";
+---
+
+<section
+  class="flex flex-col gap-5 lg:mr-section_right lg:ml-section_left mb-section_buttom mt-section_top"
+>
+  <Heading>LÆR MERE OMG KAMPEN IMOD MADSPILD</Heading>
+
+  <section class="border border-black flex sm:flex-col lg:flex-row gap-5">
+    <div class="shrink-0 relative cursor-pointer">
+      <img src="/img/bbc.png" alt="" class="bbc_vid" id="bbc_vid" />
+      <img
+        src="/img/play_green.svg"
+        alt=""
+        class="bbc_vid_btn absolute inset-0 m-auto"
+        id="bbc_vid"
+      />
+
+      <img src="/img/dr.png" alt="" class="hidden" id="dr_img" />
+      <img src="/img/jp.png" alt="" class="hidden" id="jp_img" />
+      <img src="/img/pol.png" alt="" class="hidden" id="pol_img" />
+      <img src="/img/tv2.png" alt="" class="hidden" id="tv2_img" />
+      <img src="/img/huff.png" alt="" class="hidden" id="huff_img" />
+    </div>
+
+    <div class="place-self-center flex-wrap">
+      <div class="flex flex-col gap-5 mr-5" id="bbc_text">
+        <Heading htmlheading="h2" size="small">BBC</Heading>
+        <Heading htmlheading="h2" size="medium"
+          >HOW ONE WOMAN IS WINNING THE FIGHT AGAINST FOOD WASTE
+        </Heading>
+        <Text>27 februar 2017</Text>
+        <Link> LÆS ARTIKLEN </Link>
+      </div>
+
+      <div class="hidden flex-col gap-5 mr-5" id="dr_text">
+        <Heading htmlheading="h2" size="small">DR</Heading>
+        <Heading htmlheading="h2" size="medium"
+          >10.000 FATTIGE DANSKERE FÅR JULEMAD FRA SUPERMARKEDER
+        </Heading>
+        <Text>19 december 2016</Text>
+        <Link> LÆS ARTIKLEN </Link>
+      </div>
+
+      <div class="hidden flex-col gap-5 mr-5" id="jp_text">
+        <Heading htmlheading="h2" size="small">JYLLANDS-POSTEN</Heading>
+        <Heading htmlheading="h2" size="medium"
+          >10.000 VIDENCENTER VIL BEKÆMPE MADSPILD MED NY HJEMMESIDE
+        </Heading>
+        <Text>8 august 2016</Text>
+        <Link> LÆS ARTIKLEN </Link>
+      </div>
+
+      <div class="hidden flex-col gap-5 mr-5" id="pol_text">
+        <Heading htmlheading="h2" size="small">POLITIKEN</Heading>
+        <Heading htmlheading="h2" size="medium"
+          >MADSPILDS-AKTIVIST: PRIVATE ER STADIG DE STØRSTE SYNDERE
+        </Heading>
+        <Text>16 marts 2017</Text>
+        <Link> LÆS ARTIKLEN </Link>
+      </div>
+
+      <div class="hidden flex-col gap-5 mr-5" id="tv2_text">
+        <Heading htmlheading="h2" size="small">TV2 NEWS</Heading>
+        <Heading htmlheading="h2" size="medium"
+          >SÅDAN UNDGÅR DU MADSPILD
+        </Heading>
+        <Text>3 marts 2017</Text>
+        <Link> LÆS ARTIKLEN </Link>
+      </div>
+
+      <div class="hidden flex-col gap-5 mr-5" id="huff_text">
+        <Heading htmlheading="h2" size="small">THE HUFFINGTON POST</Heading>
+        <Heading htmlheading="h2" size="medium"
+          >THE FIGHT AGAINST FOOD WASTE IS BECOMING BIG BUSSINESS
+        </Heading>
+        <Text>14 februar 2017</Text>
+        <Link> LÆS ARTIKLEN </Link>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="flex flex-row sm:justify-baseline sm:place-content-center lg:justify-between gap-5 flex-wrap"
+  >
+    <Button2 variant="green" id="bbc_link"> BBC </Button2>
+    <Button2 variant="green-inverted" id="dr_link"> DR </Button2>
+    <Button2 variant="green-inverted" id="jp_link"> JYLLANDS-POSTEN </Button2>
+    <Button2 variant="green-inverted" id="pol_link"> POLITIKEN </Button2>
+    <Button2 variant="green-inverted" id="tv2_link"> TV2 NEWS </Button2>
+    <Button2 variant="green-inverted" id="huff_link">
+      THE HUFFINGTON POST
+    </Button2>
+  </section>
+</section>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Media links swap functionality
+    const mediaLinks = [
+      { id: "bbc_link", contentId: "bbc_text", imageId: "bbc_vid" },
+      { id: "dr_link", contentId: "dr_text", imageId: "dr_img" },
+      { id: "jp_link", contentId: "jp_text", imageId: "jp_img" },
+      { id: "pol_link", contentId: "pol_text", imageId: "pol_img" },
+      { id: "tv2_link", contentId: "tv2_text", imageId: "tv2_img" },
+      { id: "huff_link", contentId: "huff_text", imageId: "huff_img" },
+    ];
+
+    mediaLinks.forEach((media) => {
+      const link = document.getElementById(media.id);
+
+      if (link) {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          // Hide all content, images, and reset link styles
+          mediaLinks.forEach((m) => {
+            const otherContent = document.getElementById(m.contentId);
+            const otherImage = document.getElementById(m.imageId);
+            const otherLink = document.getElementById(m.id);
+
+            if (otherContent) {
+              otherContent.classList.remove("flex");
+              otherContent.classList.add("hidden");
+            }
+            if (otherImage) {
+              otherImage.classList.add("hidden");
+            }
+            if (otherLink) {
+              otherLink.classList.remove("media-active");
+            }
+          });
+
+          // Show current content and image
+          const content = document.getElementById(media.contentId);
+          const image = document.getElementById(media.imageId);
+
+          if (content) {
+            content.classList.remove("hidden");
+            content.classList.add("flex");
+          }
+          if (image) {
+            image.classList.remove("hidden");
+          }
+
+          // Highlight current link
+          link.classList.add("media-active");
+
+          console.log("Clicked:", media.id);
+        });
+      }
+    });
+  });
+</script>
