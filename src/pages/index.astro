@@ -162,13 +162,17 @@ import Sponsors from "../components/Sponsors.astro";
     >
       <Heading>LÆR MERE OMG KAMPEN IMOD MADSPILD</Heading>
 
-      <section class="border border-black flex flex-row gap-5">
-        <div class="shrink-0 relative">
-          <img src="/img/bbc.png" alt="" />
-          <img src="/img/test.svg" alt="" class="absolute inset-0 m-auto" />
+      <section class="border border-black flex sm:flex-col lg:flex-row gap-5">
+        <div class="shrink-0 relative cursor-pointer">
+          <img src="/img/bbc.png" alt="" class="bbc_vid" />
+          <img
+            src="/img/play_green.svg"
+            alt=""
+            class="bbc_vid_btn absolute inset-0 m-auto"
+          />
         </div>
 
-        <div class="place-self-center">
+        <div class="flex flex-col gap-5 place-self-center">
           <Heading htmlheading="h2" size="small">BBC</Heading>
           <Heading htmlheading="h2" size="medium"
             >HOW ONE WOMAN IS WINNING THE FIGHT AGAINST FOOD WASTE
@@ -177,7 +181,9 @@ import Sponsors from "../components/Sponsors.astro";
         </div>
       </section>
 
-      <section class="flex flex-row justify-between gap-5 flex-wrap">
+      <section
+        class="flex flex-row sm:justify-baseline sm:place-content-center lg:justify-between gap-5 flex-wrap"
+      >
         <Link variant="green"> BBC </Link>
         <Link variant="green-inverted"> DR </Link>
         <Link variant="green-inverted"> JYLLANDS-POSTEN </Link>
@@ -298,6 +304,14 @@ import Sponsors from "../components/Sponsors.astro";
       to {
         translate: -100%;
       }
+    }
+
+    .bbc_vid {
+      transition: filter 0.5s ease-in-out;
+    }
+
+    .bbc_vid:hover {
+      filter: brightness(1.5);
     }
   </style>
 </MainLayout>
