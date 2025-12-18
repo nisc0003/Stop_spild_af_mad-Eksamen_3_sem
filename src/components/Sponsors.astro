@@ -1,0 +1,149 @@
+---
+import Text from "./Text.astro";
+const { bg = "bg-yellow-200" } = Astro.props;
+const { tag = "tag" } = Astro.props;
+const { sponsor1 = "navn" } = Astro.props;
+const { sponsor2 = "navn" } = Astro.props;
+const { sponsor3 = "navn" } = Astro.props;
+const { sponsor4 = "navn" } = Astro.props;
+const { sponsor5 = "navn" } = Astro.props;
+const { sponsor6 = "navn" } = Astro.props;
+const defaultclasses = "carousel lg:mr-section_right lg:ml-section_left";
+---
+
+<section class:list={[bg, defaultclasses]}>
+  <section class="group">
+    <div class="flex flex-row carousel_sponsor">
+      <Text>{sponsor1}</Text>
+      <img src="/img/diamond.svg" alt="" />
+    </div>
+
+    <Text>{tag}</Text>
+    <img src="/img/diamond.svg" alt="" />
+
+    <div class="flex flex-row carousel_sponsor">
+      <Text>{sponsor2}</Text>
+      <img src="/img/diamond.svg" alt="" />
+    </div>
+
+    <Text>{tag}</Text>
+    <img src="/img/diamond.svg" alt="" />
+
+    <div class="flex flex-row carousel_sponsor">
+      <Text>{sponsor3}</Text>
+      <img src="/img/diamond.svg" alt="" />
+    </div>
+
+    <Text>{tag}</Text>
+    <img src="/img/diamond.svg" alt="" />
+
+    <div class="flex flex-row carousel_sponsor">
+      <Text>{sponsor4}</Text>
+      <img src="/img/diamond.svg" alt="" />
+    </div>
+
+    <Text>{tag}</Text>
+    <img src="/img/diamond.svg" alt="" />
+
+    <div class="flex flex-row carousel_sponsor">
+      <Text>{sponsor5}</Text>
+      <img src="/img/diamond.svg" alt="" />
+    </div>
+
+    <Text>{tag}</Text>
+    <img src="/img/diamond.svg" alt="" />
+
+    <div class="flex flex-row carousel_sponsor">
+      <Text>{sponsor6}</Text>
+      <img src="/img/diamond.svg" alt="" class="lastDiamond" />
+    </div>
+  </section>
+
+  <section class="group">
+    <div class="flex flex-row carousel_sponsor">
+      <Text>{sponsor1}</Text>
+      <img src="/img/diamond.svg" alt="" />
+    </div>
+
+    <Text>{tag}</Text>
+    <img src="/img/diamond.svg" alt="" />
+
+    <div class="flex flex-row carousel_sponsor">
+      <Text>{sponsor2}</Text>
+      <img src="/img/diamond.svg" alt="" />
+    </div>
+
+    <Text>{tag}</Text>
+    <img src="/img/diamond.svg" alt="" />
+
+    <div class="flex flex-row carousel_sponsor">
+      <Text>{sponsor3}</Text>
+      <img src="/img/diamond.svg" alt="" />
+    </div>
+
+    <Text>{tag}</Text>
+    <img src="/img/diamond.svg" alt="" />
+
+    <div class="flex flex-row carousel_sponsor">
+      <Text>{sponsor4}</Text>
+      <img src="/img/diamond.svg" alt="" />
+    </div>
+
+    <Text>{tag}</Text>
+    <img src="/img/diamond.svg" alt="" />
+
+    <div class="flex flex-row carousel_sponsor">
+      <Text>{sponsor5}</Text>
+      <img src="/img/diamond.svg" alt="" />
+    </div>
+
+    <Text>{tag}</Text>
+    <img src="/img/diamond.svg" alt="" />
+
+    <div class="flex flex-row carousel_sponsor">
+      <Text>{sponsor6}</Text>
+      <img src="/img/diamond.svg" alt="" class="lastDiamond" />
+    </div>
+  </section>
+</section>
+
+<style>
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    animation: spin 5s infinite linear;
+    padding-right: 1em;
+  }
+
+  .carousel_sponsor {
+    flex: 0 0 5em;
+    align-content: center;
+    text-align: center;
+    gap: 1em;
+    padding: 1em;
+  }
+
+  .lastDiamond {
+    margin-right: 3em;
+  }
+
+  @keyframes spin {
+    from {
+      translate: 0;
+    }
+    to {
+      translate: -100%;
+    }
+  }
+</style>
