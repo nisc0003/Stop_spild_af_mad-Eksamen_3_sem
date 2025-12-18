@@ -8,10 +8,58 @@ const { sponsor3 = "navn" } = Astro.props;
 const { sponsor4 = "navn" } = Astro.props;
 const { sponsor5 = "navn" } = Astro.props;
 const { sponsor6 = "navn" } = Astro.props;
-const defaultclasses = "carousel lg:mr-section_right lg:ml-section_left";
+const defaultclasses = "carousel mb-section_buttom mt-section_top";
+const { time = "10s" } = Astro.props;
 ---
 
 <section class:list={[bg, defaultclasses]}>
+  <section class="group">
+    <div class="flex flex-row carousel_sponsor">
+      <Text>{sponsor1}</Text>
+      <img src="/img/diamond.svg" alt="" />
+    </div>
+
+    <Text>{tag}</Text>
+    <img src="/img/diamond.svg" alt="" />
+
+    <div class="flex flex-row carousel_sponsor">
+      <Text>{sponsor2}</Text>
+      <img src="/img/diamond.svg" alt="" />
+    </div>
+
+    <Text>{tag}</Text>
+    <img src="/img/diamond.svg" alt="" />
+
+    <div class="flex flex-row carousel_sponsor">
+      <Text>{sponsor3}</Text>
+      <img src="/img/diamond.svg" alt="" />
+    </div>
+
+    <Text>{tag}</Text>
+    <img src="/img/diamond.svg" alt="" />
+
+    <div class="flex flex-row carousel_sponsor">
+      <Text>{sponsor4}</Text>
+      <img src="/img/diamond.svg" alt="" />
+    </div>
+
+    <Text>{tag}</Text>
+    <img src="/img/diamond.svg" alt="" />
+
+    <div class="flex flex-row carousel_sponsor">
+      <Text>{sponsor5}</Text>
+      <img src="/img/diamond.svg" alt="" />
+    </div>
+
+    <Text>{tag}</Text>
+    <img src="/img/diamond.svg" alt="" />
+
+    <div class="flex flex-row carousel_sponsor">
+      <Text>{sponsor6}</Text>
+      <img src="/img/diamond.svg" alt="" class="lastDiamond" />
+    </div>
+  </section>
+
   <section class="group">
     <div class="flex flex-row carousel_sponsor">
       <Text>{sponsor1}</Text>
@@ -122,7 +170,7 @@ const defaultclasses = "carousel lg:mr-section_right lg:ml-section_left";
     align-items: center;
     justify-content: center;
     gap: 1em;
-    animation: spin 5s infinite linear;
+    animation: spin 10s infinite linear;
     padding-right: 1em;
   }
 
