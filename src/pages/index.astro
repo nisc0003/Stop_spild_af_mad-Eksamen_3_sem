@@ -5,6 +5,7 @@ import Text from "../components/Text.astro";
 import Link from "../components/Link.astro";
 import Card from "../components/Card.astro";
 import Sponsors from "../components/Sponsors.astro";
+import Button2 from "../components/Buttons2.astro";
 ---
 
 <MainLayout title="Stop Spild Af Mad">
@@ -164,32 +165,51 @@ import Sponsors from "../components/Sponsors.astro";
 
       <section class="border border-black flex sm:flex-col lg:flex-row gap-5">
         <div class="shrink-0 relative cursor-pointer">
-          <img src="/img/bbc.png" alt="" class="bbc_vid" />
+          <img src="/img/bbc.png" alt="" class="bbc_vid" id="bbc_vid" />
           <img
             src="/img/play_green.svg"
             alt=""
             class="bbc_vid_btn absolute inset-0 m-auto"
+            id="bbc_vid"
           />
+
+          <img src="dr.png" alt="" class="hidden" id="dr_img" />
         </div>
 
-        <div class="flex flex-col gap-5 place-self-center">
-          <Heading htmlheading="h2" size="small">BBC</Heading>
-          <Heading htmlheading="h2" size="medium"
-            >HOW ONE WOMAN IS WINNING THE FIGHT AGAINST FOOD WASTE
-          </Heading>
-          <Text>27 februar 2017</Text>
+        <div class="place-self-center">
+          <div class="flex flex-col gap-5 mr-5" id="bbc_text">
+            <Heading htmlheading="h2" size="small">BBC</Heading>
+            <Heading htmlheading="h2" size="medium"
+              >HOW ONE WOMAN IS WINNING THE FIGHT AGAINST FOOD WASTE
+            </Heading>
+            <Text>27 februar 2017</Text>
+            <Link> LÆS ARTIKLEN </Link>
+          </div>
+
+          <div class="hidden flex-col gap-5 mr-5" id="dr_text">
+            <Heading htmlheading="h2" size="small">DR</Heading>
+            <Heading htmlheading="h2" size="medium"
+              >10.000 FATTIGE DANSKERE FÅR JULEMAD FRA SUPERMARKEDER
+            </Heading>
+            <Text>19 december 2016</Text>
+            <Link> LÆS ARTIKLEN </Link>
+          </div>
         </div>
       </section>
 
       <section
         class="flex flex-row sm:justify-baseline sm:place-content-center lg:justify-between gap-5 flex-wrap"
       >
-        <Link variant="green"> BBC </Link>
-        <Link variant="green-inverted"> DR </Link>
-        <Link variant="green-inverted"> JYLLANDS-POSTEN </Link>
-        <Link variant="green-inverted"> POLITIKEN </Link>
-        <Link variant="green-inverted"> TV2 NEWS </Link>
-        <Link variant="green-inverted"> THE HUFFINGTON POST </Link>
+        <Button2 variant="green" id="bbc_link"> BBC </Button2>
+        <Button2 variant="green-inverted" id="dr_link"> DR </Button2>
+        <Button2 variant="green-inverted" id="jp_link">
+          JYLLANDS-POSTEN
+        </Button2>
+        <Button2 variant="green-inverted" id="pol_link"> POLITIKEN </Button2>
+        <Button2 variant="green-inverted" id="tv2_link"> TV2 NEWS </Button2>
+        <Button2 variant="green-inverted" id="huff_link">
+          THE HUFFINGTON POST
+        </Button2>
       </section>
     </section>
 
@@ -197,7 +217,8 @@ import Sponsors from "../components/Sponsors.astro";
       class="lg:mr-section_right lg:ml-section_left mb-section_buttom mt-section_top"
     >
       <div>
-        <Heading htmlheading="h2" size="medium">PRIER OG ANDERKENDELSER</Heading
+        <Heading htmlheading="h2" size="medium"
+          >PRISER OG ANDERKENDELSER</Heading
         >
         <Text
           >Stop Spild Af Mad og dens stifter Selina Juul har fået en lang række
