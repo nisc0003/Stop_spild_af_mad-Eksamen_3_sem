@@ -23,5 +23,109 @@ import Card from "../components/Card.astro";
         Kom i gang
       </Heading>
     </section>
+
+
+    <section class="flex flex-col">
+            <Heading htmlheading="h2" size="medium">QUIZ DIG SELV I MADSPILD</Heading>
+            <div class="grid grid-cols-2">
+              <div class="bg-amber-100 flex flex-row">
+                <div class="flex flex-row gap-2">
+                  
+                  <div><Text>SPØRGSMÅL 1</Text>
+                  <Text>Hvilke af disse mad rester tæller som madspild?</Text>
+                  </div>
+                </div>
+
+
+                  <div class="flex flex-col">
+                    <Text>A</Text>
+                    <Text>Middagsrester og gammel frugt</Text>
+                  </div>
+                </div>
+                <img src="/img/quiz.png" alt="">
+              </div>
+            </div>
+
+                <!-- <Link>SE SVAR </Link> -->
+    </section>
+
+
+    <section class="flex flex-col lg:grid lg:grid-cols-2 lg:gap-5 lg:mr-section_right lg:ml-section_left lg:mb-section_buttom lg:mt-section_top">
+      <div class="flex flex-col gap-5">
+      <Heading htmlheading="h2" size="medium">HVEM ER VI?</Heading>
+        <div class="flex flex-col gap-5">
+          <Text>Stop Spild Af Mad er en non-profit organisation og forbrugerbevægelse, som kæmper mod madspild. Siden 2008 har vi medvirket til at bringe massivt fokus på  madspild i Danmark, samt opnået en lang række resultater i både Danmark, EU, Norden og FN. </Text>
+          <Text>Stop Spild Af Mad har både nationale og internationale samarbejder. Vi bakkes op af over 60.000 danskere, samt en lang række toppolitikere og anerkendte madpersonligheder. Vi arbejder aktivt med FN’s verdensmål for bæredygtig udvikling: UN Sustainable Development Goal 12.3.</Text>
+        </div>
+      </div>
+
+      <div>
+        <img src="/img/index_frugt.png" alt="" class="">
+        <Link variant="orange">LÆS MERE OM OS</Link>
+        </div>
+      </div>
+
+    </section>
+
+
+
+    <section>
+    <div>
+    <Heading htmlheading="h2" size="medium">PRIER OG ANDERKENDELSER</Heading>
+    <Text>Stop Spild Af Mad og dens stifter Selina Juul har fået en lang række priser og anerkendelser, bl.a.:</Text>
+    <Link href="wip" variant="purple">SE FLERE PRISER</Link>
+    </div>
+
+    <section class="carousel">
+      <div class="group">
+        <img src="/img/pris1.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
+        <img src="/img/pris2.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
+        <img src="/img/pris3.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
+      </div>
+
+        <div class="group">
+        <img src="/img/pris1.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
+        <img src="/img/pris2.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
+        <img src="/img/pris3.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
+      </div>
+    </section>
+
+
+    </section>
   </main>
 </MainLayout>
+
+<style>
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    animation: spin 10s infinite linear;
+    padding-right: 1em;
+  }
+
+  .carousel_img {
+    flex: 0 0 5em;
+    align-content: center;
+    padding: 1em;
+  }
+
+  @keyframes spin {
+    from {
+      translate: 0;
+    }
+    to {
+      translate: -100%;
+    }
+  }
+</style>
