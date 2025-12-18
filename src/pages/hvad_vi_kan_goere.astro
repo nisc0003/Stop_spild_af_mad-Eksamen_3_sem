@@ -95,6 +95,12 @@ import Articles from "../components/Articles.astro";
   </section>
 
   <section
+    class="flex flex-col place-items-center mt-10 mb-50 animate-bounce animate-infinite animate-ease-in p-5"
+  >
+    <img src="/img/arrow_d.svg" alt="" id="scrollDown" />
+  </section>
+
+  <section
     class="sm:flex flex-col lg:flex-row lg:mr-section_right lg:ml-section_left mb-section_buttom mt-section_top"
   >
     <img
@@ -241,8 +247,15 @@ import Articles from "../components/Articles.astro";
         </Heading>
       </div>
 
-      <div class="flex flex-col gap-5 lg:w-full">
-        <img src="/img/map_placeholder.png" alt="" class="w-full" />
+      <div class="flex flex-col gap-5 lg:w-full h-full">
+        <div id="mapContainer" class="map-container">
+          <img
+            src="/img/cph_map.png"
+            alt=""
+            id="mapImage"
+            class="map-image h-fit w-fit"
+          />
+        </div>
         <!-- <Button>SE RESTURANTER</Button> -->
         <Link href="wip" variant="purple">SE RESTURANTER</Link>
       </div>
@@ -482,6 +495,32 @@ import Articles from "../components/Articles.astro";
     align-items: center;
     justify-content: center;
   }
+
+  .map-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    cursor: grab;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .map-container.dragging {
+    cursor: grabbing;
+  }
+
+  .map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    user-select: none;
+    transform: scale(3);
+    transform-origin: center;
+    flex-shrink: 0;
+  }
 </style>
 
 <script is:inline>
@@ -517,6 +556,18 @@ import Articles from "../components/Articles.astro";
         e.preventDefault();
         window.scrollTo({
           top: 0,
+          behavior: "smooth",
+        });
+      });
+    }
+
+    // Scroll down :3
+    const scrollDown = document.getElementById("scrollDown");
+    if (scrollDown) {
+      scrollDown.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 750,
           behavior: "smooth",
         });
       });
@@ -565,6 +616,75 @@ import Articles from "../components/Articles.astro";
 
     // Initialize stagger animation
     initStaggerAnimation();
+
+    // ===== DRAGGABLE MAP =====
+    const mapContainer = document.getElementById("mapContainer");
+    const mapImage = document.getElementById("mapImage");
+
+    if (mapContainer && mapImage) {
+      let isDragging = false;
+      let startX = 0;
+      let startY = 0;
+      let offsetX = 0;
+      let offsetY = 0;
+      const scale = 3;
+
+      // Calculate maximum allowed offset
+      const updateBounds = () => {
+        const containerRect = mapContainer.getBoundingClientRect();
+        const imageWidth = mapImage.offsetWidth * scale;
+        const imageHeight = mapImage.offsetHeight * scale;
+
+        window.maxOffsetX = (imageWidth - containerRect.width) / 2 / scale;
+        window.maxOffsetY = (imageHeight - containerRect.height) / 2 / scale;
+      };
+
+      mapImage.addEventListener("load", updateBounds);
+      setTimeout(updateBounds, 100);
+      window.addEventListener("resize", updateBounds);
+
+      mapContainer.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        startX = e.clientX;
+        startY = e.clientY;
+        mapContainer.classList.add("dragging");
+      });
+
+      document.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+
+        const deltaX = e.clientX - startX;
+        const deltaY = e.clientY - startY;
+
+        offsetX += deltaX;
+        offsetY += deltaY;
+
+        // Clamp offsets to prevent dragging out of bounds
+        offsetX = Math.max(
+          -window.maxOffsetX,
+          Math.min(window.maxOffsetX, offsetX),
+        );
+        offsetY = Math.max(
+          -window.maxOffsetY,
+          Math.min(window.maxOffsetY, offsetY),
+        );
+
+        mapImage.style.transform = `scale(${scale}) translate(${offsetX}px, ${offsetY}px)`;
+
+        startX = e.clientX;
+        startY = e.clientY;
+      });
+
+      document.addEventListener("mouseup", () => {
+        isDragging = false;
+        mapContainer.classList.remove("dragging");
+      });
+
+      // Prevent text selection while dragging
+      mapContainer.addEventListener("selectstart", (e) => {
+        if (isDragging) e.preventDefault();
+      });
+    }
 
     // ===== TIDSLINJE (TIMELINE) JAVASCRIPT =====
     // This section handles the interactive timeline where users can click on years (2008-2015)
