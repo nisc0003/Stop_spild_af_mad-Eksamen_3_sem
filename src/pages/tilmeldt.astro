@@ -8,4 +8,361 @@ import Link from "../components/Link.astro";
 import Card from "../components/Card.astro";
 ---
 
-<MainLayout title="" />
+<MainLayout title="Bliv støttemedlem">
+  <!-- Hero Section -->
+  <div class="mr-section_right ml-section_left mt-section_top mb-8">
+    <div class="mb-6">
+      <Link href="/bliv_aktiv" variant="textlink"> ← Tilbage </Link>
+    </div>
+    <Heading htmlheading="h1" size="large" stylingclasses="mb-6">
+      Bliv støttemedlem
+    </Heading>
+  </div>
+
+  <!-- Green Info Section -->
+  <section class="bg-green--400">
+    <div class="mr-section_right ml-section_left py-12 md:py-16 lg:py-20">
+      <div class="grid gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16 lg:items-start">
+        <!-- Stats Box -->
+        <div
+          class="order-1 intersect:animate-fade-up intersect-once lg:sticky lg:top-24 self-center"
+        >
+          <!-- Media Section -->
+
+          <div class="radius-contentBox overflow-hidden shadow-xl">
+            <img
+              src="/img/stoettemedlemsingle.svg"
+              alt="Bliv støttemedlem"
+              class="w-full h-auto"
+            />
+          </div>
+        </div>
+
+        <!-- Content Column -->
+        <div class="order-2 space-y-6 lg:space-y-8">
+          <Heading
+            htmlheading="h2"
+            size="medium"
+            font="sans"
+            stylingclasses="text-white"
+          >
+            HVAD INDEBÆRER DET?
+          </Heading>
+
+          <div class="space-y-4 lg:space-y-6">
+            <Text
+              stylingclasses="text-white text-base md:text-lg leading-relaxed"
+            >
+              Privatpersoner, erhvervsvirksomheder, kommuner, foreninger,
+              institutioner og organisationer kan blive støttemedlemmer af
+              foreningen Stop Spild Af Mad, og derved aktivt støtte foreningen
+              Stop Spild Af Mads arbejde i mod madspild.
+            </Text>
+
+            <Text
+              stylingclasses="text-white text-base md:text-lg leading-relaxed font-semibold"
+            >
+              Det er gratis at blive støttemedlem af foreningen Stop Spild Af
+              Mad.
+            </Text>
+          </div>
+
+          <div class="pt-4">
+            <Link href="/tilmeldt" variant="green-inverted" size="large">
+              Gå til Tilmelding
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cards Section -->
+  <section
+    class="bg-white mr-section_right ml-section_left py-16 md:py-20 lg:py-24"
+  >
+    <Heading
+      htmlheading="h2"
+      size="large"
+      stylingclasses="text-center mb-12 md:mb-16"
+    >
+      Hvad går din støtte til?
+    </Heading>
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10"
+    >
+      <!-- Card 1 - Madspilds Manifest -->
+      <article
+        class="bg-white radius-contentBox border-2 border-gray-200 overflow-hidden flex flex-col shadow-md hover:shadow-2xl hover:border-green--400 transition-all duration-300 hover:-translate-y-1 intersect:animate-fade-up intersect-once group"
+      >
+        <div
+          class="w-full p-[2rem] pb-[1rem] flex justify-center flex-shrink-0"
+        >
+          <img
+            src="/img/stoettelogo1.png"
+            alt="Uddannelse logo"
+            class="w-full max-w-[10rem] h-auto object-contain"
+          />
+        </div>
+        <div class="p-8 flex flex-col flex-grow">
+          <Heading
+            htmlheading="h3"
+            size="xsmall"
+            font="sanstight"
+            weight="semibold"
+            stylingclasses="text-center mb-6"
+          >
+            Madspilds Manifest
+          </Heading>
+
+          <Text
+            font="sans"
+            weight="normal"
+            stylingclasses="text-center mb-6 flex-grow text-sm md:text-base leading-relaxed text-gray-700"
+          >
+            Sammen med Coop Danmark har vi udarbejdet et Madspilds Manifest, og
+            det lykkedes i perioden januar til september 2014 Coop Danmark at
+            reducere madspild med 9,8% i deres butikker.
+          </Text>
+
+          <div class="mt-auto pt-4 flex justify-center">
+            <Link href="/bliv_aktiv" variant="black" size="small">
+              Læs mere
+            </Link>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 - Øget Fokus -->
+      <article
+        class="bg-white radius-contentBox border-2 border-gray-200 overflow-hidden flex flex-col shadow-md hover:shadow-2xl hover:border-green--400 transition-all duration-300 hover:-translate-y-1 intersect:animate-fade-up intersect-once animate-delay-100 group"
+      >
+        <div
+          class="w-full p-[2rem] pb-[1rem] flex justify-center flex-shrink-0"
+        >
+          <img
+            src="/img/stoettelogo2.png"
+            alt="Uddannelse logo"
+            class="w-full max-w-[10rem] h-auto object-contain"
+          />
+        </div>
+        <div class="p-8 flex flex-col flex-grow">
+          <Heading
+            htmlheading="h3"
+            size="xsmall"
+            font="sanstight"
+            weight="semibold"
+            stylingclasses="text-center mb-6"
+          >
+            Øget Fokus
+          </Heading>
+
+          <Text
+            font="sans"
+            weight="normal"
+            stylingclasses="text-center mb-6 flex-grow text-sm md:text-base leading-relaxed text-gray-700"
+          >
+            Vi har medvirket til at danskerne har øget sit fokus på at undgå
+            madspild. Ifølge tal fra Landbrug & Fødevarer fra 2016 svarede 83%
+            at de var blevet mere interesserede i at minimere husstandens
+            madspild.
+          </Text>
+
+          <div class="mt-auto pt-4 flex justify-center">
+            <Link href="/bliv_aktiv" variant="black" size="small">
+              Læs mere
+            </Link>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 - Mængderabatter -->
+      <article
+        class="bg-white radius-contentBox border-2 border-gray-200 overflow-hidden flex flex-col shadow-md hover:shadow-2xl hover:border-green--400 transition-all duration-300 hover:-translate-y-1 intersect:animate-fade-up intersect-once animate-delay-200 group"
+      >
+        <div
+          class="w-full p-[2rem] pb-[1rem] flex justify-center flex-shrink-0"
+        >
+          <img
+            src="/img/stoettelogo3.png"
+            alt="Uddannelse logo"
+            class="w-full max-w-[10rem] h-auto object-contain"
+          />
+        </div>
+        <div class="p-8 flex flex-col flex-grow">
+          <Heading
+            htmlheading="h3"
+            size="xsmall"
+            font="sanstight"
+            weight="semibold"
+            stylingclasses="text-center mb-6"
+          >
+            Mængderabatter
+          </Heading>
+
+          <Text
+            font="sans"
+            weight="normal"
+            stylingclasses="text-center mb-6 flex-grow text-sm md:text-base leading-relaxed text-gray-700"
+          >
+            Stop Spild Af Mad har været medvirkende inspiration til at
+            butikskæden REMA 1000 har droppet mængderabatter i kædens alle
+            danske butikker og derved medvirker til mindre madspild.
+          </Text>
+
+          <div class="mt-auto pt-4 flex justify-center">
+            <Link href="/bliv_aktiv" variant="black" size="small">
+              Læs mere
+            </Link>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Se Andre Støtteformer Section -->
+  <section class="bg-yellow--100 py-16 md:py-20 lg:py-24">
+    <div class="mr-section_right ml-section_left">
+      <Heading
+        htmlheading="h3"
+        size="large"
+        stylingclasses="text-center mb-12 md:mb-16"
+      >
+        Se andre støtteformer
+      </Heading>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
+      >
+        <Card
+          slug="frivillig"
+          title="Bliv frivillig"
+          image="/img/frivillig.webp"
+          subtitle="Lær at lave lækre retter med restmad"
+          textfield1="Deltag i vores madlavningsworkshops hvor vi lærer dig hvordan du kan udnytte restmad til at lave fantastiske retter."
+          textfield2="Vi afholder workshops både for begyndere og øvede kokke, hvor fokus er på kreativitet og bæredygtighed."
+          textfield3="Alle ingredienser stilles til rådighed, og du får opskrifter med hjem."
+          list={[
+            "Madlavningsteknikker",
+            "Opskrifter på restmad",
+            "Bæredygtig madlavning",
+            "Gratis deltagelse",
+          ]}
+          id="madlavning-workshops"
+          link="/tilmeldt"
+          mediaType="video"
+          mediaSrc="/img/vids/TedX_2012.mp4"
+        />
+
+        <Card
+          slug="stoettemedlem"
+          title="Bliv støttemedlem"
+          image="/img/stoettemedlem.webp"
+          subtitle="Hjælp os ved vores mange events"
+          textfield1="Bliv frivillig og hjælp os med at sprede budskabet om madspild ved events rundt om i landet."
+          textfield2="Som frivillig får du mulighed for at møde ligesindede, gøre en forskel og få værdifuld erfaring."
+          textfield3="Vi holder events året rundt - både store og små arrangementer."
+          list={["Festivaler", "Gadeevents", "Konferencer", "Workshops"]}
+          id="frivillig-events"
+          link="/tilmeldt"
+          mediaType="image"
+          mediaSrc="/img/aktivitet2.jpg"
+        />
+
+        <Card
+          slug="samarbejdspartner"
+          title="Bliv samarbejdspartner"
+          image="/img/samarbejdspartner.webp"
+          subtitle="Professionelle kokkekurser mod madspild"
+          textfield1="Tag på kokkekursus med professionelle kokke som lærer dig tricks til at minimere madspild i hverdagen."
+          textfield2="Kurserne er hands-on og du får mulighed for at smage alle de lækre retter."
+          textfield3="Perfekt til både privatpersoner og restauratører der vil lære mere."
+          list={[
+            "Professionelle instruktører",
+            "3 timers kursus",
+            "Certifikat",
+            "Netværk med andre",
+          ]}
+          id="kokkekurser"
+          link="/tilmeldt"
+          mediaType="image"
+          mediaSrc="/img/aktivitet3.jpg"
+        />
+
+        <Card
+          slug="erhvervspartner"
+          title="Bliv erhvervspartner"
+          image="/img/erhvervspartner.webp"
+          subtitle="Støt vores mærkningsordning"
+          textfield1="Vores mærkningsordning hjælper forbrugerne med at identificere produkter der er tæt på udløbsdato."
+          textfield2="Ved at købe disse produkter hjælper du med at reducere madspild og spare penge."
+          textfield3="Mærkningen findes i flere supermarkedskæder rundt om i landet."
+          list={[
+            "Tilgængelig i Rema 1000",
+            "Op til 50% rabat",
+            "Friske varer",
+            "Kvalitetssikret",
+          ]}
+          id="bekaempmadspild-maerkning"
+          link="/tilmeldt"
+          mediaType="image"
+          mediaSrc="/img/aktivitet4.jpg"
+        />
+
+        <Card
+          slug="spred-budskabet"
+          title="Spred budskabet"
+          image="/img/spred_budskab.webp"
+          subtitle="Hjælp med at distribuere overskudsmad"
+          textfield1="Vær med til at distribuere overskudsmad fra supermarkeder og restauranter til dem der har brug for det."
+          textfield2="Vi samler madvarer ind der ellers ville blive smidt ud og sikrer at de kommer til gode formål."
+          textfield3="Som frivillig bliver du en vigtig del af vores redningshold."
+          list={[
+            "Fleksible vagter",
+            "Meningsfuldt arbejde",
+            "Fællesskab",
+            "Gør en forskel",
+          ]}
+          id="maddistribution"
+          link="/tilmeldt"
+          mediaType="image"
+          mediaSrc="/img/aktivitet5.jpg"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="my-section_top">
+    <div
+      class="mr-section_right ml-section_left max-w-2xl mx-auto text-center lg:text-left"
+    >
+      <Heading htmlheading="h4" size="large" stylingclasses="mb-6">
+        Kontakt os
+      </Heading>
+
+      <Text
+        stylingclasses="mb-8 text-base md:text-lg leading-relaxed text-gray-700"
+      >
+        Er du i tvivl om noget eller vil du gerne vide mere? Skriv endelig til
+        os!
+      </Text>
+
+      <Link href="mailto:info@stopspildafmad.org" variant="black" size="medium">
+        Send os en mail
+      </Link>
+    </div>
+  </section>
+</MainLayout>
+
+<script>
+  import Alpine from "alpinejs";
+  Alpine.start();
+</script>
+
+<style>
+  [x-cloak] {
+    display: none !important;
+  }
+</style>

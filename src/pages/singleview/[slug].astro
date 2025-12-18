@@ -11,6 +11,7 @@ const cards = [
     slug: "frivillig",
     title: "Bliv frivillig",
     image: "/img/frivillig.webp",
+    imagesingle: "/img/frivillig_single.webp",
     subtitle: "Bliv en del af vores team",
     textfield1:
       "De frivillige er vores vigtigste ressource. Siden 2008 har Stop Spild Af Mad involveret over 500 frivillige fra hele Danmark i vores mange projekter, aktiviteter, events o.lign.",
@@ -27,6 +28,7 @@ const cards = [
     slug: "stoettemedlem",
     title: "Bliv støttemedlem",
     image: "/img/stoettemedlem.webp",
+    imagesingle: "",
     subtitle: "HVAD INDEBÆRE DET?",
     textfield1:
       "Privatpersoner, erhvervsvirksomheder, kommuner, foreninger,  institutioner og organisationer kan blive støttemedlemmer af foreningen Stop Spild Af Mad, og derved aktivt støtte foreningen Stop Spild Af Mads arbejde i mod madspild.",
@@ -41,6 +43,7 @@ const cards = [
     slug: "samarbejdspartner",
     title: "Bliv samarbejdspartner",
     image: "/img/samarbejdspartner.webp",
+    imagesingle: "",
     subtitle: "Bliv vores samarbejdspartner",
     textfield1:
       "Som Danmarks mest toneangivende organisation mod madspild har Stop Spild Af Mad siden 2008 opbygget en bred vifte af tunge danske og internationale samarbejdspartnere, som støtter Stop Spild Af Mads projekter og aktiviteter - bl.a. Landbrug & Fødevarer, Nordisk Råd, EU, FN og mange andre. Sammen er vi endnu stærkere i kampen mod madspild.",
@@ -55,6 +58,7 @@ const cards = [
     slug: "erhvervspartner",
     title: "Bliv erhvervspartner",
     image: "/img/erhvervspartner.webp",
+    imagesingle: "",
     subtitle: "Støt foreningen Stop Spild Af Mad",
     textfield1:
       "Som erhvervspartner hos Stop Spild Af Mad er I med til at støtte foreningens arbejde i kampen mod madspild og bidrage til konkrete projekter og initiativer.",
@@ -133,7 +137,7 @@ const item = cards.find((card) => card.slug === slug);
 
           <div class="mb-8 rounded-lg overflow-hidden shadow-lg">
             <img
-              src={item.image}
+              src={item.imagesingle}
               alt={item.title}
               class="w-full h-64 md:h-96 object-cover"
             />
