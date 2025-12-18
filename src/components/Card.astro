@@ -2,47 +2,45 @@
 import Heading from "../components/Heading.astro";
 import Link from "../components/Link.astro";
 
-const {
-  slug,
-  title,
-  image,
-  subtitle,
-  textfield1,
-  textfield2,
-  textfield3,
-  list,
-  id,
-  link,
-  mediaType,
-  mediaSrc,
-} = Astro.props;
+const { slug, title, image } = Astro.props;
 
 // Link til singleview med slug
 const singleviewUrl = `/singleview/${slug}`;
 ---
 
 <article
-  class="group bg-white border border-gray-300 rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+  class="group overflow-hidden transition-all duration-300 flex flex-col h-full @container [container-name:card]"
 >
-  <a href={singleviewUrl} class="block">
-    <div class="relative overflow-hidden aspect-video">
+  <a href={singleviewUrl} class="block h-full">
+    <!-- IMAGE -->
+    <div class="relative overflow-hidden h-full w-full bg-gray-100">
       <img
         src={image}
         alt={title}
-        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        class="object-cover transition-transform duration-500 group-hover:opacity-90 group-hover:scale-110 h-full w-full"
       />
     </div>
 
-    <div class="p-4 md:p-6">
+    <!-- CONTENT:-->
+    <div class="flex flex-col h-full min-w-0 mt-4">
       <Heading
         htmlheading="h3"
-        size="small"
-        stylingclasses="mb-3 group-hover:text-primary-500 transition-colors duration-300"
+        size="xsmall"
+        font="sans"
+        stylingclasses="mb-2 group-hover:opacity-75 transition-transform duration-300 uppercase font-semibold leading-[1.1] text-balance break-words [hyphens:auto] "
       >
         {title}
       </Heading>
 
-      <Link href={singleviewUrl} variant="textlink"> Læs mere → </Link>
+      <!-- Button:-->
+      <Link
+        href={singleviewUrl}
+        variant="black"
+        size="small"
+        class="mt-auto w-fit group-hover:opacity-75ZZZZ"
+      >
+        Læs mere
+      </Link>
     </div>
   </a>
 </article>

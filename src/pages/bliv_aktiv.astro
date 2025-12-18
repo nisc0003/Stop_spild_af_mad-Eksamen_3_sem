@@ -9,113 +9,91 @@ import Card from "../components/Card.astro";
 ---
 
 <MainLayout title="Bliv Aktiv">
-  <section class="mr-section_right ml-section_left py-20">
-    <div class="max-w-7xl mx-auto">
-      <Heading htmlheading="h1" size="large" stylingclasses="mb-6 text-center">
-        BLIV AKTIV
-      </Heading>
-
-      <Text stylingclasses="text-center mb-12 max-w-3xl mx-auto">
-        Der er mange måder at støtte kampen mod madspild på. Bliv frivillig,
-        deltag i vores events, eller lær mere om vores initiativer.
-      </Text>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <Card
-          slug="frivillig"
-          title="Bliv frivillig"
-          image="/img/frivillig.webp"
-          subtitle="Lær at lave lækre retter med restmad"
-          textfield1="Deltag i vores madlavningsworkshops hvor vi lærer dig hvordan du kan udnytte restmad til at lave fantastiske retter."
-          textfield2="Vi afholder workshops både for begyndere og øvede kokke, hvor fokus er på kreativitet og bæredygtighed."
-          textfield3="Alle ingredienser stilles til rådighed, og du får opskrifter med hjem."
-          list={[
-            "Madlavningsteknikker",
-            "Opskrifter på restmad",
-            "Bæredygtig madlavning",
-            "Gratis deltagelse",
-          ]}
-          id="madlavning-workshops"
-          link="/tilmeldt"
-          mediaType="video"
-          mediaSrc="/img/vids/TedX_2012.mp4"
-        />
-
-        <Card
-          slug="stoettemedlem"
-          title="Bliv støttemedlem"
-          image="/img/stoettemedlem.webp"
-          subtitle="Hjælp os ved vores mange events"
-          textfield1="Bliv frivillig og hjælp os med at sprede budskabet om madspild ved events rundt om i landet."
-          textfield2="Som frivillig får du mulighed for at møde ligesindede, gøre en forskel og få værdifuld erfaring."
-          textfield3="Vi holder events året rundt - både store og små arrangementer."
-          list={["Festivaler", "Gadeevents", "Konferencer", "Workshops"]}
-          id="frivillig-events"
-          link="/tilmeldt"
-          mediaType="image"
-          mediaSrc="/img/aktivitet2.jpg"
-        />
-
-        <Card
-          slug="samarbejdspartner"
-          title="Bliv samarbejdspartner"
-          image="/img/samarbejdspartner.webp"
-          subtitle="Professionelle kokkekurser mod madspild"
-          textfield1="Tag på kokkekursus med professionelle kokke som lærer dig tricks til at minimere madspild i hverdagen."
-          textfield2="Kurserne er hands-on og du får mulighed for at smage alle de lækre retter."
-          textfield3="Perfekt til både privatpersoner og restauratører der vil lære mere."
-          list={[
-            "Professionelle instruktører",
-            "3 timers kursus",
-            "Certifikat",
-            "Netværk med andre",
-          ]}
-          id="kokkekurser"
-          link="/tilmeldt"
-          mediaType="image"
-          mediaSrc="/img/aktivitet3.jpg"
-        />
-
-        <Card
-          slug="erhvervspartner"
-          title="Bliv erhvervspartner"
-          image="/img/erhvervspartner.webp"
-          subtitle="Støt vores mærkningsordning"
-          textfield1="Vores mærkningsordning hjælper forbrugerne med at identificere produkter der er tæt på udløbsdato."
-          textfield2="Ved at købe disse produkter hjælper du med at reducere madspild og spare penge."
-          textfield3="Mærkningen findes i flere supermarkedskæder rundt om i landet."
-          list={[
-            "Tilgængelig i Rema 1000",
-            "Op til 50% rabat",
-            "Friske varer",
-            "Kvalitetssikret",
-          ]}
-          id="bekaempmadspild-maerkning"
-          link="/tilmeldt"
-          mediaType="image"
-          mediaSrc="/img/aktivitet4.jpg"
-        />
-
-        <Card
-          slug="spred-budskabet"
-          title="Spred budskabet"
-          image="/img/spred_budskab.webp"
-          subtitle="Hjælp med at distribuere overskudsmad"
-          textfield1="Vær med til at distribuere overskudsmad fra supermarkeder og restauranter til dem der har brug for det."
-          textfield2="Vi samler madvarer ind der ellers ville blive smidt ud og sikrer at de kommer til gode formål."
-          textfield3="Som frivillig bliver du en vigtig del af vores redningshold."
-          list={[
-            "Fleksible vagter",
-            "Meningsfuldt arbejde",
-            "Fællesskab",
-            "Gør en forskel",
-          ]}
-          id="maddistribution"
-          link="/tilmeldt"
-          mediaType="image"
-          mediaSrc="/img/aktivitet5.jpg"
-        />
+  <section class="mr-section_right ml-section_left pb-20 pt-10">
+    <div
+      class="flex flex-col items-center lg:flex-row lg:justify-between gap-6 lg:gap-12 mb-12"
+    >
+      <div class="flex flex-col gap-4 max-w-3xl">
+        <Heading
+          htmlheading="h1"
+          size="medium"
+          stylingclasses="text-center lg:text-left"
+        >
+          BLIV AKTIV I KAMPEM MOD MADSPILD
+        </Heading>
+        <Text stylingclasses="text-center lg:text-left">
+          Der er mange måder at støtte kampen mod madspild på. Bliv frivillig,
+          deltag i vores events, eller lær mere om vores initiativer.
+        </Text>
       </div>
+      <Link href="/form" variant="green" size="medium"> Tilmeld dig </Link>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <Card
+        slug="frivillig"
+        title="Bliv frivillig"
+        image="/img/frivillig.webp"
+        id="madlavning-workshops"
+        link="/tilmeldt"
+      />
+
+      <Card
+        slug="stoettemedlem"
+        title="Bliv støttemedlem"
+        image="/img/stoettemedlem.webp"
+        id="frivillig-events"
+        link="/tilmeldt"
+      />
+
+      <Card
+        slug="samarbejdspartner"
+        title="Bliv samarbejdspartner"
+        image="/img/samarbejdspartner.webp"
+        id="kokkekurser"
+        link="/tilmeldt"
+      />
+
+      <Card
+        slug="erhvervspartner"
+        title="Bliv erhvervspartner"
+        image="/img/erhvervspartner.webp"
+        id="bekaempmadspild-maerkning"
+        link="/tilmeldt"
+      />
+
+      <Card
+        slug="spred-budskabet"
+        title="Spred budskabet"
+        image="/img/spred_budskab.webp"
+        id="maddistribution"
+        link="/tilmeldt"
+      />
     </div>
   </section>
 </MainLayout>
+<!-- kontakt os sektion -->
+<section>
+  <div class="bg-green--400 pr-section_right pl-section_left py-10">
+    <div class="mr-section_right ml-section_left grid gap-6">
+      <Heading htmlheading="h3" size="medium" stylingclasses="text-white">
+        Kontakt os
+      </Heading>
+      <Text
+        stylingclasses="text-white"
+        size="small"
+        ,
+        font="sans"
+        ,
+        weight="medium"
+        ,
+        >Er du i tvivl om noget eller vil du gerne vide mere? Skriv endelig til
+        os!</Text
+      >
+      <div>
+        <Button href="/form" variant="green-inverted" size="medium">
+          Send os en mail
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
