@@ -6,8 +6,10 @@
 @import "tailwindcss-intersect";
 
 @theme {
-  /*Farver */
+  /* SLÅR ALLE STANDARD TAILWIND FARVER FRA */
+  /* --color-*: initial; */
 
+  /*Farver */
   --color-orange--400: #e64f16;
   --color-orange--200: #ffaf83;
   --color-orange--100: #fec6a7;
@@ -71,6 +73,12 @@
 
   --inactive-purple-bg: var(--color-purple--100);
   --inactive-purple-text: var(--color-purple--400);
+
+  /* BOX BACKGRONUDS */
+  --color-bg-green: var(--color-green-100);
+  --color-bg-red: var(--color-red-100);
+  --color-bg-yellow: var(--color-yellow-100);
+  --color-bg-purple: var(--color-purple-100);
 }
 
 @layer base {

@@ -24,108 +24,185 @@ import Card from "../components/Card.astro";
       </Heading>
     </section>
 
+    <section
+      class="flex flex-col lg:mr-section_right lg:ml-section_left mb-section_buttom mt-section_top gap-5"
+    >
+      <Heading htmlheading="h2" size="medium">QUIZ DIG SELV I MADSPILD</Heading>
+      <div class="sm:inline lg:grid grid-cols-2 gap-10">
+        <div class="bg-yellow-50 flex flex-row">
+          <section class="flex flex-col gap-25 place-content-center mx-auto">
+            <div>
+              <div class="mb-10">
+                <Heading>Spørgsmål 1</Heading>
+                <Text>Spørgsmålet</Text>
+              </div>
 
-    <section class="flex flex-col">
-            <Heading htmlheading="h2" size="medium">QUIZ DIG SELV I MADSPILD</Heading>
-            <div class="grid grid-cols-2">
-              <div class="bg-amber-100 flex flex-row">
-                <div class="flex flex-row gap-2">
-                  
-                  <div><Text>SPØRGSMÅL 1</Text>
-                  <Text>Hvilke af disse mad rester tæller som madspild?</Text>
-                  </div>
-                </div>
+              <div class="flex flex-row gap-10">
+                <Text>A</Text>
+                <Text>Middagsrester og gammel frugt</Text>
+              </div>
 
+              <div class="flex flex-row gap-10">
+                <Text>B</Text>
+                <Text>Osteskorper og kaffegrums </Text>
+              </div>
 
-                  <div class="flex flex-col">
-                    <Text>A</Text>
-                    <Text>Middagsrester og gammel frugt</Text>
-                  </div>
-                </div>
-                <img src="/img/quiz.png" alt="">
+              <div class="flex flex-row gap-10">
+                <Text>C</Text>
+                <Text>Alt affald der kommer fra mad er madspild</Text>
               </div>
             </div>
 
-                <!-- <Link>SE SVAR </Link> -->
+            <div class="mb-5">
+              <Link variant="black">Se Svar →</Link>
+            </div>
+          </section>
+        </div>
+        <img src="/img/quiz.png" alt="" class="sm:hidden lg:inline" />
+      </div>
+
+      <!-- <Link>SE SVAR </Link> -->
     </section>
 
-
-    <section class="flex flex-col lg:grid lg:grid-cols-2 lg:gap-5 lg:mr-section_right lg:ml-section_left lg:mb-section_buttom lg:mt-section_top">
+    <section
+      class="flex flex-col lg:grid lg:grid-cols-2 lg:gap-5 lg:mr-section_right lg:ml-section_left mb-section_buttom mt-section_top"
+    >
       <div class="flex flex-col gap-5">
-      <Heading htmlheading="h2" size="medium">HVEM ER VI?</Heading>
+        <Heading htmlheading="h2" size="medium">HVEM ER VI?</Heading>
         <div class="flex flex-col gap-5">
-          <Text>Stop Spild Af Mad er en non-profit organisation og forbrugerbevægelse, som kæmper mod madspild. Siden 2008 har vi medvirket til at bringe massivt fokus på  madspild i Danmark, samt opnået en lang række resultater i både Danmark, EU, Norden og FN. </Text>
-          <Text>Stop Spild Af Mad har både nationale og internationale samarbejder. Vi bakkes op af over 60.000 danskere, samt en lang række toppolitikere og anerkendte madpersonligheder. Vi arbejder aktivt med FN’s verdensmål for bæredygtig udvikling: UN Sustainable Development Goal 12.3.</Text>
+          <Text
+            >Stop Spild Af Mad er en non-profit organisation og
+            forbrugerbevægelse, som kæmper mod madspild. Siden 2008 har vi
+            medvirket til at bringe massivt fokus på madspild i Danmark, samt
+            opnået en lang række resultater i både Danmark, EU, Norden og FN.
+          </Text>
+          <Text
+            >Stop Spild Af Mad har både nationale og internationale samarbejder.
+            Vi bakkes op af over 60.000 danskere, samt en lang række
+            toppolitikere og anerkendte madpersonligheder. Vi arbejder aktivt
+            med FN’s verdensmål for bæredygtig udvikling: UN Sustainable
+            Development Goal 12.3.</Text
+          >
         </div>
       </div>
 
       <div>
-        <img src="/img/index_frugt.png" alt="" class="">
+        <img src="/img/index_frugt.png" alt="" class="" />
         <Link variant="orange">LÆS MERE OM OS</Link>
-        </div>
       </div>
-
     </section>
 
-
-
-    <section>
-    <div>
-    <Heading htmlheading="h2" size="medium">PRIER OG ANDERKENDELSER</Heading>
-    <Text>Stop Spild Af Mad og dens stifter Selina Juul har fået en lang række priser og anerkendelser, bl.a.:</Text>
-    <Link href="wip" variant="purple">SE FLERE PRISER</Link>
-    </div>
-
-    <section class="carousel">
-      <div class="group">
-        <img src="/img/pris1.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
-        <img src="/img/pris2.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
-        <img src="/img/pris3.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
+    <section
+      class="lg:mr-section_right lg:ml-section_left mb-section_buttom mt-section_top"
+    >
+      <div>
+        <Heading htmlheading="h2" size="medium">PRIER OG ANDERKENDELSER</Heading
+        >
+        <Text
+          >Stop Spild Af Mad og dens stifter Selina Juul har fået en lang række
+          priser og anerkendelser, bl.a.:</Text
+        >
+        <Link href="wip" variant="purple">SE FLERE PRISER</Link>
       </div>
+
+      <section class="carousel">
+        <div class="group">
+          <img
+            src="/img/pris1.png"
+            alt=""
+            class="carousel_img grow-0 shrink-0 basis-5em"
+          />
+          <img
+            src="/img/pris2.png"
+            alt=""
+            class="carousel_img grow-0 shrink-0 basis-5em"
+          />
+          <img
+            src="/img/pris3.png"
+            alt=""
+            class="carousel_img grow-0 shrink-0 basis-5em"
+          />
+        </div>
 
         <div class="group">
-        <img src="/img/pris1.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
-        <img src="/img/pris2.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
-        <img src="/img/pris3.png" alt="" class="carousel_img grow-0 shrink-0 basis-5em">
-      </div>
+          <img
+            src="/img/pris1.png"
+            alt=""
+            class="carousel_img grow-0 shrink-0 basis-5em"
+          />
+          <img
+            src="/img/pris2.png"
+            alt=""
+            class="carousel_img grow-0 shrink-0 basis-5em"
+          />
+          <img
+            src="/img/pris3.png"
+            alt=""
+            class="carousel_img grow-0 shrink-0 basis-5em"
+          />
+        </div>
+      </section>
     </section>
 
+    <section class="bg-purple-100 py-10">
+      <section
+        class="sm:grid sm:grid-rows-2 sm:grid-cols-2 lg:flex lg:flex-row lg:mr-section_right lg:ml-section_left place-self-center gap-22"
+      >
+        <div class="flex flex-col max-w-65 text-center">
+          <Heading>200+</Heading>
+          <Text>projekter og aktiviteter mod madspild siden 2008</Text>
+        </div>
 
+        <div class="flex flex-col max-w-65 text-center">
+          <Heading>7.000+</Heading>
+          <Text>danske og internationale medieomtaler siden 2008</Text>
+        </div>
+
+        <div class="flex flex-col max-w-65 text-center">
+          <Heading>300+</Heading>
+          <Text>tons overskudsmad videreformidlet til udsatte siden 2011</Text>
+        </div>
+
+        <div class="flex flex-col max-w-65 text-center">
+          <Heading>126.000+</Heading>
+          <Text>følgere på samlede sociale medier</Text>
+        </div>
+      </section>
     </section>
   </main>
+
+  <style>
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+    }
+
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1em;
+      animation: spin 5s infinite linear;
+      padding-right: 1em;
+    }
+
+    .carousel_img {
+      flex: 0 0 5em;
+      align-content: center;
+      padding: 1em;
+    }
+
+    @keyframes spin {
+      from {
+        translate: 0;
+      }
+      to {
+        translate: -100%;
+      }
+    }
+  </style>
 </MainLayout>
-
-<style>
-  .carousel {
-    display: flex;
-    overflow-x: auto;
-  }
-
-  .carousel::-webkit-scrollbar {
-    display: none;
-  }
-
-  .group {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1em;
-    animation: spin 10s infinite linear;
-    padding-right: 1em;
-  }
-
-  .carousel_img {
-    flex: 0 0 5em;
-    align-content: center;
-    padding: 1em;
-  }
-
-  @keyframes spin {
-    from {
-      translate: 0;
-    }
-    to {
-      translate: -100%;
-    }
-  }
-</style>
