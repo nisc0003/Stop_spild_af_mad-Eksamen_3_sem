@@ -3,7 +3,26 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import Heading from "../../components/Heading.astro";
 import Text from "../../components/Text.astro";
 import Link from "../../components/Link.astro";
-import Button from "../../components/Button.astro";
+import Card from "../../components/Card.astro";
+
+interface Card {
+  mediaType?: string;
+  mediaSrc?: string;
+  imagesingle?: string;
+  image?: string;
+  [key: string]: any;
+}
+
+function resolveMedia(card: Card) {
+  const mediaType = card?.mediaType;
+  const mediaSrc = card?.mediaSrc;
+
+  if (mediaType && mediaSrc) return { type: mediaType, src: mediaSrc };
+  if (card?.imagesingle) return { type: "image", src: card.imagesingle };
+  if (card?.image) return { type: "image", src: card.image };
+
+  return null;
+}
 
 // Data for alle cards
 const cards = [
@@ -11,7 +30,6 @@ const cards = [
     slug: "frivillig",
     title: "Bliv frivillig",
     image: "/img/frivillig.webp",
-    imagesingle: "/img/frivillig_single.webp",
     subtitle: "Bliv en del af vores team",
     textfield1:
       "De frivillige er vores vigtigste ressource. Siden 2008 har Stop Spild Af Mad involveret over 500 frivillige fra hele Danmark i vores mange projekter, aktiviteter, events o.lign.",
@@ -28,22 +46,20 @@ const cards = [
     slug: "stoettemedlem",
     title: "Bliv støttemedlem",
     image: "/img/stoettemedlem.webp",
-    imagesingle: "",
+    imagesingle: "/img/stoettemedlemsingle.svg",
     subtitle: "HVAD INDEBÆRE DET?",
     textfield1:
-      "Privatpersoner, erhvervsvirksomheder, kommuner, foreninger,  institutioner og organisationer kan blive støttemedlemmer af foreningen Stop Spild Af Mad, og derved aktivt støtte foreningen Stop Spild Af Mads arbejde i mod madspild.",
+      "Privatpersoner, erhvervsvirksomheder, kommuner, foreninger, institutioner og organisationer kan blive støttemedlemmer af foreningen Stop Spild Af Mad, og derved aktivt støtte foreningen Stop Spild Af Mads arbejde i mod madspild.",
     textfield2:
       "Det er gratis at blive støttemedlem af foreningen Stop Spild Af Mad.",
     id: "stoettemedlem",
     link: "/tilmeldt",
-    mediaType: "iframe",
-    mediaSrc: "https://www.youtube.com/embed/2IGJcWp_y_I?si=CZxJNPZXGHqaYeSD",
   },
   {
     slug: "samarbejdspartner",
     title: "Bliv samarbejdspartner",
     image: "/img/samarbejdspartner.webp",
-    imagesingle: "",
+    imagesingle: "/img/samarbejdspartner.webp",
     subtitle: "Bliv vores samarbejdspartner",
     textfield1:
       "Som Danmarks mest toneangivende organisation mod madspild har Stop Spild Af Mad siden 2008 opbygget en bred vifte af tunge danske og internationale samarbejdspartnere, som støtter Stop Spild Af Mads projekter og aktiviteter - bl.a. Landbrug & Fødevarer, Nordisk Råd, EU, FN og mange andre. Sammen er vi endnu stærkere i kampen mod madspild.",
@@ -58,7 +74,7 @@ const cards = [
     slug: "erhvervspartner",
     title: "Bliv erhvervspartner",
     image: "/img/erhvervspartner.webp",
-    imagesingle: "",
+    imagesingle: "/img/erhvervspartner.webp",
     subtitle: "Støt foreningen Stop Spild Af Mad",
     textfield1:
       "Som erhvervspartner hos Stop Spild Af Mad er I med til at støtte foreningens arbejde i kampen mod madspild og bidrage til konkrete projekter og initiativer.",
@@ -74,6 +90,7 @@ const cards = [
     slug: "spred-budskabet",
     title: "Spred budskabet",
     image: "/img/spred_budskab.webp",
+    imagesingle: "/img/spred_budskab.webp",
     subtitle: "Bliv ambassadør i kampen mod madspild",
     textfield1:
       "Du kan vise, at du går forrest i kampen mod madspild og bakker op om bevægelsen på dine sociale medier som Instagram, Facebook, Twitter o.lign. ved at bruge vores officielle hashtag #stopspildafmad",
@@ -102,122 +119,287 @@ const { slug } = Astro.params;
 
 // Find det matchende card
 const item = cards.find((card) => card.slug === slug);
+const media = item ? resolveMedia(item) : null;
 ---
 
 <MainLayout title={item?.title || "Indhold findes ikke"}>
-  <main class="container mx-auto p-4">
-    {
-      !item && (
-        <div class="max-w-xl mx-auto text-center">
-          <Heading htmlheading="h1" size="medium" stylingclasses="mb-4">
-            Siden kunne ikke findes
+  {!item ? (
+    <div class="mr-section_right ml-section_left mt-section_top mb-section_buttom max-w-xl mx-auto">
+      <div class="bg-yellow--100 radius-contentBox p-8 md:p-10 shadow-md text-center">
+        <Heading htmlheading="h1" size="medium" stylingclasses="mb-4">
+          Siden kunne ikke findes
+        </Heading>
+        <Text>Det indhold du leder efter findes ikke eller linket er forkert.</Text>
+        <div class="mt-6">
+          <Link href="/" variant="green">Tilbage til forsiden</Link>
+        </div>
+      </div>
+    </div>
+  ) : (
+    <>
+      <div class="mr-section_right ml-section_left mt-section_top mb-8 grid gap-16">
+        <Link href="/bliv_aktiv" variant="black" stylingclasses="inline-block">← Tilbage</Link>
+        <Heading htmlheading="h1" size="large">{item.title}</Heading>
+      </div>
+
+      <section class="bg-green--400">
+        <div class="mr-section_right ml-section_left py-12 md:py-16 lg:py-20">
+          <div class="grid gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16 lg:items-stretch">
+            {media && (
+              <div class="radius-contentBox overflow-hidden">
+                {media.type === "image" && (
+                  <img src={media.src} alt={item.title} class="w-full h-full object-cover" />
+                )}
+                {media.type === "iframe" && (
+                  <iframe src={media.src} title={item.title} class="w-full aspect-video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+                )}
+                {media.type === "video" && (
+                  <video class="w-full h-full object-cover" controls>
+                    <source src={media.src} type="video/mp4" />
+                  </video>
+                )}
+              </div>
+            )}
+
+            <div class="space-y-6 lg:space-y-8">
+              {item.subtitle && <Heading htmlheading="h2" size="medium" stylingclasses="text-white">{item.subtitle}</Heading>}
+              
+              {item.textfield1 && <Text stylingclasses="text-white">{item.textfield1}</Text>}
+              {item.textfield2 && <Text stylingclasses="text-white font-semibold">{item.textfield2}</Text>}
+              {item.textfield3 && <Text stylingclasses="text-white">{item.textfield3}</Text>}
+
+              {item.list && item.list.length > 0 && (
+                <div class="bg-white/10 backdrop-blur-sm radius-contentBox p-6">
+                  <Heading htmlheading="h3" size="xsmall" stylingclasses="text-white mb-4">Kontaktinfo</Heading>
+                  <ul class="space-y-2">
+                    {item.list.map((li) => <li><Text stylingclasses="text-white text-sm">{li}</Text></li>)}
+                  </ul>
+                </div>
+              )}
+
+              {item.link && (
+                <Link href={item.link} variant="green-inverted" size="large">Gå til Tilmelding</Link>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+   <section
+    class="bg-white mr-section_right ml-section_left py-16 md:py-20 lg:py-24"
+  >
+    <Heading
+      htmlheading="h2"
+      size="large"
+      stylingclasses="text-center mb-12 md:mb-16"
+    >
+      Hvad går din støtte til?
+    </Heading>
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10"
+    >
+      <!-- Card 1 - Madspilds Manifest -->
+      <article
+        class="bg-white radius-contentBox border-2 border-gray-200 overflow-hidden flex flex-col shadow-md hover:shadow-2xl hover:border-green--400 transition-all duration-300 hover:-translate-y-1 intersect:animate-fade-up intersect-once group"
+      >
+        <div class="w-full p-8 pb-4 flex justify-center shrink-0">
+          <img
+            src="/img/stoettelogo1.png"
+            alt="Uddannelse logo"
+            class="w-full max-w-40 h-auto object-contain"
+          />
+        </div>
+        <div class="p-8 flex flex-col grow">
+          <Heading
+            htmlheading="h3"
+            size="xsmall"
+            font="sanstight"
+            weight="semibold"
+            stylingclasses="text-center mb-6"
+          >
+            Madspilds Manifest
           </Heading>
 
-          <Text>
-            Det indhold du leder efter findes ikke eller linket er forkert.
+          <Text
+            font="sans"
+            weight="normal"
+            stylingclasses="text-center mb-6 flex-grow text-sm md:text-base leading-relaxed text-gray-700"
+          >
+            Sammen med Coop Danmark har vi udarbejdet et Madspilds Manifest, og
+            det lykkedes i perioden januar til september 2014 Coop Danmark at
+            reducere madspild med 9,8% i deres butikker.
           </Text>
 
-          <div class="mt-6">
-            <Link href="/" variant="green">
-              Tilbage til forsiden
+          <div class="mt-auto pt-4 flex justify-center">
+            <Link href="/bliv_aktiv" variant="black" size="small">
+              Læs mere
             </Link>
           </div>
         </div>
-      )
-    }
+      </article>
 
-    {
-      item && (
-        <>
-          <div class="mb-6">
-            <Link href="/bliv_aktiv" variant="textlink">
-              ← Tilbage
+      <!-- Card 2 - Øget Fokus -->
+      <article
+        class="bg-white radius-contentBox border-2 border-gray-200 overflow-hidden flex flex-col shadow-md hover:shadow-2xl hover:border-green--400 transition-all duration-300 hover:-translate-y-1 intersect:animate-fade-up intersect-once animate-delay-100 group"
+      >
+        <div class="w-full p-8 pb-4 flex justify-center shrink-0">
+          <img
+            src="/img/stoettelogo2.png"
+            alt="Uddannelse logo"
+            class="w-full max-w-40 h-auto object-contain"
+          />
+        </div>
+        <div class="p-8 flex flex-col grow">
+          <Heading
+            htmlheading="h3"
+            size="xsmall"
+            font="sanstight"
+            weight="semibold"
+            stylingclasses="text-center mb-6"
+          >
+            Øget Fokus
+          </Heading>
+
+          <Text
+            font="sans"
+            weight="normal"
+            stylingclasses="text-center mb-6 flex-grow text-sm md:text-base leading-relaxed text-gray-700"
+          >
+            Vi har medvirket til at danskerne har øget sit fokus på at undgå
+            madspild. Ifølge tal fra Landbrug & Fødevarer fra 2016 svarede 83%
+            at de var blevet mere interesserede i at minimere husstandens
+            madspild.
+          </Text>
+
+          <div class="mt-auto pt-4 flex justify-center">
+            <Link href="/bliv_aktiv" variant="black" size="small">
+              Læs mere
             </Link>
           </div>
+        </div>
+      </article>
 
-          <div class="mb-8 rounded-lg overflow-hidden shadow-lg">
-            <img
-              src={item.imagesingle}
-              alt={item.title}
-              class="w-full h-64 md:h-96 object-cover"
-            />
+      <!-- Card 3 - Mængderabatter -->
+      <article
+        class="bg-white radius-contentBox border-2 border-gray-200 overflow-hidden flex flex-col shadow-md hover:shadow-2xl hover:border-green--400 transition-all duration-300 hover:-translate-y-1 intersect:animate-fade-up intersect-once animate-delay-200 group"
+      >
+        <div class="w-full p-8 pb-4 flex justify-center shrink-0">
+          <img
+            src="/img/stoettelogo3.png"
+            alt="Uddannelse logo"
+            class="w-full max-w-40 h-auto object-contain"
+          />
+        </div>
+        <div class="p-8 flex flex-col grow">
+          <Heading
+            htmlheading="h3"
+            size="xsmall"
+            font="sanstight"
+            weight="semibold"
+            stylingclasses="text-center mb-6"
+          >
+            Mængderabatter
+          </Heading>
+
+          <Text
+            font="sans"
+            weight="normal"
+            stylingclasses="text-center mb-6 flex-grow text-sm md:text-base leading-relaxed text-gray-700"
+          >
+            Stop Spild Af Mad har været medvirkende inspiration til at
+            butikskæden REMA 1000 har droppet mængderabatter i kædens alle
+            danske butikker og derved medvirker til mindre madspild.
+          </Text>
+
+          <div class="mt-auto pt-4 flex justify-center">
+            <Link href="/bliv_aktiv" variant="black" size="small">
+              Læs mere
+            </Link>
           </div>
+        </div>
+      </article>
+    </div>
+  </section>
 
-          <article class="max-w-3xl mx-auto">
-            <Heading htmlheading="h1" size="large" stylingclasses="mb-4">
-              {item.title}
+  <!-- Se Andre Støtteformer Section -->
+  <section class="bg-yellow--100 py-16 md:py-20 lg:py-24">
+    <div class="mr-section_right ml-section_left">
+      <Heading
+        htmlheading="h3"
+        size="large"
+        stylingclasses="text-center mb-12 md:mb-16"
+      >
+        Se andre støtteformer
+      </Heading>
+ <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <Card
+        slug="frivillig"
+        title="Bliv frivillig"
+        image="/img/frivillig.webp"
+        id="madlavning-workshops"
+        link="/tilmeldt"
+      />
+
+      <Card
+        slug="stoettemedlem"
+        title="Bliv støttemedlem"
+        image="/img/stoettemedlem.webp"
+        id="frivillig-events"
+        link="/tilmeldt"
+      />
+
+      <Card
+        slug="samarbejdspartner"
+        title="Bliv samarbejdspartner"
+        image="/img/samarbejdspartner.webp"
+        id="kokkekurser"
+        link="/tilmeldt"
+      />
+
+      <Card
+        slug="erhvervspartner"
+        title="Bliv erhvervspartner"
+        image="/img/erhvervspartner.webp"
+        id="bekaempmadspild-maerkning"
+        link="/tilmeldt"
+      />
+
+      <Card
+        slug="spred-budskabet"
+        title="Spred budskabet"
+        image="/img/spred_budskab.webp"
+        id="maddistribution"
+        link="/tilmeldt"
+      />
+    </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+          <section class="mt-section_top mb-section_buttom">
+          <div class="mr-section_right ml-section_left max-w-2xl mx-auto text-center lg:text-left">
+            <Heading htmlheading="h4" size="large" stylingclasses="mb-6">
+              Kontakt os
             </Heading>
 
-            {item.subtitle && (
-              <Heading htmlheading="h2" size="small" stylingclasses="mb-6">
-                {item.subtitle}
-              </Heading>
-            )}
+            <Text stylingclasses="mb-8 text-base md:text-lg leading-relaxed text-gray-700">
+              Er du i tvivl om noget eller vil du gerne vide mere? Skriv endelig
+              til os!
+            </Text>
 
-            {item.textfield1 && (
-              <Text stylingclasses="mb-4">{item.textfield1}</Text>
-            )}
-
-            {item.textfield2 && (
-              <Text stylingclasses="mb-4">{item.textfield2}</Text>
-            )}
-
-            {item.textfield3 && (
-              <Text stylingclasses="mb-6">{item.textfield3}</Text>
-            )}
-
-            {item.list && item.list.length > 0 && (
-              <div class="my-8">
-                <Heading htmlheading="h3" size="xsmall" stylingclasses="mb-4">
-                  Vores kontaktinfo:
-                </Heading>
-                <ul class="list-disc pl-6 space-y-2">
-                  {item.list.map((li) => (
-                    <li>
-                      <Text>{li}</Text>
-                    </li>
-                  ))}
-                </ul>
-                {item.link && (
-                  <div class="mt-8 text-center">
-                    <Link href={item.link} variant="green" size="large">
-                      Tilmeld dig nu
-                    </Link>
-                  </div>
-                )}
-              </div>
-            )}
-
-            {item.mediaType && item.mediaSrc && (
-              <div class="my-8">
-                {item.mediaType === "video" && (
-                  <video width="100%" height="auto" controls class="rounded-lg">
-                    <source src={item.mediaSrc} type="video/mp4" />
-                    Din browser understøtter ikke video afspilning.
-                  </video>
-                )}
-                {item.mediaType === "image" && (
-                  <img
-                    src={item.mediaSrc}
-                    alt={item.title}
-                    class="w-full rounded-lg"
-                  />
-                )}
-                {item.mediaType === "iframe" && (
-                  <iframe
-                    src={item.mediaSrc}
-                    width="100%"
-                    height="500"
-                    class="rounded-lg"
-                    frameborder="0"
-                    allowfullscreen
-                  />
-                )}
-              </div>
-            )}
-          </article>
-        </>
-      )
-    }
-  </main>
+            <Link
+              href="mailto:info@stopspildafmad.org"
+              variant="black"
+              size="medium"
+            >
+              Send os en mail
+            </Link>
+          </div>
+        </section>
+      </>
+    )
+  }
 </MainLayout>
