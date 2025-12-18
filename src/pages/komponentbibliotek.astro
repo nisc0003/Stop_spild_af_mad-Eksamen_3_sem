@@ -4,6 +4,7 @@ import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Link from "../components/Link.astro";
 import Button from "../components/Button.astro";
+import Sponsors from "../components/Sponsors.astro";
 ---
 
 <MainLayout title="Komponentbibliotek">
@@ -650,6 +651,18 @@ import Button from "../components/Button.astro";
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- Display Font -->
+      <div class="mb-12">
+        <div class="bg-(--color-green--400) text-white p-6 rounded-t-lg">
+          <Heading htmlheading="h3" size="medium" stylingclasses="text-white"
+            >ROLLING CAROUSEL</Heading
+          >
+        </div>
+        <div class="bg-white p-8 rounded-b-lg border border-gray-200 space-y-4">
+          <Sponsors />
         </div>
       </div>
     </section>
