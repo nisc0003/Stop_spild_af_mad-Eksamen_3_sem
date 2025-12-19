@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "My Protect Folders"
+AithUserFile /.htpasswd
+require valid-user

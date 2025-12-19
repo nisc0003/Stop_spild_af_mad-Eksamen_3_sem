@@ -1,0 +1,32 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+import Button from "../components/Button.astro";
+import Link from "../components/Link.astro";
+---
+
+<MainLayout>
+  <section class="flex flex-col items-center mt-section_top">
+    <img src="/img/logo_full_green.svg" alt="" />
+  </section>
+
+  <section
+    class="py-20 bg-(--color-green--400) place-items-center mb-section_buttom mt-section_top"
+  >
+    <Heading size="xlarge" stylingclasses="text-green-100">
+      TAK FOR DIN STØTTE
+    </Heading>
+    <Text size="xlarge" stylingclasses="text-green-100"
+      >Vi kontakter dig på mail inden for 4-8 hverdage</Text
+    >
+  </section>
+
+  <section class="flex flex-col place-self-center place-items-center gap-5">
+    <Text>Gå tilbage til:</Text>
+    <div class="flex flex-row gap-5">
+      <Link href="/" variant="black">FORSIDEN</Link>
+      <Link href="/bliv_aktiv" variant="black">FORSIDEN</Link>
+    </div>
+  </section>
+</MainLayout>

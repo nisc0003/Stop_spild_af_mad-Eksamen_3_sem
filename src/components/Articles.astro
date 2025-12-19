@@ -17,8 +17,19 @@ import Link from "../components/Link.astro";
         src="/img/play_green.svg"
         alt=""
         class="bbc_vid_btn absolute inset-0 m-auto"
-        id="bbc_vid"
+        id="bbc_vid2"
       />
+      <div class="hidden" id="bbc_video">
+        <iframe
+          src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2FBBCNewsStories%2Fvideos%2F1867098186881302%2F&show_text=false&width=476&t=0"
+          style="border:none;overflow:hidden"
+          allowfullscreen="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+          allowFullScreen="true"
+          class="h-145 w-180"
+        >
+        </iframe>
+      </div>
 
       <img src="/img/dr.png" alt="" class="hidden" id="dr_img" />
       <img src="/img/jp.png" alt="" class="hidden" id="jp_img" />
@@ -98,61 +109,87 @@ import Link from "../components/Link.astro";
   </section>
 </section>
 
+<style>
+  .bbc_vid {
+    transition: filter 0.5s ease-in-out;
+  }
+
+  .bbc_vid:hover {
+    filter: brightness(1.5);
+  }
+</style>
+
 <script is:inline>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Media links swap functionality
-    const mediaLinks = [
-      { id: "bbc_link", contentId: "bbc_text", imageId: "bbc_vid" },
-      { id: "dr_link", contentId: "dr_text", imageId: "dr_img" },
-      { id: "jp_link", contentId: "jp_text", imageId: "jp_img" },
-      { id: "pol_link", contentId: "pol_text", imageId: "pol_img" },
-      { id: "tv2_link", contentId: "tv2_text", imageId: "tv2_img" },
-      { id: "huff_link", contentId: "huff_text", imageId: "huff_img" },
-    ];
+  const bbcThumbnail = document.getElementById("bbc_vid");
+  const bbcPlayBTN = document.getElementById("bbc_vid2");
+  const bbcVideo = document.getElementById("bbc_video");
 
-    mediaLinks.forEach((media) => {
-      const link = document.getElementById(media.id);
-
-      if (link) {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
-
-          // Hide all content, images, and reset link styles
-          mediaLinks.forEach((m) => {
-            const otherContent = document.getElementById(m.contentId);
-            const otherImage = document.getElementById(m.imageId);
-            const otherLink = document.getElementById(m.id);
-
-            if (otherContent) {
-              otherContent.classList.remove("flex");
-              otherContent.classList.add("hidden");
-            }
-            if (otherImage) {
-              otherImage.classList.add("hidden");
-            }
-            if (otherLink) {
-              otherLink.classList.remove("media-active");
-            }
-          });
-
-          // Show current content and image
-          const content = document.getElementById(media.contentId);
-          const image = document.getElementById(media.imageId);
-
-          if (content) {
-            content.classList.remove("hidden");
-            content.classList.add("flex");
-          }
-          if (image) {
-            image.classList.remove("hidden");
-          }
-
-          // Highlight current link
-          link.classList.add("media-active");
-
-          console.log("Clicked:", media.id);
-        });
-      }
-    });
+  bbcThumbnail.addEventListener("click", () => {
+    bbcThumbnail.classList.add("hidden");
+    bbcPlayBTN.classList.add("hidden");
+    bbcVideo.classList.remove("hidden");
   });
+
+  bbcPlayBTN.addEventListener("click", () => {
+    bbcThumbnail.classList.add("hidden");
+    bbcPlayBTN.classList.add("hidden");
+    bbcVideo.classList.remove("hidden");
+  });
+
+  // document.addEventListener("DOMContentLoaded", function () {
+  //   // Media links swap functionality
+  //   const mediaLinks = [
+  //     { id: "bbc_link", contentId: "bbc_text", imageId: "bbc_vid" },
+  //     { id: "dr_link", contentId: "dr_text", imageId: "dr_img" },
+  //     { id: "jp_link", contentId: "jp_text", imageId: "jp_img" },
+  //     { id: "pol_link", contentId: "pol_text", imageId: "pol_img" },
+  //     { id: "tv2_link", contentId: "tv2_text", imageId: "tv2_img" },
+  //     { id: "huff_link", contentId: "huff_text", imageId: "huff_img" },
+  //   ];
+
+  //   mediaLinks.forEach((media) => {
+  //     const link = document.getElementById(media.id);
+
+  //     if (link) {
+  //       link.addEventListener("click", (e) => {
+  //         e.preventDefault();
+
+  //         // Hide all content, images, and reset link styles
+  //         mediaLinks.forEach((m) => {
+  //           const otherContent = document.getElementById(m.contentId);
+  //           const otherImage = document.getElementById(m.imageId);
+  //           const otherLink = document.getElementById(m.id);
+
+  //           if (otherContent) {
+  //             otherContent.classList.remove("flex");
+  //             otherContent.classList.add("hidden");
+  //           }
+  //           if (otherImage) {
+  //             otherImage.classList.add("hidden");
+  //           }
+  //           if (otherLink) {
+  //             otherLink.classList.remove("media-active");
+  //           }
+  //         });
+
+  //         // Show current content and image
+  //         const content = document.getElementById(media.contentId);
+  //         const image = document.getElementById(media.imageId);
+
+  //         if (content) {
+  //           content.classList.remove("hidden");
+  //           content.classList.add("flex");
+  //         }
+  //         if (image) {
+  //           image.classList.remove("hidden");
+  //         }
+
+  //         // Highlight current link
+  //         link.classList.add("media-active");
+
+  //         console.log("Clicked:", media.id);
+  //       });
+  //     }
+  //   });
+  // });
 </script>
