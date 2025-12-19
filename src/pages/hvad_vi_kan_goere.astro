@@ -465,21 +465,35 @@ import Buttons2 from "../components/Buttons2.astro";
       Vores TEDx Talks
     </Heading>
 
-    <div class="active">
-      <video width="100%" controls id="vid2012">
+    <div class="active" id="vid2012">
+      <video width="100%" controls>
         <source src="img/vids/TedX_2012.mp4" type="video/mp4" />
       </video>
     </div>
 
-    <div class="inactive">
-      <video width="100%" controls id="vid2016">
+    <div class="inactive" id="vid2016">
+      <video width="100%" controls>
         <source src="img/vids/TedX_2016.mp4" type="video/mp4" />
       </video>
     </div>
 
     <section class="grid grid-cols-2 gap-5 mt-5">
-      <Buttons2 variant="orange" size="large" id="2012_btn"> 2012 </Buttons2>
-      <Buttons2 variant="orange" size="large" id="2016_btn"> 2016 </Buttons2>
+      <div
+        id="2012_btn"
+        class="hover:cursor-pointer bg-(--color-orange--100) hover:bg-(--color-orange--400) text-(--color-orange--400) hover:text-(--color-orange--100) transition-all duration-300 text-[2rem] rounded-(--radius-CTA) flex items-center justify-center"
+      >
+        <p>2012</p>
+      </div>
+
+      <div
+        id="2016_btn"
+        class="hover:cursor-pointer bg-(--color-orange--400) hover:bg-(--color-orange--100) text-(--color-orange--100) hover:text-(--color-orange--400) transition-all duration-300 text-[2rem] rounded-(--radius-CTA) flex items-center justify-center"
+      >
+        <p>2016</p>
+      </div>
+
+      <!-- <Buttons2 variant="orange" size="large" id="2012_btn"> 2012 </Buttons2> -->
+      <!-- <Buttons2 variant="orange" size="large" id="2016_btn"> 2016 </Buttons2> -->
     </section>
   </section>
 
@@ -637,23 +651,39 @@ import Buttons2 from "../components/Buttons2.astro";
     const vid2012 = document.getElementById("vid2012");
     const vid2016 = document.getElementById("vid2016");
 
-    if (btn2012 && btn2016 && vid2012 && vid2016) {
-      btn2012.addEventListener("click", (e) => {
-        e.preventDefault();
-        vid2016.classList.remove("active");
-        vid2016.classList.add("inactive");
-        vid2012.classList.remove("inactive");
-        vid2012.classList.add("active");
-      });
+    btn2016.addEventListener("click", () => {
+      vid2016.classList.remove("inactive");
+      vid2016.classList.add("active");
+      vid2012.classList.remove("active");
+      vid2012.classList.add("inactive");
 
-      btn2016.addEventListener("click", (e) => {
-        e.preventDefault();
-        vid2012.classList.remove("active");
-        vid2012.classList.add("inactive");
-        vid2016.classList.remove("inactive");
-        vid2016.classList.add("active");
-      });
-    }
+      btn2016.classList.remove("bg-(--color-orange--400)");
+      btn2016.classList.add("bg-(--color-orange--100)");
+      btn2016.classList.remove("text-(--color-orange--100))");
+      btn2016.classList.add("text-(--color-orange--400)");
+
+      btn2012.classList.add("bg-(--color-orange--400)");
+      btn2012.classList.remove("bg-(--color-orange--100)");
+      btn2012.classList.add("text-(--color-orange--100))");
+      btn2012.classList.remove("text-(--color-orange--400)");
+    });
+
+    btn2012.addEventListener("click", () => {
+      vid2012.classList.remove("inactive");
+      vid2012.classList.add("active");
+      vid2016.classList.remove("active");
+      vid2016.classList.add("inactive");
+
+      btn2012.classList.remove("bg-(--color-orange--400)");
+      btn2012.classList.add("bg-(--color-orange--100)");
+      btn2012.classList.remove("text-(--color-orange--100))");
+      btn2012.classList.add("text-(--color-orange--400)");
+
+      btn2016.classList.add("bg-(--color-orange--400)");
+      btn2016.classList.remove("bg-(--color-orange--100)");
+      btn2016.classList.add("text-(--color-orange--100))");
+      btn2016.classList.remove("text-(--color-orange--400)");
+    });
 
     // Scroll to top
     const scrollToTopBtn = document.getElementById("scrollToTop");
