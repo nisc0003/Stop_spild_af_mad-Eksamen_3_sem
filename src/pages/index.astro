@@ -143,7 +143,9 @@ import Articles from "../components/Articles.astro";
 
       <div class="sm:mt-5 lg:mt-0 flex flex-col place-content-between">
         <img src="/img/index_frugt.png" alt="" class="" />
-        <Link href="/wip" variant="orange">LÆS MERE OM OS</Link>
+        <div class="place-self-center">
+          <Link href="/wip" variant="orange">LÆS MERE OM OS</Link>
+        </div>
       </div>
     </section>
 
@@ -272,14 +274,6 @@ import Articles from "../components/Articles.astro";
       to {
         translate: -100%;
       }
-    }
-
-    .bbc_vid {
-      transition: filter 0.5s ease-in-out;
-    }
-
-    .bbc_vid:hover {
-      filter: brightness(1.5);
     }
   </style>
 </MainLayout>

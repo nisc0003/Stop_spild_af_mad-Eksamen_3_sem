@@ -8,6 +8,7 @@ import Link from "../components/Link.astro";
 import Card from "../components/Card.astro";
 import Header from "../components/Header.astro";
 import Articles from "../components/Articles.astro";
+import Buttons2 from "../components/Buttons2.astro";
 ---
 
 <!-- SM: er 640px i width -->
@@ -20,8 +21,12 @@ import Articles from "../components/Articles.astro";
     </Heading>
 
     <div class="flex flex-col gap-3 items-end">
-      <Link variant="orange"> LÆS OM VORES TIPS </Link>
-      <Link> VORES HISTORIE </Link>
+      <div onclick="ScrollToTips()">
+        <Link variant="orange"> LÆS OM VORES TIPS </Link>
+      </div>
+      <div onclick="ScrollToHistorie()">
+        <Link> VORES HISTORIE </Link>
+      </div>
     </div>
   </section>
 
@@ -109,7 +114,7 @@ import Articles from "../components/Articles.astro";
       class="sm:order-3 h-50 w-fit place-self-center lg:order-first lg:h-fit lg:w-fit"
     />
 
-    <div class="flex flex-col place-content-between">
+    <div class="flex flex-col place-content-between" id="tips">
       <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
         Hvad kan vi gøre?
       </Heading>
@@ -123,9 +128,15 @@ import Articles from "../components/Articles.astro";
 
       <div class="flex flex-col gap-5">
         <!-- <Button> KØB ENKELT VARE </Button> -->
-        <Link variant="green"> KØB ENKELT VARE</Link>
-        <Link variant="orange"> KØB IND MED OMTANKE</Link>
-        <Link variant="purple"> DOGGY BAGS</Link>
+        <div onclick="ScrollToTip1()">
+          <Buttons2 variant="green"> KØB ENKELT VARE</Buttons2>
+        </div>
+        <div onclick="ScrollToTip2()">
+          <Buttons2 variant="orange"> KØB IND MED OMTANKE</Buttons2>
+        </div>
+        <div onclick="ScrollToTip3()">
+          <Buttons2 variant="purple"> DOGGY BAGS</Buttons2>
+        </div>
         <!-- <Button> KØB IND MED OMTANKE </Button>
         <Button> DOGGY BAGS</Button> -->
       </div>
@@ -135,7 +146,7 @@ import Articles from "../components/Articles.astro";
   <section
     class="sm:flex flex-col lg:flex lg:flex-row lg:mr-section_right lg:ml-section_left mb-section_buttom mt-section_top"
   >
-    <div>
+    <div id="tip1">
       <Link variant="green-inverted" size="medium">Tip 1</Link>
       <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
         Fortsæt med at købe enkelt-varer
@@ -169,6 +180,7 @@ import Articles from "../components/Articles.astro";
 
   <section
     class="lg:mr-section_right lg:ml-section_left mb-section_buttom mt-section_top"
+    id="tip2"
   >
     <Link variant="orange" size="medium">TIP 2</Link>
     <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
@@ -195,6 +207,7 @@ import Articles from "../components/Articles.astro";
 
   <section
     class="lg:grid lg:grid-cols-2 lg:grid-row-2 lg:mr-section_right lg:ml-section_left mb-section_buttom mt-section_top lg:gap-10"
+    id="tip3"
   >
     <div class="lg:flex lg:flex-col lg:order-2 lg:col-start-2">
       <div class="lg:hidden">
@@ -257,13 +270,16 @@ import Articles from "../components/Articles.astro";
           />
         </div>
         <!-- <Button>SE RESTURANTER</Button> -->
-        <Link href="wip" variant="purple">SE RESTURANTER</Link>
+        <div class="place-self-center">
+          <Link href="/wip" variant="purple"> SE RESTURANTER </Link>
+        </div>
       </div>
     </div>
   </section>
 
   <section
     class="mr-section_right ml-section_left max-w-585px place-items-center mb-section_buttom mt-section_top"
+    id="historie"
   >
     <Heading htmlheading="h1" size="medium" stylingclasses="mb-6">
       VORES HISTORIE
@@ -287,15 +303,13 @@ import Articles from "../components/Articles.astro";
           class="sm:overflow-x-auto sm:overflow-y-hidden w-full sm:pr-55 lg:pr-0 sm:flex sm:flex-nowrap lg:flex-col gap-10"
         >
           <li class="li1 activeTime" id="li1"><h1>2008</h1></li>
-          <li class="li2" id="li2"><h1>2009</h1></li>
-          <li class="li3" id="li3"><h1>2010</h1></li>
-          <li class="li4" id="li4"><h1>2011</h1></li>
-          <li class="li5" id="li5"><h1>2012</h1></li>
-          <div class="hidden">
-            <li class="li6" id="li6"><h1>2013</h1></li>
-            <li class="li7" id="li7"><h1>2014</h1></li>
-            <li class="li8" id="li8"><h1>2015</h1></li>
-          </div>
+          <li class="li2" id="li2"><h1>2010</h1></li>
+          <li class="li3" id="li3"><h1>2011</h1></li>
+          <li class="li4" id="li4"><h1>2013</h1></li>
+          <li class="li5" id="li5"><h1>2014</h1></li>
+          <li class="li6" id="li6"><h1>2016</h1></li>
+          <li class="li7" id="li7"><h1>2019</h1></li>
+          <li class="li8" id="li8"><h1>2024</h1></li>
         </ul>
         <!-- 
         <ul class="overflow-auto w-auto pr-25 sm:hidden lg:inline">
@@ -307,73 +321,120 @@ import Articles from "../components/Articles.astro";
         </ul> -->
       </div>
       <div class="sm:order-1 lg:order-3 flex flex-col lg:flex-1">
-        <div class="flex sm:flex-col lg:flex-row li1_content" id="li1_content">
+        <div
+          class="flex sm:flex-col lg:flex-row li1_content gap-5"
+          id="li1_content"
+        >
           <img src="/img/2008.png" alt="" />
-          <div class="flex flex-col gap-10">
-            <h1>Begyndelsen</h1>
-            <p>
+          <div class="flex flex-col gap-5">
+            <Heading>Begyndelsen</Heading>
+            <Text>
               Stop Spild Af Mad blev stiftet af Selina Juul i 2008 som en
               facebook gruppe, men voksede hurtigt til en anderkendt frivilligt
               og selvstændigt non-profit. Selina Juul var motiveret af hendes
               fortid i Moskva, hvor hun oplevede stor fødevaremangel. Da hun kom
               til Danmark tog hun derfor kampen op i mod madspild.
-            </p>
+            </Text>
           </div>
         </div>
 
-        <div class="flex flex-row li2_content inactiveBox" id="li2_content">
-          <img src="/img/cart.png" alt="" />
+        <div
+          class="flex flex-row li2_content inactiveBox gap-5"
+          id="li2_content"
+        >
+          <img src="/img/2010.png" alt="" />
           <div class="flex flex-col gap-10">
-            <h1>Begyndelsen 222</h1>
-            <p>
-              Stop Spild Af Mad blev stiftet af Selina Juul i 2008 som en
-              facebook gruppe, men voksede hurtigt til en anderkendt frivilligt
-              og selvstændigt non-profit. Selina Juul var motiveret af hendes
-              fortid i Moskva, hvor hun oplevede stor fødevaremangel. Da hun kom
-              til Danmark tog hun derfor kampen op i mod madspild.
-            </p>
+            <Heading>Med fra start</Heading>
+            <Text>
+              I 2010 skrev Stop Spild Af Mad i Europa-Parlamentet sammen med
+              flere europæiske organisationer under på Joint Declaration Against
+              Food Waste, en europæisk erklæring med formål at reducere madspild
+              med minimum 50% inden 2025. Erklæringen var med til at påvirke EU
+              og FN.
+            </Text>
           </div>
         </div>
 
-        <div class="flex flex-row li3_content inactiveBox" id="li3_content">
-          <img src="/img/cart.png" alt="" />
+        <div
+          class="flex flex-row li3_content inactiveBox gap-5"
+          id="li3_content"
+        >
+          <img src="/img/2011.png" alt="" />
           <div class="flex flex-col gap-10">
-            <h1>Begyndelsen 333</h1>
-            <p>
-              Stop Spild Af Mad blev stiftet af Selina Juul i 2008 som en
-              facebook gruppe, men voksede hurtigt til en anderkendt frivilligt
-              og selvstændigt non-profit. Selina Juul var motiveret af hendes
-              fortid i Moskva, hvor hun oplevede stor fødevaremangel. Da hun kom
-              til Danmark tog hun derfor kampen op i mod madspild.
-            </p>
+            <Heading>Overskudsmad til udsatte</Heading>
+            <Text>
+              Siden 2011 har Stop Spild Af Mad, samarbejdspartnere og frivillige
+              indsamlet og videreformidlet over 300 tons god gratis overskudsmad
+              til herberger, væresteder, asylcentre, krisecentre, kvindehjem
+              samt andre hjælpeorganisationer for hjemløse og socialt udsatte.
+            </Text>
           </div>
         </div>
 
         <div class="flex flex-row li4_content inactiveBox" id="li4_content">
-          <img src="/img/cart.png" alt="" />
+          <img src="/img/2013.png" alt="" />
+
           <div class="flex flex-col gap-10">
-            <h1>Begyndelsen 444</h1>
-            <p>
-              Stop Spild Af Mad blev stiftet af Selina Juul i 2008 som en
-              facebook gruppe, men voksede hurtigt til en anderkendt frivilligt
-              og selvstændigt non-profit. Selina Juul var motiveret af hendes
-              fortid i Moskva, hvor hun oplevede stor fødevaremangel. Da hun kom
-              til Danmark tog hun derfor kampen op i mod madspild.
-            </p>
+            <Heading>Doggy bags</Heading>
+            <Text>
+              Siden 2013 har Stop Spild Af Mad og Unilever Food Solutions uddelt
+              over 60.000 gratis doggybags til over 200 restauranter og
+              spisesteder i hele landet. Analyse af TNS Gallup for Stop Spild Af
+              Mad viser, at over halvdelen af danskere vil tage imod en
+              doggybag.
+            </Text>
           </div>
         </div>
 
-        <div class="flex flex-row li5_content inactiveBox" id="li5_content">
-          <img src="/img/cart.png" alt="" />
+        <div
+          class="flex flex-row li5_content inactiveBox gap-5"
+          id="li5_content"
+        >
+          <img src="/img/2014.png" alt="" />
           <div class="flex flex-col gap-10">
-            <h1>Begyndelsen 555</h1>
-            <p>
-              Stop Spild Af Mad blev stiftet af Selina Juul i 2008 som en
-              facebook gruppe, men voksede hurtigt til en anderkendt frivilligt
-              og selvstændigt non-profit. Selina Juul var motiveret af hendes
-              fortid i Moskva, hvor hun oplevede stor fødevaremangel. Da hun kom
-              til Danmark tog hun derfor kampen op i mod madspild.
-            </p>
+            <Heading>Roskilde Festival</Heading>
+            <Text>
+              I 2014 har Stop Spild Af Mad, samarbejdspartnere og frivillige
+              indsamlet og videreformidlet 27,5 tons god gratis overskudsmad fra
+              Roskilde Festival til socialt udsatte. Indsatsen vandt den
+              anerkendte internationale festivalpris Green Operations Award.
+            </Text>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-row li6_content inactiveBox gap-5"
+          id="li6_content"
+        >
+          <img src="/img/2016.png" alt="" />
+          <div class="flex flex-col gap-10">
+            <Heading>Officielt en forening</Heading>
+            <Text>
+              Den 16. november 2016 blev Stop Spild Af Mad formelt omdannet til
+              en forening.
+              <br />
+              <br />
+              Hendes Kongelige Højhed Prinsesse Marie har siden 2016 været samarbejdspartner
+              til foreningen Stop Spild Af Mad.
+            </Text>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-row li6_content inactiveBox gap-5"
+          id="li6_content"
+        >
+          <img src="/img/2016.png" alt="" />
+          <div class="flex flex-col gap-10">
+            <Heading>Officielt en forening</Heading>
+            <Text>
+              Den 16. november 2016 blev Stop Spild Af Mad formelt omdannet til
+              en forening.
+              <br />
+              <br />
+              Hendes Kongelige Højhed Prinsesse Marie har siden 2016 været samarbejdspartner
+              til foreningen Stop Spild Af Mad.
+            </Text>
           </div>
         </div>
       </div>
@@ -400,8 +461,8 @@ import Articles from "../components/Articles.astro";
     </div>
 
     <section class="grid grid-cols-2 gap-5 mt-5">
-      <Link href="#" variant="orange" size="large" id="2012_btn"> 2012 </Link>
-      <Link href="#" variant="orange" size="large" id="2016_btn"> 2016 </Link>
+      <Buttons2 variant="orange" size="large" id="2012_btn"> 2012 </Buttons2>
+      <Buttons2 variant="orange" size="large" id="2016_btn"> 2016 </Buttons2>
     </section>
   </section>
 
@@ -409,7 +470,7 @@ import Articles from "../components/Articles.astro";
 
   <div>
     <a href="#" id="scrollToTop" class="material-icons-outlined">
-      <Button>TILBAGE TIL TOPPEN</Button>
+      <Button variant="black">TILBAGE TIL TOPPEN</Button>
     </a>
   </div>
 </MainLayout>
@@ -524,6 +585,30 @@ import Articles from "../components/Articles.astro";
 </style>
 
 <script is:inline>
+  // function ScrollToTips() {
+  //   document.getElementById("tips").scrollIntoView({ behavior: "smooth" });
+  // }
+
+  function ScrollToTips() {
+    document.getElementById("tips").scrollIntoView({ behavior: "smooth" });
+  }
+
+  function ScrollToHistorie() {
+    document.getElementById("historie").scrollIntoView({ behavior: "smooth" });
+  }
+
+  function ScrollToTip1() {
+    document.getElementById("tip1").scrollIntoView({ behavior: "smooth" });
+  }
+
+  function ScrollToTip2() {
+    document.getElementById("tip2").scrollIntoView({ behavior: "smooth" });
+  }
+
+  function ScrollToTip3() {
+    document.getElementById("tip3").scrollIntoView({ behavior: "smooth" });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     // TEDx Talk JS
     const btn2012 = document.getElementById("2012_btn");
