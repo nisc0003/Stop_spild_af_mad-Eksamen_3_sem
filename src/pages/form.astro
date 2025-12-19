@@ -8,40 +8,42 @@ import Button from "../components/Button.astro";
 
 <MainLayout title="Kontakt os">
   <!-- Hovedsektion med tilmeldingsformular -->
-  <section
-    class="px-(--margin-section_left) py-(--margin-section_top) bg-white"
-  >
-    <div class="max-w-4xl mx-auto">
+  <section class="mr-section_right ml-section_left pb-20 pt-10">
+    <div class="max-w-3xl mx-auto">
       <Heading
         htmlheading="h1"
-        size="large"
+        size="medium"
         weight="bold"
         font="display"
-        stylingclasses="mb-6"
+        stylingclasses="mb-3 text-center"
       >
         TILMELDING
       </Heading>
 
-      <Text size="large" stylingclasses="mb-12 text-[var(--color-black)]">
+      <Text size="medium" stylingclasses="mb-6 text-center max-w-xl mx-auto">
         Tak fordi du vil støtte os. Inden vi kan tage i mod din hjælp skal du
         oplyse din email og hvilken form for støtte du vil give. Vi kontakter
         dig efterfølgende og bekræfter din tilmelding.
       </Text>
 
-      <!-- Formular div-->
-      <div class="max-w-2xl mx-auto p-8 bg-white shadow-lg rounded-contentBox">
+      <!-- Formular container med skygge og afrunding -->
+      <div
+        class="max-w-2xl mx-auto p-6 md:p-8 bg-white shadow-2xl rounded-lg border border-orange--400"
+      >
         <!-- Alpine.js formular - x-data kobler til emailForm funktionen -->
         <!-- @submit.prevent forhindrer standard formular submit og kalder vores submit() funktion -->
-        <form x-data="emailForm" @submit.prevent="submit" class="space-y-6">
+        <form x-data="emailForm" @submit.prevent="submit" class="space-y-5">
           <!-- Dropdown: Vælg privatperson eller virksomhed -->
           <!-- x-model="type" binder værdien til Alpine's type variabel -->
           <div>
-            <label class="block mb-1 font-semibold">
-              Er du privatperson eller virksomhed?
+            <label
+              class="block mb-2 font-semibold text-black font-sans text-sm md:text-base"
+            >
+              Er du privatperson eller virksomhed? *
             </label>
             <select
               x-model="type"
-              class="form-select w-full rounded-contentBox border"
+              class="form-select w-full rounded-lg border-2 border-orange--100 bg-yellow--100 py-3 px-4 font-sans text-sm md:text-base focus:border-orange--400 focus:ring-2 focus:ring-orange--200 hover:border-orange--200 transition-all shadow-sm appearance-none cursor-pointer"
             >
               <option value="privat">Privatperson</option>
               <option value="firma">Firma</option>
@@ -50,133 +52,191 @@ import Button from "../components/Button.astro";
 
           <!-- Privatperson felter - kun vist når type === 'privat' -->
           <!-- x-show styrer synlighed, x-transition tilføjer smooth animation -->
-          <div x-show="type === 'privat'" x-transition class="space-y-4">
-            <div>
-              <label class="block mb-1 font-semibold">Fornavn</label>
-              <input
-                x-ref="firstName"
-                type="text"
-                class="form-input w-full rounded-contentBox border"
-                placeholder="Fornavn"
-              />
-            </div>
+          <div x-show="type === 'privat'" x-transition class="space-y-5">
+            <!-- Fornavn og Efternavn side by side på desktop -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+              <div>
+                <label
+                  class="block mb-2 font-semibold text-black font-sans text-sm md:text-base"
+                  >Fornavn *</label
+                >
+                <input
+                  x-ref="firstName"
+                  type="text"
+                  class="form-input w-full rounded-lg border-2 border-orange--100 bg-yellow--100 py-3 px-4 font-sans text-sm md:text-base focus:border-orange--400 focus:ring-2 focus:ring-orange--200 hover:border-orange--200 transition-all shadow-sm"
+                  placeholder="Dit fornavn"
+                />
+              </div>
 
-            <div>
-              <label class="block mb-1 font-semibold">Efternavn</label>
-              <input
-                x-ref="lastName"
-                type="text"
-                class="form-input w-full rounded-contentBox border"
-                placeholder="Efternavn"
-              />
+              <div>
+                <label
+                  class="block mb-2 font-semibold text-black font-sans text-sm md:text-base"
+                  >Efternavn *</label
+                >
+                <input
+                  x-ref="lastName"
+                  type="text"
+                  class="form-input w-full rounded-lg border-2 border-orange--100 bg-yellow--100 py-3 px-4 font-sans text-sm md:text-base focus:border-orange--400 focus:ring-2 focus:ring-orange--200 hover:border-orange--200 transition-all shadow-sm"
+                  placeholder="Dit efternavn"
+                />
+              </div>
             </div>
           </div>
 
           <!-- Firma felter - kun vist når type === 'firma' -->
-          <div x-show="type === 'firma'" x-transition class="space-y-4">
+          <div x-show="type === 'firma'" x-transition class="space-y-5">
+            <!-- Firmanavn -->
             <div>
-              <label class="block mb-1 font-semibold">Firmanavn</label>
+              <label
+                class="block mb-2 font-semibold text-black font-sans text-sm md:text-base"
+                >Firmanavn *</label
+              >
               <input
                 x-ref="companyName"
                 type="text"
-                class="form-input w-full rounded-contentBox border"
-                placeholder="Firmanavn"
+                class="form-input w-full rounded-lg border-2 border-orange--100 bg-yellow--100 py-3 px-4 font-sans text-sm md:text-base focus:border-orange--400 focus:ring-2 focus:ring-orange--200 hover:border-orange--200 transition-all shadow-sm"
+                placeholder="Dit firmanavn"
               />
             </div>
 
-            <div>
-              <label class="block mb-1 font-semibold">CVR-nummer</label>
-              <input
-                x-ref="cvr"
-                type="text"
-                class="form-input w-full rounded-contentBox border"
-                placeholder="CVR-nummer"
-              />
-            </div>
+            <!-- CVR og Adresse side by side på desktop -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+              <div>
+                <label
+                  class="block mb-2 font-semibold text-black font-sans text-sm md:text-base"
+                  >CVR-nummer *</label
+                >
+                <input
+                  x-ref="cvr"
+                  type="text"
+                  class="form-input w-full rounded-lg border-2 border-orange--100 bg-yellow--100 py-3 px-4 font-sans text-sm md:text-base focus:border-orange--400 focus:ring-2 focus:ring-orange--200 hover:border-orange--200 transition-all shadow-sm"
+                  placeholder="12345678"
+                />
+              </div>
 
-            <div>
-              <label class="block mb-1 font-semibold">Adresse</label>
-              <input
-                x-ref="companyAddress"
-                type="text"
-                class="form-input w-full rounded-contentBox border"
-                placeholder="Adresse"
-              />
+              <div>
+                <label
+                  class="block mb-2 font-semibold text-black font-sans text-sm md:text-base"
+                  >Adresse *</label
+                >
+                <input
+                  x-ref="companyAddress"
+                  type="text"
+                  class="form-input w-full rounded-lg border-2 border-orange--100 bg-yellow--100 py-3 px-4 font-sans text-sm md:text-base focus:border-orange--400 focus:ring-2 focus:ring-orange--200 hover:border-orange--200 transition-all shadow-sm"
+                  placeholder="Din virksomhedsadresse"
+                />
+              </div>
             </div>
           </div>
 
           <!-- Email felt - obligatorisk -->
           <div>
-            <label class="block mb-1 font-semibold">E-mail</label>
+            <label
+              class="block mb-2 font-semibold text-black font-sans text-sm md:text-base"
+              >E-mail *</label
+            >
             <input
               x-ref="email"
               type="email"
-              class="form-input w-full rounded-contentBox border"
+              class="form-input w-full rounded-lg border-2 border-orange--100 bg-yellow--100 py-3 px-4 font-sans text-sm md:text-base focus:border-orange--400 focus:ring-2 focus:ring-orange--200 hover:border-orange--200 transition-all shadow-sm"
               placeholder="eksempel@email.com"
+              required
             />
           </div>
 
-          <!-- Telefonnummer felt med auto-sanitering -->
-          <!-- @input fjerner ugyldige tegn mens brugeren skriver -->
-          <div>
-            <label class="block mb-1 font-semibold">Telefonnummer</label>
-            <input
-              x-ref="phone"
-              type="tel"
-              placeholder="+45 00 00 00 00"
-              class="form-input w-full rounded-contentBox border"
-              @input="$el.value = $el.value.replace(/[^0-9+ ]/g,'')"
-            />
-          </div>
+          <!-- Telefonnummer og Støtteform side by side på desktop -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+            <!-- Telefonnummer felt med auto-sanitering -->
+            <!-- @input fjerner ugyldige tegn mens brugeren skriver -->
+            <div>
+              <label
+                class="block mb-2 font-semibold text-black font-sans text-sm md:text-base"
+                >Telefonnummer *</label
+              >
+              <input
+                x-ref="phone"
+                type="tel"
+                placeholder="+45 00 00 00 00"
+                class="form-input w-full rounded-lg border-2 border-orange--100 bg-yellow--100 py-3 px-4 font-sans text-sm md:text-base focus:border-orange--400 focus:ring-2 focus:ring-orange--200 hover:border-orange--200 transition-all shadow-sm"
+                @input="$el.value = $el.value.replace(/[^0-9+ ]/g,'')"
+                required
+              />
+            </div>
 
-          <!-- Støtteform dropdown - obligatorisk -->
-          <div>
-            <label class="block mb-1 font-semibold">Støtteform</label>
-            <select
-              x-ref="subject"
-              class="form-select w-full rounded-contentBox border"
-            >
-              <option value="" disabled selected>Vælg en mulighed</option>
-              <option value="Frivillig">Frivillig</option>
-              <option value="Støttemedlem">Støttemedlem</option>
-              <option value="Samarbejdspartner">Samarbejdspartner</option>
-              <option value="Erhvervspartner">Erhvervspartner</option>
-              <option value="Budskabet">Budskabet</option>
-              <option value="andet">Andet</option>
-            </select>
+            <!-- Støtteform dropdown - obligatorisk -->
+            <div>
+              <label
+                class="block mb-2 font-semibold text-black font-sans text-sm md:text-base"
+                >Støtteform *</label
+              >
+              <select
+                x-ref="subject"
+                class="form-select w-full rounded-lg border-2 border-orange--100 bg-yellow--100 py-3 px-4 font-sans text-sm md:text-base focus:border-orange--400 focus:ring-2 focus:ring-orange--200 hover:border-orange--200 transition-all shadow-sm appearance-none cursor-pointer"
+                required
+              >
+                <option value="" disabled selected>Vælg en mulighed</option>
+                <option value="Frivillig">Frivillig</option>
+                <option value="Støttemedlem">Støttemedlem</option>
+                <option value="Samarbejdspartner">Samarbejdspartner</option>
+                <option value="Erhvervspartner">Erhvervspartner</option>
+                <option value="Budskabet">Budskabet</option>
+                <option value="andet">Andet</option>
+              </select>
+            </div>
           </div>
 
           <!-- Besked felt - valgfrit -->
           <div>
-            <label class="block mb-1 font-semibold">Besked</label>
+            <label
+              class="block mb-2 font-semibold text-black font-sans text-sm md:text-base"
+              >Besked (valgfrit)</label
+            >
             <textarea
               x-ref="message"
-              rows="6"
-              class="form-textarea w-full rounded-contentBox border"
+              rows="5"
+              class="form-textarea w-full rounded-lg border-2 border-orange--100 bg-yellow--100 py-3 px-4 font-sans text-sm md:text-base focus:border-orange--400 focus:ring-2 focus:ring-orange--200 hover:border-orange--200 transition-all resize-none shadow-sm"
               placeholder="Skriv din besked her…"></textarea>
           </div>
 
           <!-- Accept checkbox - obligatorisk -->
-          <div class="flex items-center gap-2">
+          <div class="flex items-start gap-3 pt-1">
             <input
               id="accept"
               x-ref="accept"
               type="checkbox"
-              class="form-checkbox"
+              class="form-checkbox mt-1 rounded border-2 border-orange--100 text-orange--400 focus:ring-orange--200 w-5 h-5 cursor-pointer"
+              required
             />
-            <label for="accept">Jeg accepterer</label>
+            <label
+              for="accept"
+              class="text-sm md:text-base leading-relaxed font-sans cursor-pointer"
+            >
+              Jeg accepterer vilkårene og giver tilladelse til at blive
+              kontaktet *
+            </label>
           </div>
 
           <!-- Fejlbesked - kun vist når der er en fejl -->
           <!-- x-show="error" viser kun hvis error ikke er tom -->
           <!-- x-text="error" indsætter fejlteksten -->
-          <p x-show="error" x-text="error" class="text-red-600 font-semibold">
-          </p>
+          <div
+            x-show="error"
+            x-transition
+            class="p-3 bg-orange--100 border-l-4 border-orange--400 rounded-lg shadow-sm"
+          >
+            <p
+              x-text="error"
+              class="text-orange--400 font-semibold font-sans text-sm"
+            >
+            </p>
+          </div>
 
           <!-- Submit knap -->
-          <Button type="submit" variant="black" size="large">
-            Send besked
-          </Button>
+          <div class="pt-4">
+            <Button type="submit" variant="black" size="medium">
+              Send besked
+            </Button>
+          </div>
         </form>
       </div>
     </div>
