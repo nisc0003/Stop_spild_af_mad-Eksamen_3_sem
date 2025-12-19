@@ -66,39 +66,6 @@ import Buttons2 from "../components/Buttons2.astro";
         class="carousel_img grow-0 shrink-0 basis-5em"
       />
     </div>
-
-    <div class="group">
-      <img
-        src="/img/frugt1.webp"
-        alt=""
-        class="carousel_img grow-0 shrink-0 basis-5em"
-      />
-      <img
-        src="/img/frugt2.webp"
-        alt=""
-        class="carousel_img grow-0 shrink-0 basis-5em"
-      />
-      <img
-        src="/img/frugt3.webp"
-        alt=""
-        class="carousel_img grow-0 shrink-0 basis-5em"
-      />
-      <img
-        src="/img/frugt4.webp"
-        alt=""
-        class="carousel_img grow-0 shrink-0 basis-5em"
-      />
-      <img
-        src="/img/frugt5.webp"
-        alt=""
-        class="carousel_img grow-0 shrink-0 basis-5em"
-      />
-      <img
-        src="/img/frugt6.webp"
-        alt=""
-        class="carousel_img grow-0 shrink-0 basis-5em"
-      />
-    </div>
   </section>
 
   <section
@@ -110,361 +77,235 @@ import Buttons2 from "../components/Buttons2.astro";
   <section
     class="mt-5 flex flex-col lg:mr-section_right lg:ml-section_left mb-section_buttom"
   >
-    <img
-      src="/img/food_bag.webp"
-      alt=""
-      class="sm:order-3 h-50 w-fit place-self-center lg:order-first lg:h-fit lg:w-fit"
-    />
-
-    <div class="flex flex-col place-content-between" id="tips">
-      <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
-        Hvad kan vi gøre?
-      </Heading>
-
-      <Text>
-        Emner som disse kan virke store og uoverskuelige. Det kan være svært at
-        vide hvor man skal starte, hvis man gerne vil hjælpe med at gøre en
-        forskel. Derfor har vi her nogle simple vaner man kan indfører i
-        hverdagen, som hjælper til med at mindske mængden af madspild:</Text
-      >
-
-      <div class="flex flex-col gap-5">
-        <!-- <Button> KØB ENKELT VARE </Button> -->
-        <div onclick="ScrollToTip1()" class="cursor-pointer">
-          <Buttons2 variant="green"> KØB ENKELT VARE</Buttons2>
-        </div>
-        <div onclick="ScrollToTip2()" class="cursor-pointer">
-          <Buttons2 variant="orange"> KØB IND MED OMTANKE</Buttons2>
-        </div>
-        <div onclick="ScrollToTip3()" class="cursor-pointer">
-          <Buttons2 variant="purple"> DOGGY BAGS</Buttons2>
-        </div>
-        <!-- <Button> KØB IND MED OMTANKE </Button>
-        <Button> DOGGY BAGS</Button> -->
-      </div>
-    </div>
-  </section>
-
-  <section
-    class="sm:flex flex-col lg:flex lg:flex-row lg:mr-section_right lg:ml-section_left mb-section_buttom mt-section_top"
-  >
-    <div id="tip1">
-      <Link variant="green-inverted" size="medium">Tip 1</Link>
-      <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
-        Fortsæt med at købe enkelt-varer
-      </Heading>
-
-      <div class="sm:flex flex-col gap-3 lg:hidden">
-        <Text
-          >I 2017 medvirkede Stop Spild Af Mad til at Rema 1000 droppede
-          mængerabatter i alle kædens danske butikker.</Text
-        >
-        <Text
-          >Mængden af madspild faldt her efter fra ca. 80-100 bananer blev smidt
-          ud om dagen, til kun 10 bananer om dagen.
-        </Text>
-      </div>
-
-      <div class="sm:hidden lg:flex lg:flex-col gap-3">
-        <Text>
-          I 2017 medvirkede Stop Spild Af Mad til at Rema 1000 droppede
-          mængerabatter i alle kædens danske butikker.
-        </Text>
-        <Text>
-          Mængden af madspild faldt her efter fra ca. 80-100 bananer blev smidt
-          ud om dagen, til kun 10 bananer om dagen.
-        </Text>
-      </div>
-    </div>
-
-    <img src="/img/banan1.webp" alt="" class="sm:h-85 self-center lg:h-125" />
-  </section>
-
-  <section
-    class="lg:mr-section_right lg:ml-section_left mb-section_buttom mt-section_top"
-    id="tip2"
-  >
-    <Link variant="orange" size="medium">TIP 2</Link>
-    <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
-      Køb in med omtanke
-    </Heading>
-
-    <Text>I gennemsnittet ender vi med at smide 25% af maden vi køber ud.</Text>
-    <Text
-      >Det vil svare til at hver fjerede indkøbsvogn man ser i supermarkedet
-      bliver smidt ud.</Text
-    >
-    <div class="lg:grid lg:grid-cols-2 lg:gap-5">
-      <div class="lg:col-2">
-        <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
-          Hvad kan vi gøre?
-        </Heading>
-
-        <div
-          class="staggeranimation flex flex-row justify-between"
-          id="stagger"
-        >
-          <img src="/img/cart.webp" alt="" class="sm:h-35 w-auto lg:h-50" />
-          <img src="/img/cart.webp" alt="" class="sm:h-35 w-auto lg:h-50" />
-          <img src="/img/cart.webp" alt="" class="sm:h-35 w-auto lg:h-50" />
-          <img
-            src="/img/cart.webp"
-            alt=""
-            class="grayscale sm:h-35 w-auto lg:h-50"
-          />
-        </div>
-      </div>
-
-      <Text size="small">
-        Emner som disse kan virke store og uoverskuelige. Det kan være svært at
-        vide hvor man skal starte, hvis man gerne vil hjælpe med at gøre en
-        forskel. Derfor har vi her nogle simple vaner man kan indfører i
-        hverdagen, som hjælper til med at mindske mængden af madspild:</Text
-      >
-
-      <div class="flex flex-col gap-3 mt-5 lg:mt-20">
-        <!-- <Button> KØB ENKELT VARE </Button> -->
-        <div onclick="ScrollToTip1()" class="cursor-pointer">
-          <Buttons2 variant="green" size="small"> KØB ENKELT VARE</Buttons2>
-        </div>
-        <div onclick="ScrollToTip2()" class="cursor-pointer">
-          <Buttons2 variant="orange" size="small">
-            KØB IND MED OMTANKE</Buttons2
-          >
-        </div>
-        <div onclick="ScrollToTip3()" class="cursor-pointer">
-          <Buttons2 variant="purple" size="small"> DOGGY BAGS</Buttons2>
-        </div>
-        <!-- <Button> KØB IND MED OMTANKE </Button>
-        <Button> DOGGY BAGS</Button> -->
-      </div>
-    </div>
-
-    <img
-      src="/img/doggy_bag.webp"
-      src="/img/food_bag.png"
-      alt=""
-      class="mx-auto mt-10 order-3 h-90 md:h-100 md:mt-15 lg:h-fit lg:w-fit lg:col-1 lg:row-1 lg:-mt-10"
-    />
-  </section>
-
-  <div class="sm:flex flex-col gap-5 inline lg:hidden">
-    <Text
-      >I adskellige forskellige resturanter har vi samarbejdskab og har
-      implimenteret vores Doggy bag!</Text
-    >
-    <Text
-      >Hvis du ikke kan spise din mad færdig kan du spørge om en doggy bag og
-      tage maden med hjem!</Text
-    >
-  </div>
-
-  <div class="sm:flex flex-col gap-5 hidden lg:gap-2">
-    <Text
-      >I samarbejdskab med adskillige forskellige restauranter, har vi
-      implementeret vores ‘doggy bag’!</Text
-    >
-    <Text
-      >Hvis du ikke kan spise din mad færdig kan du spørge om en ‘doggy bag’ og
-      tage maden med hjem.</Text
-    >
-  </div>
-</MainLayout>
-
-<div class="sm:flex flex-col items-center gap-5 lg:items-baseline lg:order-1">
-  <div class="sm:hidden lg:inline">
-    <Link variant="purple" size="medium">Tip 3</Link>
-    <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
-      Doggy Bags
-    </Heading>
-  </div>
-
-  <div class="flex flex-col gap-5 lg:w-full h-full">
-    <div id="mapContainer" class="map-container">
-      <img
-        src="/img/cph_map.webp"
-        alt=""
-        id="mapImage"
-        class="map-image h-fit w-fit"
-      />
-    </div>
-    <!-- <Button>SE RESTURANTER</Button> -->
-    <div class="place-self-center">
-      <Link href="/wip" variant="purple"> SE RESTURANTER </Link>
-    </div>
-  </div>
-</div>
-
-<section
-  class="mb-section_buttom mt-section_top mx-auto max-w-sm flex flex-col md:max-w-xl md:max-w-4xl lg:max-w-4xl lg:flex lg:flex-col"
->
-  <div id="tip1" class="lg:grid lg:grid-cols-2 lg:gap-20 lg:mb-40">
-    <div>
-      <Link variant="green-inverted" size="small">Tip 1</Link>
-      <Heading htmlheading="h2" font="sans" size="medium" stylingclasses="my-6">
-        Fortsæt med at købe enkelt-varer
-      </Heading>
-
-      <div class="sm:flex flex-col gap-3">
-        <Text size="small"
-          >I 2017 medvirkede Stop Spild Af Mad til at Rema 1000 droppede
-          mængerabatter i alle kædens danske butikker.</Text
-        >
-        <Text size="small" stylingclasses="mb-3"
-          >Mængden af madspild faldt her efter fra ca. 80-100 bananer blev smidt
-          ud om dagen, til kun 10 bananer om dagen.
-        </Text>
-      </div>
-    </div>
-
-    <div class="relative mx-auto">
-      <div class="shuffleImg absolute">
-        <img src="/img/banan1.png" alt="" />
-      </div>
-      <div class="shuffleImg">
-        <img src="/img/bananer.png" alt="" />
-      </div>
-    </div>
-  </div>
-
-  <section
-    class="mx-auto mb-section_buttom mt-section_top max-w-sm md:max-w-xl lg:max-w-4xl lg:mx-0 lg:mb-40"
-    id="tip2"
-  >
-    <Link variant="orange" size="small">TIP 2</Link>
-    <Heading htmlheading="h2" font="sans" size="medium" stylingclasses="my-6">
-      Køb in med omtanke
-    </Heading>
-
-    <Text size="small" stylingclasses="mb-2"
-      >I gennemsnittet ender vi med at smide 25% af maden vi køber ud.</Text
-    >
-    <Text size="small">
-      Det vil svare til at hver fjerede indkøbsvogn man ser i supermarkedet
-      bliver smidt ud.</Text
-    >
-
     <div
-      class="mt-8 staggeranimation flex flex-row justify-between md:grid md:grid-cols-2 lg:max-w-4xl"
-      id="stagger"
+      class="mx-auto max-w-sm flex flex-col place-content-between md:max-w-xl lg:mb-50 lg:max-w-4xl lg:mb-40"
+      id="tips"
     >
-      <div class="md:flex md:flex-row lg:gap-10">
-        <img src="/img/cart.png" alt="" class="h-35 w-auto lg:h-50" />
-        <img src="/img/cart.png" alt="" class="h-35 w-auto lg:h-50" />
-      </div>
+      <div class="lg:grid lg:grid-cols-2 lg:gap-5">
+        <div class="lg:col-2">
+          <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
+            Hvad kan vi gøre?
+          </Heading>
 
-      <div class="md:flex md:flex-row lg:gap-10">
-        <img src="/img/cart.png" alt="" class="h-35 w-auto lg:h-50" />
-        <img src="/img/cart.png" alt="" class="grayscale h-35 w-auto lg:h-50" />
+          <Text size="small">
+            Emner som disse kan virke store og uoverskuelige. Det kan være svært
+            at vide hvor man skal starte, hvis man gerne vil hjælpe med at gøre
+            en forskel. Derfor har vi her nogle simple vaner man kan indfører i
+            hverdagen, som hjælper til med at mindske mængden af madspild:</Text
+          >
+
+          <div class="flex flex-col gap-3 mt-5 lg:mt-20">
+            <!-- <Button> KØB ENKELT VARE </Button> -->
+            <div onclick="ScrollToTip1()" class="cursor-pointer">
+              <Buttons2 variant="green" size="small"> KØB ENKELT VARE</Buttons2>
+            </div>
+            <div onclick="ScrollToTip2()" class="cursor-pointer">
+              <Buttons2 variant="orange" size="small">
+                KØB IND MED OMTANKE</Buttons2
+              >
+            </div>
+            <div onclick="ScrollToTip3()" class="cursor-pointer">
+              <Buttons2 variant="purple" size="small"> DOGGY BAGS</Buttons2>
+            </div>
+            <!-- <Button> KØB IND MED OMTANKE </Button>
+        <Button> DOGGY BAGS</Button> -->
+          </div>
+        </div>
+
+        <img
+          src="/img/food_bag.webp"
+          alt=""
+          class="mx-auto mt-10 order-3 h-90 md:h-100 md:mt-15 lg:h-fit lg:w-fit lg:col-1 lg:row-1 lg:-mt-10"
+        />
       </div>
     </div>
   </section>
 
   <section
-    class="mb-section_buttom mt-section_top mx-auto max-w-sm md:max-w-xl lg:max-w-4xl lg:mb-80"
-    id="tip3"
+    class="mb-section_buttom mt-section_top mx-auto max-w-sm flex flex-col md:max-w-xl md:max-w-4xl lg:max-w-4xl lg:flex lg:flex-col"
   >
-    <div class="">
-      <div class="">
-        <Link variant="purple" size="small">Tip 3</Link>
+    <div id="tip1" class="lg:grid lg:grid-cols-2 lg:gap-20 lg:mb-40">
+      <div>
+        <Link variant="green-inverted" size="small">Tip 1</Link>
         <Heading
           htmlheading="h2"
           font="sans"
-          size="small"
+          size="medium"
           stylingclasses="my-6"
         >
-          Doggy Bags
+          Fortsæt med at købe enkelt-varer
         </Heading>
+
+        <div class="sm:flex flex-col gap-3">
+          <Text size="small"
+            >I 2017 medvirkede Stop Spild Af Mad til at Rema 1000 droppede
+            mængerabatter i alle kædens danske butikker.</Text
+          >
+          <Text size="small" stylingclasses="mb-3"
+            >Mængden af madspild faldt her efter fra ca. 80-100 bananer blev
+            smidt ud om dagen, til kun 10 bananer om dagen.
+          </Text>
+        </div>
       </div>
 
-      <div class="md:grid md:grid-cols-2 md:gap-4 lg:gap-30">
-        <!-- doggy bag billede og tekst -->
+      <div class="relative mx-auto">
+        <div class="shuffleImg absolute">
+          <img src="/img/banan1.webp" alt="" />
+        </div>
+        <div class="shuffleImg">
+          <img src="/img/bananer.png" alt="" />
+        </div>
+      </div>
+    </div>
 
-        <div class="md:col-2 md:row-1 md:-mt-25 lg:-mt-70">
-          <div
-            class="bg-[url('/img/star.svg')] bg-no-repeat bg-contain bg-center h-100 w-auto place-content-center lg:h-185"
-          >
-            <img src="/img/doggy_bag.png" alt="" class="mx-auto h-75 w-auto" />
-          </div>
+    <section
+      class="mx-auto mb-section_buttom mt-section_top max-w-sm md:max-w-xl lg:max-w-4xl lg:mx-0 lg:mb-40"
+      id="tip2"
+    >
+      <Link variant="orange" size="small">TIP 2</Link>
+      <Heading htmlheading="h2" font="sans" size="medium" stylingclasses="my-6">
+        Køb in med omtanke
+      </Heading>
 
-          <div class="flex flex-col inline">
-            <Text size="small" stylingclasses="mb-2 mt-5 md:-mt-5 lg:-mt-30"
-              >I adskellige forskellige resturanter har vi samarbejdskab og har
-              implimenteret vores Doggy bag!</Text
-            >
-            <Text size="small" stylingclasses="mb-5"
-              >Hvis du ikke kan spise din mad færdig kan du spørge om en doggy
-              bag og tage maden med hjem!</Text
-            >
-          </div>
+      <Text size="small" stylingclasses="mb-2"
+        >I gennemsnittet ender vi med at smide 25% af maden vi køber ud.</Text
+      >
+      <Text size="small">
+        Det vil svare til at hver fjerede indkøbsvogn man ser i supermarkedet
+        bliver smidt ud.</Text
+      >
+
+      <div
+        class="mt-8 staggeranimation flex flex-row justify-between md:grid md:grid-cols-2 lg:max-w-4xl"
+        id="stagger"
+      >
+        <div class="md:flex md:flex-row lg:gap-10">
+          <img src="/img/cart.webp" alt="" class="h-35 w-auto lg:h-50" />
+          <img src="/img/cart.webp" alt="" class="h-35 w-auto lg:h-50" />
         </div>
 
-        <!-- kort og knap -->
-        <!-- <div
+        <div class="md:flex md:flex-row lg:gap-10">
+          <img src="/img/cart.webp" alt="" class="h-35 w-auto lg:h-50" />
+          <img
+            src="/img/cart.webp"
+            alt=""
+            class="grayscale h-35 w-auto lg:h-50"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="mb-section_buttom mt-section_top mx-auto max-w-sm md:max-w-xl lg:max-w-4xl lg:mb-80"
+      id="tip3"
+    >
+      <div class="">
+        <div class="">
+          <Link variant="purple" size="small">Tip 3</Link>
+          <Heading
+            htmlheading="h2"
+            font="sans"
+            size="small"
+            stylingclasses="my-6"
+          >
+            Doggy Bags
+          </Heading>
+        </div>
+
+        <div class="md:grid md:grid-cols-2 md:gap-4 lg:gap-30">
+          <!-- doggy bag billede og tekst -->
+
+          <div class="md:col-2 md:row-1 md:-mt-25 lg:-mt-70">
+            <div
+              class="bg-[url('/img/star.svg')] bg-no-repeat bg-contain bg-center h-100 w-auto place-content-center lg:h-185"
+            >
+              <img
+                src="/img/doggy_bag.webp"
+                alt=""
+                class="mx-auto h-75 w-auto"
+              />
+            </div>
+
+            <div class="flex flex-col inline">
+              <Text size="small" stylingclasses="mb-2 mt-5 md:-mt-5 lg:-mt-30"
+                >I adskellige forskellige resturanter har vi samarbejdskab og
+                har implimenteret vores Doggy bag!</Text
+              >
+              <Text size="small" stylingclasses="mb-5"
+                >Hvis du ikke kan spise din mad færdig kan du spørge om en doggy
+                bag og tage maden med hjem!</Text
+              >
+            </div>
+          </div>
+
+          <!-- kort og knap -->
+          <!-- <div
               class="sm:flex flex-col items-center gap-5 lg:items-baseline lg:order-1"
             >
             </div> -->
 
-        <div class="">
-          <div class="flex flex-col gap-5 md:h-100 lg:h-125">
-            <div id="mapContainer" class="map-container">
-              <img
-                src="/img/cph_map.png"
-                alt=""
-                id="mapImage"
-                class="map-image h-fit w-fit"
-              />
-            </div>
-            <!-- <Button>SE RESTURANTER</Button> -->
-            <div class="place-self-center">
-              <Link href="/wip" variant="purple" size="large">
-                SE RESTURANTER
-              </Link>
+          <div class="">
+            <div class="flex flex-col gap-5 md:h-100 lg:h-125">
+              <div id="mapContainer" class="map-container">
+                <img
+                  src="/img/cph_map.webp"
+                  alt=""
+                  id="mapImage"
+                  class="map-image h-fit w-fit"
+                />
+              </div>
+              <!-- <Button>SE RESTURANTER</Button> -->
+              <div class="place-self-center">
+                <Link href="/wip" variant="purple" size="large">
+                  SE RESTURANTER
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </section>
-</section>
 
-<section
-  class="mx-auto max-w-sm md:max-w-xl text-center mb-section_buttom mt-section_top lg:max-w-4xl"
-  id="historie"
->
-  <Heading htmlheading="h1" size="medium" stylingclasses="mb-6">
-    VORES HISTORIE
-  </Heading>
-  <Text
-    >Vi er meget stolte af hvor meget Stop Spild Af Mad har mulighed for at
-    udrette.
-    <br />
-    Her er nogle af vores højdepunkter.</Text
+  <section
+    class="mx-auto max-w-sm md:max-w-xl text-center mb-section_buttom mt-section_top lg:max-w-4xl"
+    id="historie"
   >
-</section>
-
-<section
-  class="mx-auto max-w-sm md:max-w-xl lg:mr-section_right lg:ml-section_left"
->
-  <div class="tidslinje sm:flex sm:flex-col lg:flex-row lg:max-h-100 lg:w-auto">
-    <div
-      class="sm:order-3 sm:w-full sm:overflow-hidden lg:order-1 lg:w-auto lg:max-h-100 lg:overflow-y-auto"
+    <Heading htmlheading="h1" size="medium" stylingclasses="mb-6">
+      VORES HISTORIE
+    </Heading>
+    <Text
+      >Vi er meget stolte af hvor meget Stop Spild Af Mad har mulighed for at
+      udrette.
+      <br />
+      Her er nogle af vores højdepunkter.</Text
     >
-      <ul
-        class="flex-row flex sm:flex-nowrap overflow-x-auto overflow-y-hidden w-full pr-55 lg:pr-0 lg:flex-col gap-10 lg:pr-3"
+  </section>
+
+  <section
+    class="mx-auto max-w-sm md:max-w-xl lg:mr-section_right lg:ml-section_left"
+  >
+    <div
+      class="tidslinje sm:flex sm:flex-col lg:flex-row lg:max-h-100 lg:w-auto"
+    >
+      <div
+        class="sm:order-3 sm:w-full sm:overflow-hidden lg:order-1 lg:w-auto lg:max-h-100 lg:overflow-y-auto"
       >
-        <li class="li1 activeTime my-2" id="li1">
-          <Text size="large">2008</Text>
-        </li>
-        <li class="li2 my-2" id="li2"><Text size="large">2010</Text></li>
-        <li class="li3 my-2" id="li3"><Text size="large">2011</Text></li>
-        <li class="li4 my-2" id="li4"><Text size="large">2013</Text></li>
-        <li class="li5 my-2" id="li5"><Text size="large">2014</Text></li>
-        <li class="li6 my-2" id="li6"><Text size="large">2016</Text></li>
-        <li class="li7 my-2" id="li7"><Text size="large">2019</Text></li>
-        <li class="li8 my-2" id="li8"><Text size="large">2024</Text></li>
-      </ul>
-      <!-- 
+        <ul
+          class="flex-row flex sm:flex-nowrap overflow-x-auto overflow-y-hidden w-full pr-55 lg:pr-0 lg:flex-col gap-10 lg:pr-3"
+        >
+          <li class="li1 activeTime my-2" id="li1">
+            <Text size="large">2008</Text>
+          </li>
+          <li class="li2 my-2" id="li2"><Text size="large">2010</Text></li>
+          <li class="li3 my-2" id="li3"><Text size="large">2011</Text></li>
+          <li class="li4 my-2" id="li4"><Text size="large">2013</Text></li>
+          <li class="li5 my-2" id="li5"><Text size="large">2014</Text></li>
+          <li class="li6 my-2" id="li6"><Text size="large">2016</Text></li>
+          <li class="li7 my-2" id="li7"><Text size="large">2019</Text></li>
+          <li class="li8 my-2" id="li8"><Text size="large">2024</Text></li>
+        </ul>
+        <!-- 
         <ul class="overflow-auto w-auto pr-25 sm:hidden lg:inline">
           <li class="li1 activeTime" id="li1"><h1>2008</h1></li>
           <li class="li2" id="li2"><h1>2009</h1></li>
@@ -472,53 +313,60 @@ import Buttons2 from "../components/Buttons2.astro";
           <li class="li4" id="li4"><h1>2011</h1></li>
           <li class="li5" id="li5"><h1>2012</h1></li>
         </ul> -->
-    </div>
-    <div class="order-1 lg:order-3 flex flex-col lg:flex-1">
-      <div class="flex flex-col lg:flex-row li1_content gap-5" id="li1_content">
-        <img src="/img/2008.webp" alt="" />
-        <div class="flex flex-col gap-5">
-          <Heading font="sans">Begyndelsen</Heading>
-          <Text>
-            Stop Spild Af Mad blev stiftet af Selina Juul i 2008 som en facebook
-            gruppe, men voksede hurtigt til en anderkendt frivilligt og
-            selvstændigt non-profit. Selina Juul var motiveret af hendes fortid
-            i Moskva, hvor hun oplevede stor fødevaremangel. Da hun kom til
-            Danmark tog hun derfor kampen op i mod madspild.
-          </Text>
-        </div>
       </div>
-
-      <div class="flex flex-col li2_content inactiveBox gap-5" id="li2_content">
-        <img src="/img/2010.webp" alt="" />
-        <div class="flex flex-col gap-10">
-          <Heading font="sans">Med fra start</Heading>
-          <Text>
-            I 2010 skrev Stop Spild Af Mad i Europa-Parlamentet sammen med flere
-            europæiske organisationer under på Joint Declaration Against Food
-            Waste, en europæisk erklæring med formål at reducere madspild med
-            minimum 50% inden 2025. Erklæringen var med til at påvirke EU og FN.
-          </Text>
+      <div class="order-1 lg:order-3 flex flex-col lg:flex-1">
+        <div
+          class="flex flex-col lg:flex-row li1_content gap-5"
+          id="li1_content"
+        >
+          <img src="/img/2008.webp" alt="" />
+          <div class="flex flex-col gap-5">
+            <Heading font="sans">Begyndelsen</Heading>
+            <Text>
+              Stop Spild Af Mad blev stiftet af Selina Juul i 2008 som en
+              facebook gruppe, men voksede hurtigt til en anderkendt frivilligt
+              og selvstændigt non-profit. Selina Juul var motiveret af hendes
+              fortid i Moskva, hvor hun oplevede stor fødevaremangel. Da hun kom
+              til Danmark tog hun derfor kampen op i mod madspild.
+            </Text>
+          </div>
         </div>
-      </div>
 
-      <div class="flex flex-col li3_content inactiveBox gap-5" id="li3_content">
-        <img src="/img/2011.webp" alt="" />
-        <div class="flex flex-col gap-10">
-          <Heading font="sans">Overskudsmad til udsatte</Heading>
-          <Text>
-            Siden 2011 har Stop Spild Af Mad, samarbejdspartnere og frivillige
-            indsamlet og videreformidlet over 300 tons god gratis overskudsmad
-            til herberger, væresteder, asylcentre, krisecentre, kvindehjem samt
-            andre hjælpeorganisationer for hjemløse og socialt udsatte.
-          </Text>
+        <div
+          class="flex flex-col li2_content inactiveBox gap-5"
+          id="li2_content"
+        >
+          <img src="/img/2010.webp" alt="" />
+          <div class="flex flex-col gap-10">
+            <Heading font="sans">Med fra start</Heading>
+            <Text>
+              I 2010 skrev Stop Spild Af Mad i Europa-Parlamentet sammen med
+              flere europæiske organisationer under på Joint Declaration Against
+              Food Waste, en europæisk erklæring med formål at reducere madspild
+              med minimum 50% inden 2025. Erklæringen var med til at påvirke EU
+              og FN.
+            </Text>
+          </div>
         </div>
-      </div>
 
-      <div class="flex flex-row li4_content inactiveBox" id="li4_content">
-        <img src="/img/2013.webp" alt="" />
+        <div
+          class="flex flex-col li3_content inactiveBox gap-5"
+          id="li3_content"
+        >
+          <img src="/img/2011.webp" alt="" />
+          <div class="flex flex-col gap-10">
+            <Heading font="sans">Overskudsmad til udsatte</Heading>
+            <Text>
+              Siden 2011 har Stop Spild Af Mad, samarbejdspartnere og frivillige
+              indsamlet og videreformidlet over 300 tons god gratis overskudsmad
+              til herberger, væresteder, asylcentre, krisecentre, kvindehjem
+              samt andre hjælpeorganisationer for hjemløse og socialt udsatte.
+            </Text>
+          </div>
+        </div>
 
         <div class="flex flex-col li4_content inactiveBox" id="li4_content">
-          <img src="/img/2013.png" alt="" />
+          <img src="/img/2013.webp" alt="" />
 
           <div class="flex flex-col gap-10">
             <Heading font="sans">Doggy bags</Heading>
@@ -602,7 +450,7 @@ import Buttons2 from "../components/Buttons2.astro";
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <section
     class="mx-auto mb-section_buttom mt-section_top max-w-md md:max-w-xl lg:max-w-4xl lg:my-80"
@@ -613,13 +461,13 @@ import Buttons2 from "../components/Buttons2.astro";
 
     <div class="active" id="vid2012">
       <video width="100%" controls>
-        <source src="/img/vids/TedX_2012.mp4" type="video/mp4" />
+        <source src="img/vids/TedX_2012.mp4" type="video/mp4" />
       </video>
     </div>
 
     <div class="inactive" id="vid2016">
       <video width="100%" controls>
-        <source src="/img/vids/TedX_2016.mp4" type="video/mp4" />
+        <source src="img/vids/TedX_2016.mp4" type="video/mp4" />
       </video>
     </div>
 
@@ -651,7 +499,7 @@ import Buttons2 from "../components/Buttons2.astro";
       <Button variant="black">TILBAGE TIL TOPPEN</Button>
     </a>
   </div>
-</section>
+</MainLayout>
 
 <style>
   .shuffleImg {
