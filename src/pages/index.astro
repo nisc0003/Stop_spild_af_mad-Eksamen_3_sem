@@ -11,10 +11,8 @@ import Articles from "../components/Articles.astro";
 
 <MainLayout title="Stop Spild Af Mad">
   <main>
-    <section
-      class="flex sm:flex-col lg:flex-row mb-section_buttom gap-5 relative"
-    >
-      <div class="200">
+    <section class="flex flex-col md:flex-row mb-section_buttom gap-5 relative">
+      <div class="200 md:mr-25">
         <img src="/img/hero.webp" alt="" />
       </div>
 
@@ -23,7 +21,11 @@ import Articles from "../components/Articles.astro";
           <Heading>STOP SPILD</Heading>
           <div class="flex flex-row">
             <Heading>AF MAD</Heading>
-            <img src="/img/logo_green.svg" alt="" />
+            <img
+              src="/img/logo_green.svg"
+              alt=""
+              class="h-9 place-self-end md:h-auto"
+            />
           </div>
         </div>
         <Text>Danmarks største bevægelse i mod madspild</Text>
@@ -64,12 +66,12 @@ import Articles from "../components/Articles.astro";
       </Heading>
     </section> -->
 
-    <section class="flex flex-col mb-section_buttom mt-section_top gap-5">
+    <section class="flex flex-col mb-section_buttom mt-section_top gap-5 mx-15">
       <Heading htmlheading="h2" size="medium">QUIZ DIG SELV I MADSPILD</Heading>
-      <div class="sm:inline lg:grid grid-cols-2 gap-10">
-        <div class="bg-yellow-50 flex flex-row">
+      <div class="flex-row gap-5 md:grid grid-cols-2">
+        <div class="bg-(--color-yellow--100) flex flex-row">
           <section class="flex flex-col gap-25 place-content-center mx-auto">
-            <div>
+            <div class="flex flex-col gap-5">
               <div class="mb-10 mt-5">
                 <Heading>Spørgsmål 1</Heading>
                 <Text>Spørgsmålet</Text>
@@ -96,11 +98,7 @@ import Articles from "../components/Articles.astro";
             </div>
           </section>
         </div>
-        <img
-          src="/img/quiz.webp"
-          alt=""
-          class="sm:hidden lg:inline place-self-end"
-        />
+        <img src="/img/quiz.webp" alt="" class="place-self-center" />
       </div>
 
       <!-- <Link>SE SVAR </Link> -->
@@ -118,10 +116,11 @@ import Articles from "../components/Articles.astro";
     />
 
     <section
-      class="flex flex-col lg:grid lg:grid-cols-2 lg:gap-5 mb-section_buttom mt-section_top"
+      class="flex flex-col gap-5 md:grid md:grid-cols-2 mb-section_buttom mt-section_top mx-15"
     >
       <div class="flex flex-col gap-5">
         <Heading htmlheading="h2" size="medium">HVEM ER VI?</Heading>
+
         <div class="flex flex-col gap-5">
           <Text
             >Stop Spild Af Mad er en non-profit organisation og
@@ -139,7 +138,7 @@ import Articles from "../components/Articles.astro";
         </div>
       </div>
 
-      <div class="sm:mt-5 lg:mt-0 flex flex-col place-content-between">
+      <div class="flex flex-col place-content-between">
         <img src="/img/index_frugt.webp" alt="" class="" />
         <div class="place-self-center">
           <Link href="/wip" variant="orange">LÆS MERE OM OS</Link>
@@ -161,7 +160,7 @@ import Articles from "../components/Articles.astro";
     <Articles />
 
     <section class="mb-section_buttom mt-section_top">
-      <div>
+      <div class="flex flex-col place-self-center gap-3">
         <Heading htmlheading="h2" size="medium"
           >PRISER OG ANDERKENDELSER</Heading
         >
@@ -212,7 +211,7 @@ import Articles from "../components/Articles.astro";
     </section>
 
     <section
-      class="sm:grid sm:grid-rows-2 sm:grid-cols-2 lg:flex lg:flex-row place-self-center gap-22"
+      class="bg-(--color-purple--100) w-full place-content-center py-5 grid grid-rows-2 grid-cols-2 md:flex md:flex-row gap-22"
     >
       <div class="flex flex-col max-w-65 text-center">
         <Heading>200+</Heading>
