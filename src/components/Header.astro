@@ -12,7 +12,7 @@ const isHvadViKanGoere =
   currentPath === "hvad_vi_kan_goere" || currentPath === "hvad_vi_kan_goere/";
 const isKomponentbibliotek =
   currentPath === "komponentbibliotek" || currentPath === "komponentbibliotek/";
-const isTilmeldt = currentPath === "tilmeldt" || currentPath === "tilmeldt/";
+const isform = currentPath === "form" || currentPath === "form/";
 
 // Tailwind-konstanter for konsistent, ikke-brydende nav-styling (skalerer fra lg til 2xl)
 const navBase =
@@ -103,13 +103,13 @@ const navInactive = "font-medium";
         </a>
 
         <a
-          href="/tilmeldt"
-          class={`${navBase} ${isTilmeldt ? navActive : navInactive}`}
+          href="/form"
+          class={`${navBase} ${isform ? navActive : navInactive}`}
         >
           <Text
             size="small"
             font="sans"
-            weight={currentPath === "tilmeldt" || currentPath === "tilmeldt/"
+            weight={currentPath === "form" || currentPath === "form/"
               ? "bold"
               : "medium"}
           >
@@ -302,14 +302,14 @@ const navInactive = "font-medium";
 
       <li class="py-4 px-4">
         <a
-          href="/tilmeldt"
+          href="/form"
           class="block text-center py-4"
           style="color: var(--color-black);"
         >
           <Text
             size="small"
             font="sans"
-            weight={currentPath === "tilmeldt" || currentPath === "tilmeldt/"
+            weight={currentPath === "form" || currentPath === "form/"
               ? "bold"
               : "medium"}
           >

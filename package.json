@@ -16,11 +16,12 @@
     "alpinejs": "^3.15.3",
     "astro": "^5.1.10",
     "motion": "^12.23.26",
+    "resend": "^6.6.0",
     "tailwindcss-animated": "^2.0.0",
     "tailwindcss-intersect": "^2.2.0"
   },
   "devDependencies": {
-    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/forms": "^0.5.11",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.18",
     "i": "^0.3.7",

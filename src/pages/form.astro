@@ -1,4 +1,5 @@
 ---
+// Import af genbrugelige komponenter
 import MainLayout from "../layouts/MainLayout.astro";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
@@ -6,298 +7,331 @@ import Button from "../components/Button.astro";
 ---
 
 <MainLayout title="Kontakt os">
-  <section
-    class="px-[var(--margin-section_left)] py-[var(--margin-section_top)] bg-[var(--color-white)]"
-  >
-    <div class="max-w-4xl mx-auto">
+  <!-- Hovedsektion med tilmeldingsformular -->
+  <section class="mr-section_right ml-section_left pb-20 pt-10">
+    <div class="max-w-3xl mx-auto">
       <Heading
         htmlheading="h1"
-        size="large"
+        size="medium"
         weight="bold"
         font="display"
-        stylingclasses="text-[var(--color-green--400)] mb-6"
+        stylingclasses="mb-3 text-center"
       >
-        Kom i kontakt med os
+        TILMELDING
       </Heading>
 
-      <Text size="large" stylingclasses="mb-12 text-[var(--color-black)]">
-        Udfyld formularen nedenfor, så vender vi tilbage til dig hurtigst
-        muligt.
+      <Text size="medium" stylingclasses="mb-6 text-center max-w-xl mx-auto">
+        Tak fordi du vil støtte os. Inden vi kan tage i mod din hjælp skal du
+        oplyse din email og hvilken form for støtte du vil give. Vi kontakter
+        dig efterfølgende og bekræfter din tilmelding.
       </Text>
 
-      <form
-        x-data="{
-          name: '',
-          phone: '',
-          email: '',
-          interest: '',
-          message: '',
-          charCount: 0,
-          maxChars: 1000,
-          errors: {},
-          success: false,
-          
-          validateEmail(email) {
-            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-          },
-          
-          validatePhone(phone) {
-            return /^[0-9\s\+\-\(\)]{8,}$/.test(phone.replace(/\s/g, ''));
-          },
-          
-          validateForm() {
-            this.errors = {};
-            
-            if (!this.name.trim()) {
-              this.errors.name = 'Navn er påkrævet';
-            }
-            
-            if (!this.phone.trim()) {
-              this.errors.phone = 'Telefonnummer er påkrævet';
-            } else if (!this.validatePhone(this.phone)) {
-              this.errors.phone = 'Indtast et gyldigt telefonnummer';
-            }
-            
-            if (!this.email.trim()) {
-              this.errors.email = 'E-mail er påkrævet';
-            } else if (!this.validateEmail(this.email)) {
-              this.errors.email = 'Indtast en gyldig e-mail adresse';
-            }
-            
-            if (!this.interest) {
-              this.errors.interest = 'Vælg venligst et interesseområde';
-            }
-            
-            if (!this.message.trim()) {
-              this.errors.message = 'Besked er påkrævet';
-            } else if (this.message.length > this.maxChars) {
-              this.errors.message = 'Beskeden må maksimalt være ' + this.maxChars + ' tegn';
-            }
-            
-            return Object.keys(this.errors).length === 0;
-          },
-          
-          async handleSubmit(e) {
-            e.preventDefault();
-            
-            if (!this.validateForm()) {
-              return;
-            }
-            
-            // Her kan du integrere med din mail service (f.eks. Formspree, EmailJS, eller API endpoint)
-            console.log('Form data:', {
-              name: this.name,
-              phone: this.phone,
-              email: this.email,
-              interest: this.interest,
-              message: this.message
-            });
-            
-            // Simuler succesfuld indsendelse
-            this.success = true;
-            
-            // Reset form efter 3 sekunder
-            setTimeout(() => {
-              this.name = '';
-              this.phone = '';
-              this.email = '';
-              this.interest = '';
-              this.message = '';
-              this.charCount = 0;
-              this.success = false;
-            }, 3000);
-          }
-        }"
-        @submit="handleSubmit"
-        class="space-y-6"
+      <!-- Formular container med skygge og afrunding -->
+      <div
+        class="max-w-2xl mx-auto p-6 md:p-8 bg-white shadow-2xl rounded-lg border border-orange--400"
       >
-        <!-- Success Message -->
-        <div
-          x-show="success"
-          x-transition
-          class="bg-[var(--color-green--100)] border-2 border-[var(--color-green--400)] text-[var(--color-green--400)] px-6 py-4 rounded-[var(--radius-contentBox)] font-semibold"
-        >
-          ✓ Tak for din henvendelse! Vi vender tilbage hurtigst muligt.
-        </div>
-
-        <!-- Name Field -->
-        <div>
-          <label
-            for="name"
-            class="block text-[1.125rem] font-semibold text-[var(--color-black)] mb-2"
-          >
-            Navn <span class="text-[var(--color-orange--400)]">*</span>
-          </label>
-          <input
-            type="text"
-            id="name"
-            x-model="name"
-            class="w-full px-4 py-3 rounded-[var(--radius-contentBox)] border-2 border-[var(--color-green--200)] focus:border-[var(--color-green--400)] focus:ring-2 focus:ring-[var(--color-green--100)] outline-none transition-all duration-300 text-[1rem] bg-[var(--color-white)]"
-            :class="errors.name ? 'border-[var(--color-orange--400)]' : ''"
-            placeholder="Dit fulde navn"
-          />
-          <p
-            x-show="errors.name"
-            x-text="errors.name"
-            class="mt-2 text-[0.875rem] text-[var(--color-orange--400)]"
-          >
-          </p>
-        </div>
-
-        <!-- Phone Field -->
-        <div>
-          <label
-            for="phone"
-            class="block text-[1.125rem] font-semibold text-[var(--color-black)] mb-2"
-          >
-            Telefonnummer <span class="text-[var(--color-orange--400)]">*</span>
-          </label>
-          <input
-            type="tel"
-            id="phone"
-            x-model="phone"
-            class="w-full px-4 py-3 rounded-[var(--radius-contentBox)] border-2 border-[var(--color-green--200)] focus:border-[var(--color-green--400)] focus:ring-2 focus:ring-[var(--color-green--100)] outline-none transition-all duration-300 text-[1rem] bg-[var(--color-white)]"
-            :class="errors.phone ? 'border-[var(--color-orange--400)]' : ''"
-            placeholder="+45 12 34 56 78"
-          />
-          <p
-            x-show="errors.phone"
-            x-text="errors.phone"
-            class="mt-2 text-[0.875rem] text-[var(--color-orange--400)]"
-          >
-          </p>
-        </div>
-
-        <!-- Email Field -->
-        <div>
-          <label
-            for="email"
-            class="block text-[1.125rem] font-semibold text-[var(--color-black)] mb-2"
-          >
-            E-mail <span class="text-[var(--color-orange--400)]">*</span>
-          </label>
-          <input
-            type="email"
-            id="email"
-            x-model="email"
-            class="w-full px-4 py-3 rounded-[var(--radius-contentBox)] border-2 border-[var(--color-green--200)] focus:border-[var(--color-green--400)] focus:ring-2 focus:ring-[var(--color-green--100)] outline-none transition-all duration-300 text-[1rem] bg-[var(--color-white)]"
-            :class="errors.email ? 'border-[var(--color-orange--400)]' : ''"
-            placeholder="din@email.dk"
-          />
-          <p
-            x-show="errors.email"
-            x-text="errors.email"
-            class="mt-2 text-[0.875rem] text-[var(--color-orange--400)]"
-          >
-          </p>
-        </div>
-
-        <!-- Interest Dropdown -->
-        <div>
-          <label
-            for="interest"
-            class="block text-[1.125rem] font-semibold text-[var(--color-black)] mb-2"
-          >
-            Jeg er interesseret i <span class="text-[var(--color-orange--400)]"
-              >*</span
+        <!-- Alpine.js formular - x-data kobler til emailForm funktionen -->
+        <!-- @submit.prevent forhindrer standard formular submit og kalder vores submit() funktion -->
+        <form x-data="emailForm" @submit.prevent="submit" class="space-y-5">
+          <!-- Dropdown: Vælg privatperson eller virksomhed -->
+          <!-- x-model="type" binder værdien til Alpine's type variabel -->
+          <div>
+            <label
+              class="block mb-2 font-semibold text-black font-sans text-sm md:text-base"
             >
-          </label>
-          <select
-            id="interest"
-            x-model="interest"
-            class="w-full px-4 py-3 rounded-[var(--radius-contentBox)] border-2 border-[var(--color-green--200)] focus:border-[var(--color-green--400)] focus:ring-2 focus:ring-[var(--color-green--100)] outline-none transition-all duration-300 text-[1rem] bg-[var(--color-white)] cursor-pointer"
-            :class="errors.interest ? 'border-[var(--color-orange--400)]' : ''"
-          >
-            <option value="">Vælg et område...</option>
-            <option value="frivillig">Bliv frivillig</option>
-            <option value="stoettemedlem">Bliv støttemedlem</option>
-            <option value="samarbejdspartner">Bliv samarbejdspartner</option>
-            <option value="erhvervspartner">Bliv erhvervspartner</option>
-            <option value="spred-budskabet">Spred budskabet</option>
-            <option value="andet">Andet</option>
-          </select>
-          <p
-            x-show="errors.interest"
-            x-text="errors.interest"
-            class="mt-2 text-[0.875rem] text-[var(--color-orange--400)]"
-          >
-          </p>
-        </div>
+              Er du privatperson eller virksomhed? *
+            </label>
+            <select
+              x-model="type"
+              class="form-select w-full rounded-lg border-2 border-orange--100 bg-yellow--100 py-3 px-4 font-sans text-sm md:text-base focus:border-orange--400 focus:ring-2 focus:ring-orange--200 hover:border-orange--200 transition-all shadow-sm appearance-none cursor-pointer"
+            >
+              <option value="privat">Privatperson</option>
+              <option value="firma">Firma</option>
+            </select>
+          </div>
 
-        <!-- Message Field -->
-        <div>
-          <label
-            for="message"
-            class="block text-[1.125rem] font-semibold text-[var(--color-black)] mb-2"
+          <!-- Privatperson felter - kun vist når type === 'privat' -->
+          <!-- x-show styrer synlighed, x-transition tilføjer smooth animation -->
+          <div x-show="type === 'privat'" x-transition class="space-y-5">
+            <!-- Fornavn og Efternavn side by side på desktop -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+              <div>
+                <label
+                  class="block mb-2 font-semibold text-black font-sans text-sm md:text-base"
+                  >Fornavn *</label
+                >
+                <input
+                  x-ref="firstName"
+                  type="text"
+                  class="form-input w-full rounded-lg border-2 border-orange--100 bg-yellow--100 py-3 px-4 font-sans text-sm md:text-base focus:border-orange--400 focus:ring-2 focus:ring-orange--200 hover:border-orange--200 transition-all shadow-sm"
+                  placeholder="Dit fornavn"
+                />
+              </div>
+
+              <div>
+                <label
+                  class="block mb-2 font-semibold text-black font-sans text-sm md:text-base"
+                  >Efternavn *</label
+                >
+                <input
+                  x-ref="lastName"
+                  type="text"
+                  class="form-input w-full rounded-lg border-2 border-orange--100 bg-yellow--100 py-3 px-4 font-sans text-sm md:text-base focus:border-orange--400 focus:ring-2 focus:ring-orange--200 hover:border-orange--200 transition-all shadow-sm"
+                  placeholder="Dit efternavn"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Firma felter - kun vist når type === 'firma' -->
+          <div x-show="type === 'firma'" x-transition class="space-y-5">
+            <!-- Firmanavn -->
+            <div>
+              <label
+                class="block mb-2 font-semibold text-black font-sans text-sm md:text-base"
+                >Firmanavn *</label
+              >
+              <input
+                x-ref="companyName"
+                type="text"
+                class="form-input w-full rounded-lg border-2 border-orange--100 bg-yellow--100 py-3 px-4 font-sans text-sm md:text-base focus:border-orange--400 focus:ring-2 focus:ring-orange--200 hover:border-orange--200 transition-all shadow-sm"
+                placeholder="Dit firmanavn"
+              />
+            </div>
+
+            <!-- CVR og Adresse side by side på desktop -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+              <div>
+                <label
+                  class="block mb-2 font-semibold text-black font-sans text-sm md:text-base"
+                  >CVR-nummer *</label
+                >
+                <input
+                  x-ref="cvr"
+                  type="text"
+                  class="form-input w-full rounded-lg border-2 border-orange--100 bg-yellow--100 py-3 px-4 font-sans text-sm md:text-base focus:border-orange--400 focus:ring-2 focus:ring-orange--200 hover:border-orange--200 transition-all shadow-sm"
+                  placeholder="12345678"
+                />
+              </div>
+
+              <div>
+                <label
+                  class="block mb-2 font-semibold text-black font-sans text-sm md:text-base"
+                  >Adresse *</label
+                >
+                <input
+                  x-ref="companyAddress"
+                  type="text"
+                  class="form-input w-full rounded-lg border-2 border-orange--100 bg-yellow--100 py-3 px-4 font-sans text-sm md:text-base focus:border-orange--400 focus:ring-2 focus:ring-orange--200 hover:border-orange--200 transition-all shadow-sm"
+                  placeholder="Din virksomhedsadresse"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Email felt - obligatorisk -->
+          <div>
+            <label
+              class="block mb-2 font-semibold text-black font-sans text-sm md:text-base"
+              >E-mail *</label
+            >
+            <input
+              x-ref="email"
+              type="email"
+              class="form-input w-full rounded-lg border-2 border-orange--100 bg-yellow--100 py-3 px-4 font-sans text-sm md:text-base focus:border-orange--400 focus:ring-2 focus:ring-orange--200 hover:border-orange--200 transition-all shadow-sm"
+              placeholder="eksempel@email.com"
+              required
+            />
+          </div>
+
+          <!-- Telefonnummer og Støtteform side by side på desktop -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+            <!-- Telefonnummer felt med auto-sanitering -->
+            <!-- @input fjerner ugyldige tegn mens brugeren skriver -->
+            <div>
+              <label
+                class="block mb-2 font-semibold text-black font-sans text-sm md:text-base"
+                >Telefonnummer *</label
+              >
+              <input
+                x-ref="phone"
+                type="tel"
+                placeholder="+45 00 00 00 00"
+                class="form-input w-full rounded-lg border-2 border-orange--100 bg-yellow--100 py-3 px-4 font-sans text-sm md:text-base focus:border-orange--400 focus:ring-2 focus:ring-orange--200 hover:border-orange--200 transition-all shadow-sm"
+                @input="$el.value = $el.value.replace(/[^0-9+ ]/g,'')"
+                required
+              />
+            </div>
+
+            <!-- Støtteform dropdown - obligatorisk -->
+            <div>
+              <label
+                class="block mb-2 font-semibold text-black font-sans text-sm md:text-base"
+                >Støtteform *</label
+              >
+              <select
+                x-ref="subject"
+                class="form-select w-full rounded-lg border-2 border-orange--100 bg-yellow--100 py-3 px-4 font-sans text-sm md:text-base focus:border-orange--400 focus:ring-2 focus:ring-orange--200 hover:border-orange--200 transition-all shadow-sm appearance-none cursor-pointer"
+                required
+              >
+                <option value="" disabled selected>Vælg en mulighed</option>
+                <option value="Frivillig">Frivillig</option>
+                <option value="Støttemedlem">Støttemedlem</option>
+                <option value="Samarbejdspartner">Samarbejdspartner</option>
+                <option value="Erhvervspartner">Erhvervspartner</option>
+                <option value="Budskabet">Budskabet</option>
+                <option value="andet">Andet</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Besked felt - valgfrit -->
+          <div>
+            <label
+              class="block mb-2 font-semibold text-black font-sans text-sm md:text-base"
+              >Besked (valgfrit)</label
+            >
+            <textarea
+              x-ref="message"
+              rows="5"
+              class="form-textarea w-full rounded-lg border-2 border-orange--100 bg-yellow--100 py-3 px-4 font-sans text-sm md:text-base focus:border-orange--400 focus:ring-2 focus:ring-orange--200 hover:border-orange--200 transition-all resize-none shadow-sm"
+              placeholder="Skriv din besked her…"></textarea>
+          </div>
+
+          <!-- Accept checkbox - obligatorisk -->
+          <div class="flex items-start gap-3 pt-1">
+            <input
+              id="accept"
+              x-ref="accept"
+              type="checkbox"
+              class="form-checkbox mt-1 rounded border-2 border-orange--100 text-orange--400 focus:ring-orange--200 w-5 h-5 cursor-pointer"
+              required
+            />
+            <label
+              for="accept"
+              class="text-sm md:text-base leading-relaxed font-sans cursor-pointer"
+            >
+              Jeg accepterer vilkårene og giver tilladelse til at blive
+              kontaktet *
+            </label>
+          </div>
+
+          <!-- Fejlbesked - kun vist når der er en fejl -->
+          <!-- x-show="error" viser kun hvis error ikke er tom -->
+          <!-- x-text="error" indsætter fejlteksten -->
+          <div
+            x-show="error"
+            x-transition
+            class="p-3 bg-orange--100 border-l-4 border-orange--400 rounded-lg shadow-sm"
           >
-            Din besked <span class="text-[var(--color-orange--400)]">*</span>
-          </label>
-          <textarea
-            id="message"
-            x-model="message"
-            @input="charCount = message.length"
-            rows="6"
-            maxlength="1000"
-            class="w-full px-4 py-3 rounded-[var(--radius-contentBox)] border-2 border-[var(--color-green--200)] focus:border-[var(--color-green--400)] focus:ring-2 focus:ring-[var(--color-green--100)] outline-none transition-all duration-300 text-[1rem] bg-[var(--color-white)] resize-vertical"
-            :class="errors.message ? 'border-[var(--color-orange--400)]' : ''"
-            placeholder="Fortæl os, hvordan vi kan hjælpe dig..."></textarea>
-          <div class="flex justify-between items-center mt-2">
             <p
-              x-show="errors.message"
-              x-text="errors.message"
-              class="text-[0.875rem] text-[var(--color-orange--400)]"
+              x-text="error"
+              class="text-orange--400 font-semibold font-sans text-sm"
             >
-            </p>
-            <p
-              class="text-[0.875rem] text-[var(--color-green--400)] font-medium"
-              :class="charCount > maxChars ? 'text-[var(--color-orange--400)]' : ''"
-            >
-              <span x-text="charCount"></span>/<span x-text="maxChars"></span>
-              tegn
             </p>
           </div>
-        </div>
 
-        <!-- Privacy Notice -->
-        <div
-          class="bg-[var(--color-green--100)] p-4 rounded-[var(--radius-contentBox)]"
-        >
-          <Text size="small" stylingclasses="text-[var(--color-green--400)]">
-            <strong>Privatlivspolitik:</strong> Dine oplysninger behandles fortroligt
-            og anvendes kun til at besvare din henvendelse. Vi deler ikke dine data
-            med tredjeparter.
-          </Text>
-        </div>
-
-        <!-- Submit Button -->
-        <div class="flex justify-start">
-          <button
-            type="submit"
-            class="bg-[var(--color-green--400)] text-[var(--color-green--100)] text-[1.125rem] md:text-[1.25rem] lg:text-[1.5rem] font-semibold uppercase px-8 py-4 rounded-[var(--radius-CTA)] hover:bg-[var(--color-green--100)] hover:text-[var(--color-green--400)] transition-all duration-300 inline-flex items-center gap-2"
-          >
-            Send besked
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-            </svg>
-          </button>
-        </div>
-
-        <!-- Required Fields Note -->
-        <Text size="small" stylingclasses="text-[var(--color-black)] italic">
-          <span class="text-[var(--color-orange--400)]">*</span> Markerer påkrævede
-          felter
-        </Text>
-      </form>
+          <!-- Submit knap -->
+          <div class="pt-4">
+            <Button type="submit" variant="black" size="medium">
+              Send besked
+            </Button>
+          </div>
+        </form>
+      </div>
     </div>
   </section>
 </MainLayout>
+
+<script is:inline>
+  // Vent på Alpine er klar
+  document.addEventListener("alpine:init", () => {
+    // Registrer emailForm som Alpine data component
+    Alpine.data("emailForm", () => ({
+      // Initial state
+      type: "privat", // Standard valg er privatperson
+      error: "", // Fejlbesked (tom ved start)
+
+      // Submit funktionen kaldes når formen sendes
+      submit() {
+        this.error = ""; // Nulstil fejlbesked
+
+        // Hent og trim værdier fra felterne
+        // x-ref giver os adgang via this.$refs
+        const email = this.$refs.email.value.trim();
+        const phone = this.$refs.phone.value.trim();
+        const subject = this.$refs.subject.value;
+        const accepted = this.$refs.accept.checked;
+
+        // Validering: Email skal indeholde @
+        if (!email || !email.includes("@")) {
+          this.error = "Indtast en gyldig email";
+          return;
+        }
+
+        // Validering: Telefonnummer skal udfyldes
+        if (!phone) {
+          this.error = "Indtast telefonnummer";
+          return;
+        }
+
+        // Validering: Støtteform skal vælges
+        if (!subject) {
+          this.error = "Vælg en støtteform";
+          return;
+        }
+
+        // Validering: Brugeren skal acceptere
+        if (!accepted) {
+          this.error = "Du skal acceptere";
+          return;
+        }
+
+        // Byg URL parametre med basis-info
+        const params = new URLSearchParams({
+          type: this.type,
+          email,
+          phone,
+          subject,
+        });
+
+        // Tilføj besked hvis udfyldt
+        const message = this.$refs.message.value.trim();
+        if (message) params.append("message", message);
+
+        // Validering og tilføjelse af privatperson-specifikke felter
+        if (this.type === "privat") {
+          const firstName = this.$refs.firstName.value.trim();
+          const lastName = this.$refs.lastName.value.trim();
+
+          if (!firstName || !lastName) {
+            this.error = "Udfyld for- og efternavn";
+            return;
+          }
+
+          params.append("firstName", firstName);
+          params.append("lastName", lastName);
+        }
+
+        // Validering og tilføjelse af firma-specifikke felter
+        if (this.type === "firma") {
+          const companyName = this.$refs.companyName.value.trim();
+          const cvr = this.$refs.cvr.value.trim();
+          const companyAddress = this.$refs.companyAddress.value.trim();
+
+          if (!companyName || !cvr || !companyAddress) {
+            this.error = "Udfyld alle firmaoplysninger";
+            return;
+          }
+
+          params.append("companyName", companyName);
+          params.append("cvr", cvr);
+          params.append("companyAddress", companyAddress);
+        }
+
+        // Redirect til bekræftelsesside med alle data som URL parametre
+        window.location.href = `/tilmeldt?${params.toString()}`;
+      },
+    }));
+  });
+</script>

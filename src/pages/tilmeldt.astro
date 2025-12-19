@@ -5,4 +5,29 @@ import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 ---
 
-<MainLayout title="Kontakt os" />
+<MainLayout title="Tilmeldt">
+  <section class="mr-section_right ml-section_left mb-section_buttom mt-section_top">
+    <div class="max-w-3xl mx-auto text-center py-12">
+      <Heading 
+        htmlheading="h1" 
+        size="large" 
+        weight="bold" 
+        font="display"
+        stylingclasses="mb-8 text-green--400"
+      >
+        TAK FOR DIN TILMELDING!
+      </Heading>
+      <Text size="large" stylingclasses="mb-6">
+        Tak fordi du vil støtte os. Vi har modtaget dine oplysninger og vil kontakte dig hurtigst muligt for at bekræfte din tilmelding.
+      </Text>
+      <Text size="medium" stylingclasses="mb-8">
+        Du vil modtage en bekræftelse på den email-adresse, du har angivet.
+      </Text>
+      <div class="mt-8">
+        <Button variant="green" size="large">
+          <a href="/">Tilbage til forsiden</a>
+        </Button>
+      </div>
+    </div>
+  </section>
+</MainLayout>
