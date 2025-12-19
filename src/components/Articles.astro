@@ -14,61 +14,72 @@ import Link from "../components/Link.astro";
   <section
     class="border border-black rounded-lg p-4 flex flex-col lg:flex-row gap-6"
   >
-    <div class="relative w-full lg:w-1/2">
-      <!-- BBC: Image + Play Button -->
-      <img
-        src="/img/bbc.png"
-        alt="BBC video thumbnail"
-        id="bbc_vid"
-        class="media-img w-full h-auto rounded-lg shadow-md cursor-pointer hover:brightness-110 transition-all"
-        data-media="bbc"
-      />
-      <img
-        src="/img/play_green.svg"
-        alt="Afspil video"
-        class="play-btn absolute inset-0 w-16 h-16 m-auto cursor-pointer hover:scale-125 transition-all"
-        data-media="bbc"
-      />
-      <iframe
-        src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2FBBCNewsStories%2Fvideos%2F1867098186881302%2F&show_text=false&width=476&t=0"
-        style="border:none;overflow:hidden"
-        allowfullscreen="true"
-        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-        loading="lazy"
-        class="video hidden w-full h-64 sm:h-80 md:h-[28rem] rounded-lg"
+    <div
+      class="w-full lg:w-1/2 aspect-video rounded-lg overflow-hidden bg-black relative"
+    >
+      <!-- BBC: Image + Play Button Container -->
+      <div
+        id="bbc_thumbnail_container"
+        class="w-full h-full relative"
         data-media="bbc"
       >
-      </iframe>
+        <img
+          src="/img/bbc.png"
+          alt="BBC video thumbnail"
+          id="bbc_vid"
+          class="media-img w-full h-full object-cover cursor-pointer hover:brightness-110 transition-all"
+          data-media="bbc"
+        />
+        <img
+          src="/img/play_green.svg"
+          alt="Afspil video"
+          id="bbc_vid2"
+          class="play-btn absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 cursor-pointer hover:scale-125 transition-all"
+          data-media="bbc"
+        />
+      </div>
+
+      <!-- BBC iframe -->
+      <iframe
+        id="bbc_video"
+        src="https://www.youtube.com/embed/KlFNp88T2cA?si=_a686rnqOCrMVhRZ"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+        class="video hidden w-full h-full"
+        data-media="bbc"
+        style="border: none"></iframe>
 
       <!-- Other Media Images -->
       <img
         src="/img/dr.png"
         alt="DR artikel billede"
-        class="media-img hidden w-full h-auto rounded-lg shadow-md"
+        class="media-img hidden w-full h-full object-cover"
         data-media="dr"
       />
       <img
         src="/img/jp.png"
         alt="Jyllands-Posten artikel billede"
-        class="media-img hidden w-full h-auto rounded-lg shadow-md"
+        class="media-img hidden w-full h-full object-cover"
         data-media="jp"
       />
       <img
         src="/img/pol.png"
         alt="Politiken artikel billede"
-        class="media-img hidden w-full h-auto rounded-lg shadow-md"
+        class="media-img hidden w-full h-full object-cover"
         data-media="pol"
       />
       <img
         src="/img/tv2.png"
         alt="TV2 News artikel billede"
-        class="media-img hidden w-full h-auto rounded-lg shadow-md"
+        class="media-img hidden w-full h-full object-cover"
         data-media="tv2"
       />
       <img
         src="/img/huff.png"
         alt="Huffington Post artikel billede"
-        class="media-img hidden w-full h-auto rounded-lg shadow-md"
+        class="media-img hidden w-full h-full object-cover"
         data-media="huff"
       />
     </div>
@@ -137,89 +148,62 @@ import Link from "../components/Link.astro";
   </section>
 
   <section
-    class="flex flex-row justify-center lg:justify-between gap-3 flex-wrap mt-6"
+    class="flex flex-row justify-start lg:justify-start gap-3 flex-wrap lg:flex-nowrap lg:overflow-x-auto mt-6"
   >
     <button
       data-btn="bbc"
-      class="btn-media btn-active text-xs md:text-sm uppercase font-semibold px-4 md:px-6 py-2 md:py-3 rounded-lg transition-all duration-300"
+      class="btn-media btn-active bg-(--color-green--400) text-(--color-green--100) text-[0.875rem] md:text-[1rem] lg:text-[1.125rem] font-semibold uppercase px-6 py-3 rounded-CTA transition-all duration-300 hover:bg-(--color-green--100) hover:text-black whitespace-nowrap shrink-0"
       >BBC</button
     >
     <button
       data-btn="dr"
-      class="btn-media text-xs md:text-sm uppercase font-semibold px-4 md:px-6 py-2 md:py-3 rounded-lg transition-all duration-300"
+      class="btn-media bg-(--color-green--200) text-black text-[0.875rem] md:text-[1rem] lg:text-[1.125rem] font-semibold uppercase px-6 py-3 rounded-CTA transition-all duration-300 hover:bg-(--color-green--100) hover:text-black whitespace-nowrap shrink-0"
       >DR</button
     >
     <button
       data-btn="jp"
-      class="btn-media text-xs md:text-sm uppercase font-semibold px-4 md:px-6 py-2 md:py-3 rounded-lg transition-all duration-300"
+      class="btn-media bg-(--color-green--200) text-black text-[0.875rem] md:text-[1rem] lg:text-[1.125rem] font-semibold uppercase px-6 py-3 rounded-CTA transition-all duration-300 hover:bg-(--color-green--100) hover:text-black whitespace-nowrap shrink-0"
       >JYLLANDS-POSTEN</button
     >
     <button
       data-btn="pol"
-      class="btn-media text-xs md:text-sm uppercase font-semibold px-4 md:px-6 py-2 md:py-3 rounded-lg transition-all duration-300"
+      class="btn-media bg-(--color-green--200) text-black text-[0.875rem] md:text-[1rem] lg:text-[1.125rem] font-semibold uppercase px-6 py-3 rounded-CTA transition-all duration-300 hover:bg-(--color-green--100) hover:text-black whitespace-nowrap shrink-0"
       >POLITIKEN</button
     >
     <button
       data-btn="tv2"
-      class="btn-media text-xs md:text-sm uppercase font-semibold px-4 md:px-6 py-2 md:py-3 rounded-lg transition-all duration-300"
+      class="btn-media bg-(--color-green--200) text-black text-[0.875rem] md:text-[1rem] lg:text-[1.125rem] font-semibold uppercase px-6 py-3 rounded-CTA transition-all duration-300 hover:bg-(--color-green--100) hover:text-black whitespace-nowrap shrink-0"
       >TV2 NEWS</button
     >
     <button
       data-btn="huff"
-      class="btn-media text-xs md:text-sm uppercase font-semibold px-4 md:px-6 py-2 md:py-3 rounded-lg transition-all duration-300"
+      class="btn-media bg-(--color-green--200) text-black text-[0.875rem] md:text-[1rem] lg:text-[1.125rem] font-semibold uppercase px-6 py-3 rounded-CTA transition-all duration-300 hover:bg-(--color-green--100) hover:text-black whitespace-nowrap shrink-0"
       >THE HUFFINGTON POST</button
     >
   </section>
 </section>
 
 <style>
-  .bbc_vid {
-    transition: filter 0.5s ease-in-out;
-    object-fit: cover;
-  }
-
-  .bbc_vid:hover {
-    filter: brightness(1.5);
-  }
-
-  .bbc_vid_btn {
-    width: 64px;
-    height: 64px;
-    transition: transform 0.2s ease;
-    pointer-events: none;
-  }
-
-  /* Media button wrapper - swaps between active and inverted button variants */
-  .media-button-wrapper {
-    cursor: pointer;
-  }
-
-  .media-button-wrapper button {
-    transition: all 0.3s ease;
-  }
+  /* Styles moved to inline classes */
 </style>
 
 <script is:inline>
   document.addEventListener("DOMContentLoaded", function () {
+    const bbcThumbnailContainer = document.getElementById(
+      "bbc_thumbnail_container",
+    );
     const bbcThumbnail = document.getElementById("bbc_vid");
     const bbcPlayBTN = document.getElementById("bbc_vid2");
     const bbcVideo = document.getElementById("bbc_video");
 
     const showBBCVideo = () => {
-      if (!bbcThumbnail || !bbcPlayBTN || !bbcVideo) return;
-      bbcThumbnail.classList.add("hidden");
-      bbcPlayBTN.classList.add("hidden");
+      if (!bbcThumbnailContainer || !bbcVideo) return;
+      bbcThumbnailContainer.classList.add("hidden");
       bbcVideo.classList.remove("hidden");
     };
 
     if (bbcThumbnail) {
       bbcThumbnail.addEventListener("click", showBBCVideo);
-      bbcThumbnail.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          showBBCVideo();
-        }
-      });
       bbcThumbnail.setAttribute("role", "button");
       bbcThumbnail.setAttribute("tabindex", "0");
       bbcThumbnail.setAttribute("aria-label", "Afspil BBC-video");
@@ -229,116 +213,66 @@ import Link from "../components/Link.astro";
     }
 
     // Media switching functionality
-    const mediaData = [
-      { key: "bbc", contentId: "bbc_text", imageId: "bbc_vid", isBbc: true },
-      { key: "dr", contentId: "dr_text", imageId: "dr_img", isBbc: false },
-      { key: "jp", contentId: "jp_text", imageId: "jp_img", isBbc: false },
-      { key: "pol", contentId: "pol_text", imageId: "pol_img", isBbc: false },
-      { key: "tv2", contentId: "tv2_text", imageId: "tv2_img", isBbc: false },
-      {
-        key: "huff",
-        contentId: "huff_text",
-        imageId: "huff_img",
-        isBbc: false,
-      },
-    ];
+    const mediaButtons = document.querySelectorAll(".btn-media");
+    const allMediaTexts = document.querySelectorAll(".media-text");
+    const allMediaImages = document.querySelectorAll(".media-img");
 
-    const mediaWrappers = document.querySelectorAll(".media-button-wrapper");
+    mediaButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        const mediaKey = this.getAttribute("data-btn");
 
-    mediaWrappers.forEach((wrapper) => {
-      wrapper.addEventListener("click", function () {
-        const mediaKey = this.getAttribute("data-media");
-        const selectedMedia = mediaData.find((m) => m.key === mediaKey);
-        if (!selectedMedia) return;
+        // Hide all media content
+        allMediaTexts.forEach((text) => {
+          text.classList.remove("flex");
+          text.classList.add("hidden");
+        });
+        allMediaImages.forEach((img) => {
+          img.classList.add("hidden");
+        });
+        if (bbcVideo) bbcVideo.classList.add("hidden");
+        if (bbcThumbnailContainer)
+          bbcThumbnailContainer.classList.add("hidden");
 
-        // Hide all content and images
-        mediaData.forEach((media) => {
-          const content = document.getElementById(media.contentId);
-          const image = document.getElementById(media.imageId);
-
-          if (content) {
-            content.classList.remove("flex");
-            content.classList.add("hidden");
-          }
-          if (image) {
-            image.classList.add("hidden");
-          }
+        // Reset all buttons
+        mediaButtons.forEach((btn) => {
+          btn.classList.remove(
+            "bg-[var(--color-green--400)]",
+            "text-[var(--color-green--100)]",
+          );
+          btn.classList.add(
+            "bg-[var(--color-green--200)]",
+            "text-[var(--color-black)]",
+          );
         });
 
-        // Reset all wrapper states and button variants back to green-inverted
-        mediaWrappers.forEach((w) => {
-          w.classList.remove("active");
-          const btn = w.querySelector("button");
-          if (btn) {
-            btn.className = btn.className
-              .replace(
-                /bg-\[var\(--color-green--400\)\]/g,
-                "bg-[var(--color-green--100)]",
-              )
-              .replace(
-                /text-\[var\(--color-green--100\)\]/g,
-                "text-[var(--color-green--400)]",
-              )
-              .replace(
-                /hover:bg-\[var\(--color-green--100\)\]/g,
-                "hover:bg-[var(--color-green--200)]",
-              )
-              .replace(
-                /hover:text-\[var\(--color-green--400\)\]/g,
-                "hover:text-[var(--color-green--100)]",
-              );
-          }
-        });
+        // Set clicked button to active
+        this.classList.remove(
+          "bg-[var(--color-green--200)]",
+          "text-[var(--color-black)]",
+        );
+        this.classList.add(
+          "bg-[var(--color-green--400)]",
+          "text-[var(--color-green--100)]",
+        );
 
-        // If switching away from BBC, hide the entire BBC video section (thumbnail, play button, iframe)
-        if (!selectedMedia.isBbc) {
-          bbcThumbnail.classList.add("hidden");
-          bbcPlayBTN.classList.add("hidden");
-          if (bbcVideo && !bbcVideo.classList.contains("hidden")) {
-            bbcVideo.classList.add("hidden");
-          }
+        // Show selected media
+        const selectedText = document.querySelector(
+          `[data-media="${mediaKey}"].media-text`,
+        );
+        const selectedImage = document.querySelector(
+          `[data-media="${mediaKey}"].media-img`,
+        );
+
+        if (selectedText) {
+          selectedText.classList.remove("hidden");
+          selectedText.classList.add("flex");
+        }
+
+        if (mediaKey === "bbc") {
+          if (bbcThumbnailContainer)
+            bbcThumbnailContainer.classList.remove("hidden");
         } else {
-          // If switching to BBC, show the thumbnail and play button (but keep iframe hidden until clicked)
-          bbcThumbnail.classList.remove("hidden");
-          bbcPlayBTN.classList.remove("hidden");
-          if (bbcVideo && !bbcVideo.classList.contains("hidden")) {
-            bbcVideo.classList.add("hidden");
-          }
-        }
-
-        // Show selected content and image
-        const content = document.getElementById(selectedMedia.contentId);
-        const image = document.getElementById(selectedMedia.imageId);
-
-        if (content) {
-          content.classList.remove("hidden");
-          content.classList.add("flex");
-        }
-        if (image) {
-          image.classList.remove("hidden");
-        }
-
-        // Mark this wrapper as active and update button to green variant
-        this.classList.add("active");
-        const activeBtn = this.querySelector("button");
-        if (activeBtn) {
-          activeBtn.className = activeBtn.className
-            .replace(
-              /bg-\[var\(--color-green--100\)\]/g,
-              "bg-[var(--color-green--400)]",
-            )
-            .replace(
-              /text-\[var\(--color-green--400\)\]/g,
-              "text-[var(--color-green--100)]",
-            )
-            .replace(
-              /hover:bg-\[var\(--color-green--200\)\]/g,
-              "hover:bg-[var(--color-green--100)]",
-            )
-            .replace(
-              /hover:text-\[var\(--color-green--100\)\]/g,
-              "hover:text-[var(--color-green--400)]",
-            );
+          if (selectedImage) selectedImage.classList.remove("hidden");
         }
       });
     });
