@@ -224,94 +224,99 @@ const navInactive = "font-medium";
     style="display: none;"
   >
     <ul
-      class="border-t-2 border-b-2"
-      style="border-color: rgba(27, 27, 27, 0.1); background-color: var(--color-white);"
+      class="border-t-2 border-b-2 py-5"
+      style="border-color: rgba(27, 27, 27, 0.1); background-color: var(--color-black);"
     >
-      <li class="border-b" style="border-color: rgba(27, 27, 27, 0.1);">
+      <li class="border-b mx-8" style="border-color:var(--color-yellow--100);">
         <a
           href="/"
           class="block text-center py-4"
-          style="color: var(--color-black);"
+          style="color: var(--color-yellow--100);"
         >
           <Text
-            size="small"
+            stylingclasses="text-left pb-2"
+            size="large"
             font="sans"
-            weight={currentPath === "" ? "bold" : "medium"}
+            weight={currentPath === "" ? "bold" : "light"}
           >
             Forside
           </Text>
         </a>
       </li>
 
-      <li class="border-b" style="border-color: rgba(27, 27, 27, 0.1);">
+      <li class="border-b mx-8" style="border-color:var(--color-yellow--100);">
         <a
           href="/bliv_aktiv"
           class="block text-center py-4"
-          style="color: var(--color-black);"
+          style="color: var(--color-yellow--100);"
         >
           <Text
-            size="small"
+            stylingclasses="text-left py-2"
+            size="large"
             font="sans"
             weight={currentPath === "bliv_aktiv" ||
             currentPath === "bliv_aktiv/"
               ? "bold"
-              : "medium"}
+              : "light"}
           >
             Bliv aktiv
           </Text>
         </a>
       </li>
 
-      <li class="border-b" style="border-color: rgba(27, 27, 27, 0.1);">
+      <li class="border-b mx-8" style="border-color:var(--color-yellow--100);">
         <a
           href="/hvad_vi_kan_goere"
           class="block text-center py-4"
-          style="color: var(--color-black);"
+          style="color: var(--color-yellow--100);"
         >
           <Text
-            size="small"
+            stylingclasses="text-left py-2"
+            size="large"
             font="sans"
             weight={currentPath === "hvad_vi_kan_goere" ||
             currentPath === "hvad_vi_kan_goere/"
               ? "bold"
-              : "medium"}
+              : "light"}
           >
             Hvad kan vi gøre
           </Text>
         </a>
       </li>
 
-      <li class="border-b" style="border-color: rgba(27, 27, 27, 0.1);">
+      <li class="border-b mx-8" style="border-color:var(--color-yellow--100);">
         <a
           href="/komponentbibliotek"
           class="block text-center py-4"
-          style="color: var(--color-black);"
+          style="color: var(--color-yellow--100);"
         >
           <Text
-            size="small"
+            stylingclasses="text-left py-2"
+            size="large"
             font="sans"
             weight={currentPath === "komponentbibliotek" ||
             currentPath === "komponentbibliotek/"
               ? "bold"
-              : "medium"}
+              : "light"}
           >
             Komponentbibliotek
           </Text>
         </a>
       </li>
 
-      <li class="py-4 px-4">
+      <li class="mx-8">
         <a
           href="/form"
           class="block text-center py-4"
-          style="color: var(--color-black);"
+          style="color: var(--color-yellow--100);"
         >
           <Text
-            size="small"
+            stylingclasses="text-left pt-2"
+            size="large"
             font="sans"
             weight={currentPath === "form" || currentPath === "form/"
               ? "bold"
-              : "medium"}
+              : "light"}
           >
             Tilmeld dig
           </Text>
