@@ -65,7 +65,7 @@ import Articles from "../components/Articles.astro";
     </section> -->
 
     <section
-      class="flex flex-col lg:mr-section_right lg:ml-section_left mb-section_buttom mt-section_top gap-5"
+      class="flex flex-col mr-section_right ml-section_left mb-section_buttom mt-section_top gap-5"
     >
       <Heading htmlheading="h2" size="medium">QUIZ DIG SELV I MADSPILD</Heading>
       <div class="sm:inline lg:grid grid-cols-2 gap-10">
@@ -215,65 +215,63 @@ import Articles from "../components/Articles.astro";
       </section>
     </section>
 
-    <section class="bg-purple-100 py-10 mb-section_buttom mt-section_top">
-      <section
-        class="sm:grid sm:grid-rows-2 sm:grid-cols-2 lg:flex lg:flex-row lg:mr-section_right lg:ml-section_left place-self-center gap-22"
-      >
-        <div class="flex flex-col max-w-65 text-center">
-          <Heading>200+</Heading>
-          <Text>projekter og aktiviteter mod madspild siden 2008</Text>
-        </div>
+    <section
+      class="sm:grid sm:grid-rows-2 sm:grid-cols-2 lg:flex lg:flex-row lg:mr-section_right lg:ml-section_left place-self-center gap-22"
+    >
+      <div class="flex flex-col max-w-65 text-center">
+        <Heading>200+</Heading>
+        <Text>projekter og aktiviteter mod madspild siden 2008</Text>
+      </div>
 
-        <div class="flex flex-col max-w-65 text-center">
-          <Heading>7.000+</Heading>
-          <Text>danske og internationale medieomtaler siden 2008</Text>
-        </div>
+      <div class="flex flex-col max-w-65 text-center">
+        <Heading>7.000+</Heading>
+        <Text>danske og internationale medieomtaler siden 2008</Text>
+      </div>
 
-        <div class="flex flex-col max-w-65 text-center">
-          <Heading>300+</Heading>
-          <Text>tons overskudsmad videreformidlet til udsatte siden 2011</Text>
-        </div>
+      <div class="flex flex-col max-w-65 text-center">
+        <Heading>300+</Heading>
+        <Text>tons overskudsmad videreformidlet til udsatte siden 2011</Text>
+      </div>BBC HOW ONE WOMAN IS WINNING THE FIGHT AGAINST FOOD WASTE
 
-        <div class="flex flex-col max-w-65 text-center">
-          <Heading>126.000+</Heading>
-          <Text>følgere på samlede sociale medier</Text>
-        </div>
-      </section>
+      <div class="flex flex-col max-w-65 text-center">
+        <Heading>126.000+</Heading>
+        <Text>følgere på samlede sociale medier</Text>
+      </div>
     </section>
   </main>
-
-  <style>
-    .carousel {
-      display: flex;
-      overflow-x: auto;
-    }
-
-    .carousel::-webkit-scrollbar {
-      display: none;
-    }
-
-    .group {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1em;
-      animation: spin 5s infinite linear;
-      padding-right: 1em;
-    }
-
-    .carousel_img {
-      flex: 0 0 5em;
-      align-content: center;
-      padding: 1em;
-    }
-
-    @keyframes spin {
-      from {
-        translate: 0;
-      }
-      to {
-        translate: -100%;
-      }
-    }
-  </style>
 </MainLayout>
+
+<style>
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    animation: spin 5s infinite linear;
+    padding-right: 1em;
+  }
+
+  .carousel_img {
+    flex: 0 0 5em;
+    align-content: center;
+    padding: 1em;
+  }
+
+  @keyframes spin {
+    from {
+      translate: 0;
+    }
+    to {
+      translate: -100%;
+    }
+  }
+</style>

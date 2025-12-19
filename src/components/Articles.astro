@@ -1,195 +1,346 @@
 ---
 import Heading from "../components/Heading.astro";
-import Button2 from "../components/Buttons2.astro";
+import Button from "../components/Button.astro";
 import Text from "../components/Text.astro";
 import Link from "../components/Link.astro";
 ---
 
 <section
-  class="flex flex-col gap-5 lg:mr-section_right lg:ml-section_left mb-section_buttom mt-section_top"
+  class="flex flex-col gap-5 mb-section_buttom mt-section_top px-4 sm:px-6 lg:px-8 lg:mr-section_right lg:ml-section_left"
+  id="articles-section"
 >
   <Heading>LÆR MERE OMG KAMPEN IMOD MADSPILD</Heading>
 
-  <section class="border border-black flex sm:flex-col lg:flex-row gap-5">
-    <div class="shrink-0 relative cursor-pointer">
-      <img src="/img/bbc.png" alt="" class="bbc_vid" id="bbc_vid" />
+  <section
+    class="border border-black rounded-lg p-4 flex flex-col lg:flex-row gap-6"
+  >
+    <div class="relative w-full lg:w-1/2">
+      <!-- BBC: Image + Play Button -->
+      <img
+        src="/img/bbc.png"
+        alt="BBC video thumbnail"
+        id="bbc_vid"
+        class="media-img w-full h-auto rounded-lg shadow-md cursor-pointer hover:brightness-110 transition-all"
+        data-media="bbc"
+      />
       <img
         src="/img/play_green.svg"
-        alt=""
-        class="bbc_vid_btn absolute inset-0 m-auto"
-        id="bbc_vid2"
+        alt="Afspil video"
+        class="play-btn absolute inset-0 w-16 h-16 m-auto cursor-pointer hover:scale-125 transition-all"
+        data-media="bbc"
       />
-      <div class="hidden" id="bbc_video">
-        <iframe
-          src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2FBBCNewsStories%2Fvideos%2F1867098186881302%2F&show_text=false&width=476&t=0"
-          style="border:none;overflow:hidden"
-          allowfullscreen="true"
-          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-          allowFullScreen="true"
-          class="h-145 w-180"
-        >
-        </iframe>
-      </div>
+      <iframe
+        src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2FBBCNewsStories%2Fvideos%2F1867098186881302%2F&show_text=false&width=476&t=0"
+        style="border:none;overflow:hidden"
+        allowfullscreen="true"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        loading="lazy"
+        class="video hidden w-full h-64 sm:h-80 md:h-[28rem] rounded-lg"
+        data-media="bbc"
+      >
+      </iframe>
 
-      <img src="/img/dr.png" alt="" class="hidden" id="dr_img" />
-      <img src="/img/jp.png" alt="" class="hidden" id="jp_img" />
-      <img src="/img/pol.png" alt="" class="hidden" id="pol_img" />
-      <img src="/img/tv2.png" alt="" class="hidden" id="tv2_img" />
-      <img src="/img/huff.png" alt="" class="hidden" id="huff_img" />
+      <!-- Other Media Images -->
+      <img
+        src="/img/dr.png"
+        alt="DR artikel billede"
+        class="media-img hidden w-full h-auto rounded-lg shadow-md"
+        data-media="dr"
+      />
+      <img
+        src="/img/jp.png"
+        alt="Jyllands-Posten artikel billede"
+        class="media-img hidden w-full h-auto rounded-lg shadow-md"
+        data-media="jp"
+      />
+      <img
+        src="/img/pol.png"
+        alt="Politiken artikel billede"
+        class="media-img hidden w-full h-auto rounded-lg shadow-md"
+        data-media="pol"
+      />
+      <img
+        src="/img/tv2.png"
+        alt="TV2 News artikel billede"
+        class="media-img hidden w-full h-auto rounded-lg shadow-md"
+        data-media="tv2"
+      />
+      <img
+        src="/img/huff.png"
+        alt="Huffington Post artikel billede"
+        class="media-img hidden w-full h-auto rounded-lg shadow-md"
+        data-media="huff"
+      />
     </div>
 
-    <div class="place-self-center flex-wrap">
-      <div class="flex flex-col gap-5 mr-5" id="bbc_text">
+    <div class="w-full lg:w-1/2 flex items-center justify-center">
+      <!-- BBC Content -->
+      <div class="media-text flex flex-col gap-4 px-2" data-media="bbc">
         <Heading htmlheading="h2" size="small">BBC</Heading>
         <Heading htmlheading="h2" size="medium"
           >HOW ONE WOMAN IS WINNING THE FIGHT AGAINST FOOD WASTE
         </Heading>
-        <Text>27 februar 2017</Text>
+        <Text>27. februar 2017</Text>
         <Link> LÆS ARTIKLEN </Link>
       </div>
 
-      <div class="hidden flex-col gap-5 mr-5" id="dr_text">
+      <!-- DR Content -->
+      <div class="media-text hidden flex-col gap-4 px-2" data-media="dr">
         <Heading htmlheading="h2" size="small">DR</Heading>
         <Heading htmlheading="h2" size="medium"
           >10.000 FATTIGE DANSKERE FÅR JULEMAD FRA SUPERMARKEDER
         </Heading>
-        <Text>19 december 2016</Text>
+        <Text>19. december 2016</Text>
         <Link> LÆS ARTIKLEN </Link>
       </div>
 
-      <div class="hidden flex-col gap-5 mr-5" id="jp_text">
+      <!-- JP Content -->
+      <div class="media-text hidden flex-col gap-4 px-2" data-media="jp">
         <Heading htmlheading="h2" size="small">JYLLANDS-POSTEN</Heading>
         <Heading htmlheading="h2" size="medium"
           >10.000 VIDENCENTER VIL BEKÆMPE MADSPILD MED NY HJEMMESIDE
         </Heading>
-        <Text>8 august 2016</Text>
+        <Text>8. august 2016</Text>
         <Link> LÆS ARTIKLEN </Link>
       </div>
 
-      <div class="hidden flex-col gap-5 mr-5" id="pol_text">
+      <!-- Politiken Content -->
+      <div class="media-text hidden flex-col gap-4 px-2" data-media="pol">
         <Heading htmlheading="h2" size="small">POLITIKEN</Heading>
         <Heading htmlheading="h2" size="medium"
           >MADSPILDS-AKTIVIST: PRIVATE ER STADIG DE STØRSTE SYNDERE
         </Heading>
-        <Text>16 marts 2017</Text>
+        <Text>16. marts 2017</Text>
         <Link> LÆS ARTIKLEN </Link>
       </div>
 
-      <div class="hidden flex-col gap-5 mr-5" id="tv2_text">
+      <!-- TV2 Content -->
+      <div class="media-text hidden flex-col gap-4 px-2" data-media="tv2">
         <Heading htmlheading="h2" size="small">TV2 NEWS</Heading>
         <Heading htmlheading="h2" size="medium"
-          >SÅDAN UNDGÅR DU MADSPILD
-        </Heading>
-        <Text>3 marts 2017</Text>
+          >SÅDAN UNDGÅR DU MADSPILD</Heading
+        >
+        <Text>3. marts 2017</Text>
         <Link> LÆS ARTIKLEN </Link>
       </div>
 
-      <div class="hidden flex-col gap-5 mr-5" id="huff_text">
+      <!-- Huffington Post Content -->
+      <div class="media-text hidden flex-col gap-4 px-2" data-media="huff">
         <Heading htmlheading="h2" size="small">THE HUFFINGTON POST</Heading>
         <Heading htmlheading="h2" size="medium"
           >THE FIGHT AGAINST FOOD WASTE IS BECOMING BIG BUSSINESS
         </Heading>
-        <Text>14 februar 2017</Text>
+        <Text>14. februar 2017</Text>
         <Link> LÆS ARTIKLEN </Link>
       </div>
     </div>
   </section>
 
   <section
-    class="flex flex-row sm:justify-baseline sm:place-content-center lg:justify-between gap-5 flex-wrap"
+    class="flex flex-row justify-center lg:justify-between gap-3 flex-wrap mt-6"
   >
-    <Button2 variant="green" id="bbc_link"> BBC </Button2>
-    <Button2 variant="green-inverted" id="dr_link"> DR </Button2>
-    <Button2 variant="green-inverted" id="jp_link"> JYLLANDS-POSTEN </Button2>
-    <Button2 variant="green-inverted" id="pol_link"> POLITIKEN </Button2>
-    <Button2 variant="green-inverted" id="tv2_link"> TV2 NEWS </Button2>
-    <Button2 variant="green-inverted" id="huff_link">
-      THE HUFFINGTON POST
-    </Button2>
+    <button
+      data-btn="bbc"
+      class="btn-media btn-active text-xs md:text-sm uppercase font-semibold px-4 md:px-6 py-2 md:py-3 rounded-lg transition-all duration-300"
+      >BBC</button
+    >
+    <button
+      data-btn="dr"
+      class="btn-media text-xs md:text-sm uppercase font-semibold px-4 md:px-6 py-2 md:py-3 rounded-lg transition-all duration-300"
+      >DR</button
+    >
+    <button
+      data-btn="jp"
+      class="btn-media text-xs md:text-sm uppercase font-semibold px-4 md:px-6 py-2 md:py-3 rounded-lg transition-all duration-300"
+      >JYLLANDS-POSTEN</button
+    >
+    <button
+      data-btn="pol"
+      class="btn-media text-xs md:text-sm uppercase font-semibold px-4 md:px-6 py-2 md:py-3 rounded-lg transition-all duration-300"
+      >POLITIKEN</button
+    >
+    <button
+      data-btn="tv2"
+      class="btn-media text-xs md:text-sm uppercase font-semibold px-4 md:px-6 py-2 md:py-3 rounded-lg transition-all duration-300"
+      >TV2 NEWS</button
+    >
+    <button
+      data-btn="huff"
+      class="btn-media text-xs md:text-sm uppercase font-semibold px-4 md:px-6 py-2 md:py-3 rounded-lg transition-all duration-300"
+      >THE HUFFINGTON POST</button
+    >
   </section>
 </section>
 
 <style>
   .bbc_vid {
     transition: filter 0.5s ease-in-out;
+    object-fit: cover;
   }
 
   .bbc_vid:hover {
     filter: brightness(1.5);
   }
+
+  .bbc_vid_btn {
+    width: 64px;
+    height: 64px;
+    transition: transform 0.2s ease;
+    pointer-events: none;
+  }
+
+  /* Media button wrapper - swaps between active and inverted button variants */
+  .media-button-wrapper {
+    cursor: pointer;
+  }
+
+  .media-button-wrapper button {
+    transition: all 0.3s ease;
+  }
 </style>
 
 <script is:inline>
-  const bbcThumbnail = document.getElementById("bbc_vid");
-  const bbcPlayBTN = document.getElementById("bbc_vid2");
-  const bbcVideo = document.getElementById("bbc_video");
+  document.addEventListener("DOMContentLoaded", function () {
+    const bbcThumbnail = document.getElementById("bbc_vid");
+    const bbcPlayBTN = document.getElementById("bbc_vid2");
+    const bbcVideo = document.getElementById("bbc_video");
 
-  bbcThumbnail.addEventListener("click", () => {
-    bbcThumbnail.classList.add("hidden");
-    bbcPlayBTN.classList.add("hidden");
-    bbcVideo.classList.remove("hidden");
+    const showBBCVideo = () => {
+      if (!bbcThumbnail || !bbcPlayBTN || !bbcVideo) return;
+      bbcThumbnail.classList.add("hidden");
+      bbcPlayBTN.classList.add("hidden");
+      bbcVideo.classList.remove("hidden");
+    };
+
+    if (bbcThumbnail) {
+      bbcThumbnail.addEventListener("click", showBBCVideo);
+      bbcThumbnail.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          showBBCVideo();
+        }
+      });
+      bbcThumbnail.setAttribute("role", "button");
+      bbcThumbnail.setAttribute("tabindex", "0");
+      bbcThumbnail.setAttribute("aria-label", "Afspil BBC-video");
+    }
+    if (bbcPlayBTN) {
+      bbcPlayBTN.addEventListener("click", showBBCVideo);
+    }
+
+    // Media switching functionality
+    const mediaData = [
+      { key: "bbc", contentId: "bbc_text", imageId: "bbc_vid", isBbc: true },
+      { key: "dr", contentId: "dr_text", imageId: "dr_img", isBbc: false },
+      { key: "jp", contentId: "jp_text", imageId: "jp_img", isBbc: false },
+      { key: "pol", contentId: "pol_text", imageId: "pol_img", isBbc: false },
+      { key: "tv2", contentId: "tv2_text", imageId: "tv2_img", isBbc: false },
+      {
+        key: "huff",
+        contentId: "huff_text",
+        imageId: "huff_img",
+        isBbc: false,
+      },
+    ];
+
+    const mediaWrappers = document.querySelectorAll(".media-button-wrapper");
+
+    mediaWrappers.forEach((wrapper) => {
+      wrapper.addEventListener("click", function () {
+        const mediaKey = this.getAttribute("data-media");
+        const selectedMedia = mediaData.find((m) => m.key === mediaKey);
+        if (!selectedMedia) return;
+
+        // Hide all content and images
+        mediaData.forEach((media) => {
+          const content = document.getElementById(media.contentId);
+          const image = document.getElementById(media.imageId);
+
+          if (content) {
+            content.classList.remove("flex");
+            content.classList.add("hidden");
+          }
+          if (image) {
+            image.classList.add("hidden");
+          }
+        });
+
+        // Reset all wrapper states and button variants back to green-inverted
+        mediaWrappers.forEach((w) => {
+          w.classList.remove("active");
+          const btn = w.querySelector("button");
+          if (btn) {
+            btn.className = btn.className
+              .replace(
+                /bg-\[var\(--color-green--400\)\]/g,
+                "bg-[var(--color-green--100)]",
+              )
+              .replace(
+                /text-\[var\(--color-green--100\)\]/g,
+                "text-[var(--color-green--400)]",
+              )
+              .replace(
+                /hover:bg-\[var\(--color-green--100\)\]/g,
+                "hover:bg-[var(--color-green--200)]",
+              )
+              .replace(
+                /hover:text-\[var\(--color-green--400\)\]/g,
+                "hover:text-[var(--color-green--100)]",
+              );
+          }
+        });
+
+        // If switching away from BBC, hide the entire BBC video section (thumbnail, play button, iframe)
+        if (!selectedMedia.isBbc) {
+          bbcThumbnail.classList.add("hidden");
+          bbcPlayBTN.classList.add("hidden");
+          if (bbcVideo && !bbcVideo.classList.contains("hidden")) {
+            bbcVideo.classList.add("hidden");
+          }
+        } else {
+          // If switching to BBC, show the thumbnail and play button (but keep iframe hidden until clicked)
+          bbcThumbnail.classList.remove("hidden");
+          bbcPlayBTN.classList.remove("hidden");
+          if (bbcVideo && !bbcVideo.classList.contains("hidden")) {
+            bbcVideo.classList.add("hidden");
+          }
+        }
+
+        // Show selected content and image
+        const content = document.getElementById(selectedMedia.contentId);
+        const image = document.getElementById(selectedMedia.imageId);
+
+        if (content) {
+          content.classList.remove("hidden");
+          content.classList.add("flex");
+        }
+        if (image) {
+          image.classList.remove("hidden");
+        }
+
+        // Mark this wrapper as active and update button to green variant
+        this.classList.add("active");
+        const activeBtn = this.querySelector("button");
+        if (activeBtn) {
+          activeBtn.className = activeBtn.className
+            .replace(
+              /bg-\[var\(--color-green--100\)\]/g,
+              "bg-[var(--color-green--400)]",
+            )
+            .replace(
+              /text-\[var\(--color-green--400\)\]/g,
+              "text-[var(--color-green--100)]",
+            )
+            .replace(
+              /hover:bg-\[var\(--color-green--200\)\]/g,
+              "hover:bg-[var(--color-green--100)]",
+            )
+            .replace(
+              /hover:text-\[var\(--color-green--100\)\]/g,
+              "hover:text-[var(--color-green--400)]",
+            );
+        }
+      });
+    });
   });
-
-  bbcPlayBTN.addEventListener("click", () => {
-    bbcThumbnail.classList.add("hidden");
-    bbcPlayBTN.classList.add("hidden");
-    bbcVideo.classList.remove("hidden");
-  });
-
-  // document.addEventListener("DOMContentLoaded", function () {
-  //   // Media links swap functionality
-  //   const mediaLinks = [
-  //     { id: "bbc_link", contentId: "bbc_text", imageId: "bbc_vid" },
-  //     { id: "dr_link", contentId: "dr_text", imageId: "dr_img" },
-  //     { id: "jp_link", contentId: "jp_text", imageId: "jp_img" },
-  //     { id: "pol_link", contentId: "pol_text", imageId: "pol_img" },
-  //     { id: "tv2_link", contentId: "tv2_text", imageId: "tv2_img" },
-  //     { id: "huff_link", contentId: "huff_text", imageId: "huff_img" },
-  //   ];
-
-  //   mediaLinks.forEach((media) => {
-  //     const link = document.getElementById(media.id);
-
-  //     if (link) {
-  //       link.addEventListener("click", (e) => {
-  //         e.preventDefault();
-
-  //         // Hide all content, images, and reset link styles
-  //         mediaLinks.forEach((m) => {
-  //           const otherContent = document.getElementById(m.contentId);
-  //           const otherImage = document.getElementById(m.imageId);
-  //           const otherLink = document.getElementById(m.id);
-
-  //           if (otherContent) {
-  //             otherContent.classList.remove("flex");
-  //             otherContent.classList.add("hidden");
-  //           }
-  //           if (otherImage) {
-  //             otherImage.classList.add("hidden");
-  //           }
-  //           if (otherLink) {
-  //             otherLink.classList.remove("media-active");
-  //           }
-  //         });
-
-  //         // Show current content and image
-  //         const content = document.getElementById(media.contentId);
-  //         const image = document.getElementById(media.imageId);
-
-  //         if (content) {
-  //           content.classList.remove("hidden");
-  //           content.classList.add("flex");
-  //         }
-  //         if (image) {
-  //           image.classList.remove("hidden");
-  //         }
-
-  //         // Highlight current link
-  //         link.classList.add("media-active");
-
-  //         console.log("Clicked:", media.id);
-  //       });
-  //     }
-  //   });
-  // });
 </script>
