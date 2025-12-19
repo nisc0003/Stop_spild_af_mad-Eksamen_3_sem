@@ -100,7 +100,7 @@ import Buttons2 from "../components/Buttons2.astro";
   </section>
 
   <section
-    class="flex flex-col place-items-center mt-10 mb-50 animate-bounce animate-infinite animate-ease-in p-5"
+    class="flex flex-col place-items-center mt-10 mb-50 animate-bounce animate-infinite animate-ease-in p-5 hover:cursor-pointer"
   >
     <img src="/img/arrow_d.svg" alt="" id="scrollDown" />
   </section>
@@ -128,13 +128,13 @@ import Buttons2 from "../components/Buttons2.astro";
 
       <div class="flex flex-col gap-5">
         <!-- <Button> KØB ENKELT VARE </Button> -->
-        <div onclick="ScrollToTip1()">
+        <div onclick="ScrollToTip1()" class="cursor-pointer">
           <Buttons2 variant="green"> KØB ENKELT VARE</Buttons2>
         </div>
-        <div onclick="ScrollToTip2()">
+        <div onclick="ScrollToTip2()" class="cursor-pointer">
           <Buttons2 variant="orange"> KØB IND MED OMTANKE</Buttons2>
         </div>
-        <div onclick="ScrollToTip3()">
+        <div onclick="ScrollToTip3()" class="cursor-pointer">
           <Buttons2 variant="purple"> DOGGY BAGS</Buttons2>
         </div>
         <!-- <Button> KØB IND MED OMTANKE </Button>
@@ -421,19 +421,36 @@ import Buttons2 from "../components/Buttons2.astro";
         </div>
 
         <div
-          class="flex flex-row li6_content inactiveBox gap-5"
-          id="li6_content"
+          class="flex flex-row li7_content inactiveBox gap-5"
+          id="li7_content"
         >
-          <img src="/img/2016.png" alt="" />
+          <img src="/img/2019.png" alt="" />
           <div class="flex flex-col gap-10">
-            <Heading>Officielt en forening</Heading>
+            <Heading>Tedx Talks</Heading>
             <Text>
-              Den 16. november 2016 blev Stop Spild Af Mad formelt omdannet til
-              en forening.
+              Stifter Selina Juul fik i 2019 igen mulighed for at holde en Tedx
+              Talk. Dette skabte både mulighed for at komme længere ud i verden
+              med vores mission og værdier, og var med til at sætte Danmark på
+              verdens kortet i kampen mod madspild.
               <br />
               <br />
               Hendes Kongelige Højhed Prinsesse Marie har siden 2016 været samarbejdspartner
               til foreningen Stop Spild Af Mad.
+            </Text>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-row li8_content inactiveBox gap-5"
+          id="li8_content"
+        >
+          <img src="/img/2024.png" alt="" />
+          <div class="flex flex-col gap-10">
+            <Heading>Kongelig Protektion</Heading>
+            <Text>
+              Stop Spild Af Mad har Hendes Kongelige Højhed Prinsesse Marie som
+              protektor. Hendes Kongelige Højhed Prinsesse Marie blev protektor
+              for foreningen Stop Spild Af Mad den 30. maj 2024.
             </Text>
           </div>
         </div>
@@ -469,7 +486,11 @@ import Buttons2 from "../components/Buttons2.astro";
   <Articles />
 
   <div>
-    <a href="#" id="scrollToTop" class="material-icons-outlined">
+    <a
+      href="#"
+      id="scrollToTop"
+      class="material-icons-outlined hover:cursor-pointer"
+    >
       <Button variant="black">TILBAGE TIL TOPPEN</Button>
     </a>
   </div>
