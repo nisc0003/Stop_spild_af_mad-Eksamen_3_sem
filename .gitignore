@@ -1,3 +1,6 @@
+*.DS_Store
+*.mov
+
 # build output
 dist/
 # generated types
